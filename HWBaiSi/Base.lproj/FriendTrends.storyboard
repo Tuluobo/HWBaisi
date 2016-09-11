@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jCp-6Z-3W7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--关注-->
+        <scene sceneID="kEw-fe-tC3">
+            <objects>
+                <viewController id="jCp-6Z-3W7" customClass="FriendTrendsViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v3v-jj-cNs"/>
+                        <viewControllerLayoutGuide type="bottom" id="uxS-pU-63L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x94-cY-xdu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="关注" image="tabBar_friendTrends_icon" selectedImage="tabBar_friendTrends_click_icon" id="9UT-PR-OpC"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBC-WW-fF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545" y="1127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabBar_friendTrends_click_icon" width="37" height="37"/>
+        <image name="tabBar_friendTrends_icon" width="37" height="37"/>
+    </resources>
+</document>

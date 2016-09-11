@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3DH-Ql-9Ci">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--最新-->
+        <scene sceneID="YFt-pP-zoc">
+            <objects>
+                <viewController id="3DH-Ql-9Ci" customClass="NewViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kmd-Nw-JXi"/>
+                        <viewControllerLayoutGuide type="bottom" id="G0p-Jy-CiQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oai-5Q-vRs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="最新" image="tabBar_new_icon" selectedImage="tabBar_new_click_icon" id="SbR-dA-sL0"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUy-sL-SKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2091" y="-910"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabBar_new_click_icon" width="37" height="37"/>
+        <image name="tabBar_new_icon" width="37" height="37"/>
+    </resources>
+</document>
