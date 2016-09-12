@@ -14,15 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
 		
-		/**
+		/************
 		window = UIWindow(frame: UIScreen.mainScreen().bounds)
 		// iOS9.0之后如果程序启动完成的那一刻不设置root控制器报错：Application windows are expected to have a root view controller at the end of application launch
 		// 但是如果设置延时之后显示，就不会报错
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
 			self.window?.makeKeyAndVisible()
-		}**/
+		}
+        ************/
+		
 		setupUI()
 		
 		return true
@@ -31,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func setupUI() {
 		UINavigationBar.appearance().barStyle = UIBarStyle.Default
 		UINavigationBar.appearance().tintColor = UIColor.redColor()
-		UITabBar.appearance().tintColor = UIColor(red: 81 / 255.0, green: 81 / 255.0, blue: 81 / 255.0, alpha: 1.0)
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.grayColor()], forState: .Normal)
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.darkGrayColor()], forState: .Selected)
 	}
 	
 	func applicationWillResignActive(application: UIApplication) {

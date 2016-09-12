@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iYS-YC-bN8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PUa-CD-Oaz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--精华-->
+        <!--Essence View Controller-->
         <scene sceneID="zy3-GK-o67">
             <objects>
                 <viewController id="iYS-YC-bN8" customClass="EssenceViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,11 +17,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="精华" image="tabBar_essence_icon" selectedImage="tabBar_essence_click_icon" id="hae-b2-67J"/>
+                    <navigationItem key="navigationItem" id="Xp8-0b-90E"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrf-cL-pzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2608" y="-637"/>
+        </scene>
+        <!--精华-->
+        <scene sceneID="2TY-6U-lR4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PUa-CD-Oaz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="精华" image="tabBar_essence_icon" selectedImage="tabBar_essence_click_icon" id="hae-b2-67J"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i9q-aC-fjk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iYS-YC-bN8" kind="relationship" relationship="rootViewController" id="mSF-tG-hAZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rx9-pl-xTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1796" y="-637"/>
         </scene>

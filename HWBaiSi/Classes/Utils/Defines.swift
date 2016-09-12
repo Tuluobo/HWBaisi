@@ -1,0 +1,17 @@
+//
+//  Defines.swift
+//  HWBaiSi
+//
+//  Created by WangHao on 16/9/12.
+//  Copyright © 2016年 Tuluobo. All rights reserved.
+//
+
+import Foundation
+
+/****** 自定义Log ******/
+func HWLog<T>(message: T, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
+	#if DEBUG
+		let filename = (fileName as NSString).pathComponents.last
+		print("\(filename!)\(function)[\(lineNumber)]: \(message)")
+	#endif
+}

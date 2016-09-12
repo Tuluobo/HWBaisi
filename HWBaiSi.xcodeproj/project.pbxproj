@@ -26,6 +26,8 @@
 		D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */; };
 		D20EA7BB1D83BD620004C9B6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7B91D83BD620004C9B6 /* Me.storyboard */; };
 		D20EA7C01D83BD980004C9B6 /* Essence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7BE1D83BD980004C9B6 /* Essence.storyboard */; };
+		D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C55881D86ED5F0044FA29 /* Defines.swift */; };
+		D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		D20EA7BA1D83BD620004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		D20EA7BF1D83BD980004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essence.storyboard; sourceTree = "<group>"; };
+		D29C55881D86ED5F0044FA29 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEXtension.swift; sourceTree = "<group>"; };
 		E15B6CCA1FA21E054DE97A98 /* Pods-HWBaiSi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWBaiSi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,7 +216,11 @@
 			isa = PBXGroup;
 			children = (
 				D20EA77C1D8391C20004C9B6 /* AppDelegate.swift */,
+				D29C558E1D86F1B80044FA29 /* Models */,
+				D29C558D1D86F1AE0044FA29 /* Views */,
 				D20EA7C31D83BE270004C9B6 /* ViewControllers */,
+				D29C55871D86ED200044FA29 /* Utils */,
+				D29C558A1D86EFB10044FA29 /* Extension */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,6 +250,36 @@
 				D2045C931D83CB2600270179 /* Me */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D29C55871D86ED200044FA29 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D29C55881D86ED5F0044FA29 /* Defines.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D29C558A1D86EFB10044FA29 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D29C558D1D86F1AE0044FA29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D29C558E1D86F1B80044FA29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,10 +490,12 @@
 			files = (
 				D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
+				D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */,
 				D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */,
 				D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
 				D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */,
+				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,
 				D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */,
 				D20EA7B01D83BCC30004C9B6 /* EssenceViewController.swift in Sources */,
 			);
@@ -630,6 +670,7 @@
 				INFOPLIST_FILE = HWBaiSi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuluobo.HWBaiSi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -645,6 +686,7 @@
 				INFOPLIST_FILE = HWBaiSi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuluobo.HWBaiSi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
