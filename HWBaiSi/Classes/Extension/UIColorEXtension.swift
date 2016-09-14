@@ -19,7 +19,7 @@ extension UIColor {
 	}
 	
 	class func defaultLightGray() -> UIColor {
-		return UIColor(R: 206, G: 206, B: 206)
+		return UIColor(R: 190, G: 190, B: 190)
 	}
     
     class func defaultGray() -> UIColor {

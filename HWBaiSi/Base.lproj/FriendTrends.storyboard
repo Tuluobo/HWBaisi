@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hei-dL-6Kd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,44 @@
                     <view key="view" contentMode="scaleToFill" id="x94-cY-xdu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-dh-5PD">
+                                <string key="text">快快登录吧，关注百思最in牛人
+好友动态让你过把瘾儿~
+欧耶~~~！</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_cry_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ne6-RY-8SV">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="IB4-Aa-Hd1"/>
+                                    <constraint firstAttribute="height" constant="48" id="ZTp-jw-EPD"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKO-gS-kpY">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="立即登录注册" backgroundImage="friendsTrend_login">
+                                    <color key="titleColor" red="0.7843137255" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="friendsTrend_login_click">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="92C-Lh-5CB" kind="presentation" id="iVY-FB-pl5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qhP-dh-5PD" firstAttribute="leading" secondItem="x94-cY-xdu" secondAttribute="leadingMargin" constant="20" id="2h4-aa-CcJ"/>
+                            <constraint firstItem="OKO-gS-kpY" firstAttribute="top" secondItem="qhP-dh-5PD" secondAttribute="bottom" constant="24" id="5nf-8p-4Dv"/>
+                            <constraint firstItem="OKO-gS-kpY" firstAttribute="centerX" secondItem="x94-cY-xdu" secondAttribute="centerX" id="6j0-vO-4HS"/>
+                            <constraint firstItem="qhP-dh-5PD" firstAttribute="centerY" secondItem="x94-cY-xdu" secondAttribute="centerY" id="73g-C6-mGq"/>
+                            <constraint firstItem="Ne6-RY-8SV" firstAttribute="centerX" secondItem="x94-cY-xdu" secondAttribute="centerX" id="7DP-xM-O2W"/>
+                            <constraint firstItem="qhP-dh-5PD" firstAttribute="top" secondItem="Ne6-RY-8SV" secondAttribute="bottom" constant="24" id="fT2-vT-Nsz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qhP-dh-5PD" secondAttribute="trailing" constant="20" id="rxz-v5-5FZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Qr-y6-O7Y">
                         <barButtonItem key="leftBarButtonItem" id="Atv-is-Hsu">
@@ -33,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBC-WW-fF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2357" y="1127"/>
+            <point key="canvasLocation" x="2356" y="1126.6866566716642"/>
         </scene>
         <!--关注-->
         <scene sceneID="qbO-Lt-423">
@@ -54,10 +92,21 @@
             </objects>
             <point key="canvasLocation" x="1545" y="1127"/>
         </scene>
+        <!--RegisterAndLogin-->
+        <scene sceneID="1Pw-8Y-sKa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RegisterAndLogin" id="92C-Lh-5CB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNy-aq-w6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="1126"/>
+        </scene>
     </scenes>
     <resources>
         <image name="friendsRecommentIcon" width="19" height="17"/>
         <image name="friendsRecommentIcon-click" width="19" height="17"/>
+        <image name="friendsTrend_login" width="243" height="48"/>
+        <image name="friendsTrend_login_click" width="243" height="48"/>
+        <image name="header_cry_icon" width="48" height="48"/>
         <image name="tabBar_friendTrends_click_icon" width="37" height="37"/>
         <image name="tabBar_friendTrends_icon" width="37" height="37"/>
     </resources>

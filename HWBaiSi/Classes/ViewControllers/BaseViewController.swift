@@ -9,10 +9,15 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
         // 设置通用背景颜色
 		self.view.backgroundColor = UIColor.defaultLightGray()
 	}
+    
 }
