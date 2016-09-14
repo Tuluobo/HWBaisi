@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Anh-uJ-gaa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Anh-uJ-gaa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Me View Controller-->
@@ -14,15 +15,15 @@
                         <viewControllerLayoutGuide type="bottom" id="477-IX-d22"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aJ6-MH-P91">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qlv-4d-iQq">
                         <rightBarButtonItems>
                             <barButtonItem id="Vz7-9F-NSN">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nDT-FA-jOM">
-                                    <rect key="frame" x="560" y="12" width="20" height="20"/>
+                                    <rect key="frame" x="339" y="12" width="20" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="mine-setting-icon"/>
                                     <state key="highlighted" image="mine-setting-icon-click"/>
@@ -33,7 +34,7 @@
                             </barButtonItem>
                             <barButtonItem id="XF6-QH-JBF">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ety-ri-8f6">
-                                    <rect key="frame" x="532" y="12" width="20" height="20"/>
+                                    <rect key="frame" x="311" y="12" width="20" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="mine-moon-icon"/>
                                     <state key="highlighted" image="mine-moon-icon-click"/>
@@ -63,9 +64,9 @@
                         <viewControllerLayoutGuide type="bottom" id="JMj-ca-sXt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="er3-39-vVH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kc7-oQ-QmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,7 +76,7 @@
         <!--我-->
         <scene sceneID="90Y-sC-qjG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Anh-uJ-gaa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Anh-uJ-gaa" customClass="HWNavigationController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我" image="tabBar_me_icon" selectedImage="tabBar_me_click_icon" id="mda-jf-fHy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QzS-TG-eF6">

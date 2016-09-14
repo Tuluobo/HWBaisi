@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hei-dL-6Kd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hei-dL-6Kd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Friend Trends View Controller-->
@@ -13,14 +14,14 @@
                         <viewControllerLayoutGuide type="bottom" id="uxS-pU-63L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x94-cY-xdu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Qr-y6-O7Y">
                         <barButtonItem key="leftBarButtonItem" id="Atv-is-Hsu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NnB-Iv-xwc">
-                                <rect key="frame" x="20" y="13" width="19" height="18"/>
+                                <rect key="frame" x="16" y="13" width="19" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="friendsRecommentIcon"/>
                                 <state key="highlighted" image="friendsRecommentIcon-click"/>
@@ -37,7 +38,7 @@
         <!--关注-->
         <scene sceneID="qbO-Lt-423">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hei-dL-6Kd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hei-dL-6Kd" customClass="HWNavigationController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="关注" image="tabBar_friendTrends_icon" selectedImage="tabBar_friendTrends_click_icon" id="9UT-PR-OpC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PK9-38-Bu8">
@@ -55,8 +56,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="friendsRecommentIcon" width="19" height="18"/>
-        <image name="friendsRecommentIcon-click" width="19" height="18"/>
+        <image name="friendsRecommentIcon" width="19" height="17"/>
+        <image name="friendsRecommentIcon-click" width="19" height="17"/>
         <image name="tabBar_friendTrends_click_icon" width="37" height="37"/>
         <image name="tabBar_friendTrends_icon" width="37" height="37"/>
     </resources>
