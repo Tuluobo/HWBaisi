@@ -21,7 +21,7 @@ class PublishViewController: BaseViewController {
 	}
 	
 	@IBAction func clickedShareBtnCancel() {
-		self.dismissViewControllerAnimated(true, completion: nil)
+		self.dismiss(animated: true, completion: nil)
 	}
 	
 }

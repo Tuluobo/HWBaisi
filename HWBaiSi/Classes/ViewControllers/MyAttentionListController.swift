@@ -1,19 +1,19 @@
 //
-//  NewViewController.swift
+//  MyAttentionListController.swift
 //  HWBaiSi
 //
-//  Created by WangHao on 16/9/10.
+//  Created by WangHao on 16/9/13.
 //  Copyright © 2016年 Tuluobo. All rights reserved.
 //
 
 import UIKit
 
-class NewViewController: BaseViewController {
+class MyAttentionListController: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
+		self.navigationItem.title = "我的关注"
 	}
 	
 	override func didReceiveMemoryWarning() {

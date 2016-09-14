@@ -9,7 +9,7 @@
 import Foundation
 
 /****** 自定义Log ******/
-func HWLog<T>(message: T, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
+func HWLog<T>(_ message: T, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
 	#if DEBUG
 		let filename = (fileName as NSString).pathComponents.last
 		print("\(filename!)\(function)[\(lineNumber)]: \(message)")

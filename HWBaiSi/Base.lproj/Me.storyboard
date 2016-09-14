@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Anh-uJ-gaa">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Me View Controller-->
@@ -17,13 +18,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qlv-4d-iQq"/>
+                    <navigationItem key="navigationItem" id="qlv-4d-iQq">
+                        <rightBarButtonItems>
+                            <barButtonItem id="Vz7-9F-NSN">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nDT-FA-jOM">
+                                    <rect key="frame" x="560" y="12" width="20" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="mine-setting-icon"/>
+                                    <state key="highlighted" image="mine-setting-icon-click"/>
+                                    <connections>
+                                        <segue destination="zZA-GG-jde" kind="show" id="rj1-jB-zjc"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem id="XF6-QH-JBF">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ety-ri-8f6">
+                                    <rect key="frame" x="532" y="12" width="20" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="mine-moon-icon"/>
+                                    <state key="highlighted" image="mine-moon-icon-click"/>
+                                </button>
+                                <connections>
+                                    <action selector="clickedNightModeBtn:" destination="eR3-uT-l6G" id="cTX-i3-Fhe"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nightModeBtn" destination="XF6-QH-JBF" id="M9k-G9-KKy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3w-TJ-ucJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1977" y="984"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2df-Mp-D6v">
+            <objects>
+                <viewController id="zZA-GG-jde" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OJ7-9j-0vB"/>
+                        <viewControllerLayoutGuide type="bottom" id="JMj-ca-sXt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="er3-39-vVH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kc7-oQ-QmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2659" y="984"/>
         </scene>
         <!--我-->
         <scene sceneID="90Y-sC-qjG">
@@ -46,6 +93,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mine-moon-icon" width="20" height="20"/>
+        <image name="mine-moon-icon-click" width="26" height="26"/>
+        <image name="mine-setting-icon" width="20" height="20"/>
+        <image name="mine-setting-icon-click" width="20" height="20"/>
         <image name="tabBar_me_click_icon" width="37" height="37"/>
         <image name="tabBar_me_icon" width="37" height="37"/>
     </resources>

@@ -17,7 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Qr-y6-O7Y"/>
+                    <navigationItem key="navigationItem" id="6Qr-y6-O7Y">
+                        <barButtonItem key="leftBarButtonItem" id="Atv-is-Hsu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NnB-Iv-xwc">
+                                <rect key="frame" x="20" y="13" width="19" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="friendsRecommentIcon"/>
+                                <state key="highlighted" image="friendsRecommentIcon-click"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -46,6 +55,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="friendsRecommentIcon" width="19" height="18"/>
+        <image name="friendsRecommentIcon-click" width="19" height="18"/>
         <image name="tabBar_friendTrends_click_icon" width="37" height="37"/>
         <image name="tabBar_friendTrends_icon" width="37" height="37"/>
     </resources>

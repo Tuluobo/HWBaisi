@@ -12,11 +12,15 @@ class EssenceViewController: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.title = "精选"
+		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
 	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
+    
+    @IBAction func clickedNaviLeftBtn() {
+    }
+    
 }

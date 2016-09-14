@@ -13,7 +13,7 @@ class FriendTrendsViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.title = "关注列表"
+		self.navigationItem.title = "我的关注"
 	}
 	
 	override func didReceiveMemoryWarning() {
