@@ -31,10 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func setupUI() {
 		/// Navi 通用这只
-		UINavigationBar.appearance().tintColor = UIColor.defaultDrakGray()
+		UINavigationBar.appearance().tintColor = UIColor.defaultDrakGray
 		/// Tab Bar Item 字体
-		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultGray()], for: UIControlState())
-		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultDrakGray()], for: .selected)
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultGray], for: UIControlState())
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultDrakGray], for: .selected)
 	}
 	
 	func applicationWillResignActive(_ application: UIApplication) {

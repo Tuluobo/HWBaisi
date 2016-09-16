@@ -12,6 +12,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fIP-cV-KmZ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="q2Z-XY-v07">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -34,7 +35,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCG-Cn-Hc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043.5" y="526"/>
+            <point key="canvasLocation" x="2159" y="531"/>
         </scene>
         <!--FriendTrends-->
         <scene sceneID="FzN-lp-pyD">
@@ -44,7 +45,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFB-Z3-3oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074.5" y="442"/>
+            <point key="canvasLocation" x="2260" y="452"/>
         </scene>
         <!--Essence-->
         <scene sceneID="8Cd-03-vWk">
@@ -54,7 +55,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pR-Ak-T3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059" y="261"/>
+            <point key="canvasLocation" x="2134" y="255"/>
         </scene>
         <!--New-->
         <scene sceneID="Wqa-lS-eUa">
@@ -64,7 +65,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTC-9N-Ucb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047.5" y="352"/>
+            <point key="canvasLocation" x="2217" y="358"/>
         </scene>
     </scenes>
 </document>
