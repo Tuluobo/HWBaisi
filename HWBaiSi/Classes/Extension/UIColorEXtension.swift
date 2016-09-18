@@ -19,19 +19,19 @@ extension UIColor {
 	}
 	
     class var defaultLightGray: UIColor {
-		return UIColor(R: 190, G: 190, B: 190)
+		return UIColor(R: 243, G: 243, B: 243)
 	}
     
     class var defaultGray: UIColor {
-        return UIColor(R: 110, G: 110, B: 110)
+        return UIColor(R: 39, G: 39, B: 39)
     }
 	
 	class var defaultDrakGray: UIColor {
-		return UIColor(R: 81, G: 81, B: 81)
+		return UIColor(R: 26, G: 26, B: 26)
 	}
 	
 	class var defaultRed: UIColor {
-		return UIColor(R: 228, G: 46, B: 22)
+		return UIColor(R: 255, G: 26, B: 85)
 	}
     
     class var placeTextColor: UIColor {

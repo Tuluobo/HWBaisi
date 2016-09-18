@@ -12,7 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	var window: UIWindow?
-	
+    
+    private let kNightModeKey = "kNightModeKey"
+    var nightMode:Bool = false {
+        didSet {
+            guard let mode = UserDefaults.standard.value(forKey: kNightModeKey) as? Bool  else {
+                UserDefaults.standard.set(nightMode, forKey: kNightModeKey)
+                return
+            }
+            if mode != nightMode {
+                UserDefaults.standard.set(nightMode, forKey: kNightModeKey)
+            }
+        }
+    }
+    
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
 		/************
@@ -24,17 +37,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		}
         ************/
 		
+        setupNightMode()
+        
 		setupUI()
 		
 		return true
 	}
+    
+    func setupNightMode() {
+        if let mode = UserDefaults.standard.value(forKey: kNightModeKey) as? Bool {
+            nightMode = mode
+        } else {
+            UserDefaults.standard.set(nightMode, forKey: kNightModeKey)
+        }
+    }
 	
 	func setupUI() {
 		/// Navi 通用这只
-		UINavigationBar.appearance().tintColor = UIColor.defaultDrakGray
+        UINavigationBar.appearance().tintColor = nightMode ? UIColor.defaultDrakGray :  UIColor.defaultRed
 		/// Tab Bar Item 字体
 		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultGray], for: UIControlState())
-		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultDrakGray], for: .selected)
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultRed], for: .selected)
 	}
 	
 	func applicationWillResignActive(_ application: UIApplication) {

@@ -11,7 +11,8 @@ import UIKit
 class BaseViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        let model = (UIApplication.shared.delegate as! AppDelegate).nightMode
+        return model ? .lightContent : .default
     }
 	
 	override func viewDidLoad() {

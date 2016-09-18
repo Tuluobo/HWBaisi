@@ -43,7 +43,8 @@ class MeViewController: UITableViewController {
     
     // MARK: 用户响应方法
     @IBAction func clickedNightModeBtn(_ sender: AnyObject) {
-        HWLog("夜间模式")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.nightMode = !appDelegate.nightMode
     }
     
     
@@ -63,7 +64,6 @@ class HWTagsViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -82,6 +82,11 @@ extension HWTagsViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
+// MARK:
+class HWTagCollectionViewLayout: UICollectionViewLayout {
+    
+}
+
 // MARK: HWTagCollectionViewCell
 class HWTagCollectionViewCell: UICollectionViewCell {
     
@@ -90,6 +95,7 @@ class HWTagCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.backgroundColor = UIColor.cyan
     }
     

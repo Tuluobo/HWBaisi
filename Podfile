@@ -8,6 +8,8 @@ target 'HWBaiSi' do
   # Pods for HWBaiSi
   pod 'AFNetworking'
   pod 'SDWebImage'
+  pod 'SVProgressHUD'
+
 
   target 'HWBaiSiTests' do
     inherit! :search_paths
