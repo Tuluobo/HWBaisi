@@ -26,6 +26,7 @@
 		D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */; };
 		D20EA7BB1D83BD620004C9B6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7B91D83BD620004C9B6 /* Me.storyboard */; };
 		D20EA7C01D83BD980004C9B6 /* Essence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7BE1D83BD980004C9B6 /* Essence.storyboard */; };
+		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
 		D27EDD171D884D08001DF587 /* MyAttentionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27EDD161D884D08001DF587 /* MyAttentionListController.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
@@ -34,6 +35,7 @@
 		D28E3E001D8AEF380056D3C2 /* RESTfulManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DFF1D8AEF380056D3C2 /* RESTfulManager.swift */; };
 		D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C55881D86ED5F0044FA29 /* Defines.swift */; };
 		D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */; };
+		D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,7 @@
 		D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		D20EA7BA1D83BD620004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		D20EA7BF1D83BD980004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essence.storyboard; sourceTree = "<group>"; };
+		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
 		D27EDD161D884D08001DF587 /* MyAttentionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttentionListController.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		D28E3DFF1D8AEF380056D3C2 /* RESTfulManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTfulManager.swift; sourceTree = "<group>"; };
 		D29C55881D86ED5F0044FA29 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEXtension.swift; sourceTree = "<group>"; };
+		D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWSquareWebViewController.swift; sourceTree = "<group>"; };
 		E15B6CCA1FA21E054DE97A98 /* Pods-HWBaiSi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWBaiSi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */,
+				D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 		D29C558E1D86F1B80044FA29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D22710831D93CE7600F270C8 /* HWMeSquare.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,12 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D20EA7961D8391C20004C9B6 /* Build configuration list for PBXNativeTarget "HWBaiSi" */;
 			buildPhases = (
-				723AD2E47E27DA05F9444DC3 /* 📦 Check Pods Manifest.lock */,
+				723AD2E47E27DA05F9444DC3 /* [CP] Check Pods Manifest.lock */,
 				D20EA7751D8391C20004C9B6 /* Sources */,
 				D20EA7761D8391C20004C9B6 /* Frameworks */,
 				D20EA7771D8391C20004C9B6 /* Resources */,
-				7F200E63A9AFE938C5EC49B6 /* 📦 Embed Pods Frameworks */,
-				0150D083C894AC5BE9D6BEEF /* 📦 Copy Pods Resources */,
+				7F200E63A9AFE938C5EC49B6 /* [CP] Embed Pods Frameworks */,
+				0150D083C894AC5BE9D6BEEF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,12 +335,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D20EA7991D8391C20004C9B6 /* Build configuration list for PBXNativeTarget "HWBaiSiTests" */;
 			buildPhases = (
-				EE26D6F460235032B825DDF5 /* 📦 Check Pods Manifest.lock */,
+				EE26D6F460235032B825DDF5 /* [CP] Check Pods Manifest.lock */,
 				D20EA7891D8391C20004C9B6 /* Sources */,
 				D20EA78A1D8391C20004C9B6 /* Frameworks */,
 				D20EA78B1D8391C20004C9B6 /* Resources */,
-				3DF028B5FE08985805F25AAC /* 📦 Embed Pods Frameworks */,
-				54C48D2333BD684D4B0785C6 /* 📦 Copy Pods Resources */,
+				3DF028B5FE08985805F25AAC /* [CP] Embed Pods Frameworks */,
+				54C48D2333BD684D4B0785C6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -415,14 +421,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0150D083C894AC5BE9D6BEEF /* 📦 Copy Pods Resources */ = {
+		0150D083C894AC5BE9D6BEEF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,14 +436,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3DF028B5FE08985805F25AAC /* 📦 Embed Pods Frameworks */ = {
+		3DF028B5FE08985805F25AAC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,14 +451,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HWBaiSiTests/Pods-HWBaiSiTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54C48D2333BD684D4B0785C6 /* 📦 Copy Pods Resources */ = {
+		54C48D2333BD684D4B0785C6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,14 +466,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HWBaiSiTests/Pods-HWBaiSiTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		723AD2E47E27DA05F9444DC3 /* 📦 Check Pods Manifest.lock */ = {
+		723AD2E47E27DA05F9444DC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,14 +481,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7F200E63A9AFE938C5EC49B6 /* 📦 Embed Pods Frameworks */ = {
+		7F200E63A9AFE938C5EC49B6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,14 +496,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE26D6F460235032B825DDF5 /* 📦 Check Pods Manifest.lock */ = {
+		EE26D6F460235032B825DDF5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +524,7 @@
 				D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */,
 				D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */,
 				D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */,
+				D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
 				D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */,
 				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,
@@ -525,6 +532,7 @@
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
 				D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */,
 				D20EA7B01D83BCC30004C9B6 /* EssenceViewController.swift in Sources */,
+				D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */,
 				D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */,
 				D27EDD171D884D08001DF587 /* MyAttentionListController.swift in Sources */,
 			);

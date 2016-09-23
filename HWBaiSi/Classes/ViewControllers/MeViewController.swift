@@ -10,6 +10,14 @@ import UIKit
 import AFNetworking
 import SDWebImage
 
+// 常量
+fileprivate let rowItemCount = 4
+fileprivate let kTagCollectionCellKey = "tagCollectionCell"
+fileprivate let mainSize = UIScreen.main.bounds.size
+fileprivate let aspectWH: CGFloat = 5.0/4.0
+fileprivate let itemW = mainSize.width / CGFloat(rowItemCount)
+fileprivate let itemH = itemW * aspectWH
+
 class MeViewController: UITableViewController {
 	
     @IBOutlet weak var nightModeBtn: UIBarButtonItem!
@@ -17,22 +25,27 @@ class MeViewController: UITableViewController {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+        
+		tagViewCell.delegate = self
+        
         self.view.backgroundColor = UIColor.defaultLightGray
 		self.navigationItem.title = "我"
         self.tableView.contentInset = UIEdgeInsetsMake(-24, 0, -20, 0)
         // 获取 Tag 数据
-        self.updateTagsData()
+        self.updateSquareData()
 	}
 	
     // MARK: 内部方法
-    private func updateTagsData() {
+    private func updateSquareData() {
         RESTfulManager.sharedInstance.fetchTags { (data, error) in
             if let e = error {
                 HWLog("\(e)")
                 return
             }
-            self.tagViewCell.tagData = data!
+            self.tagViewCell.squareData = data!
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -41,50 +54,103 @@ class MeViewController: UITableViewController {
         cell.backgroundView = UIImageView(image: UIImage(named: "mainCellBackground"))
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath == IndexPath(item: 0, section: 2) && self.tagViewCell.squareData.count > 0 {
+            let line = ceil(CGFloat(self.tagViewCell.squareData.count) / CGFloat(rowItemCount))
+            return itemH * line
+        }
+        
+        return 44
+    }
+    
     // MARK: 用户响应方法
     @IBAction func clickedNightModeBtn(_ sender: AnyObject) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.nightMode = !appDelegate.nightMode
     }
-    
-    
 }
 
+// MARK: HWTagsViewCellDelegate
+extension MeViewController: HWTagsViewCellDelegate {
+    
+    func tagsViewCell(view: HWTagsViewCell, didClickedSquare square: HWMeSquare) {
+        let urlStr = square.url!
+        guard let url = URL(string: urlStr) else {
+            // TODO: 更多按钮
+            return
+        }
+        if urlStr.hasPrefix("http") {
+            let webVC = HWSquareWebViewController()
+            webVC.hidesBottomBarWhenPushed = true
+            webVC.url = url
+            self.navigationController?.pushViewController(webVC, animated: true)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+}
+
+// MARK: HWTagsViewCellDelegate
+protocol HWTagsViewCellDelegate: NSObjectProtocol {
+    func tagsViewCell(view:HWTagsViewCell, didClickedSquare square:HWMeSquare)
+}
 // MARK: HWTagsViewCell
-fileprivate let kTagCollectionCellKey = "tagCollectionCell"
+// 最后一个 Cell 的类定义
 class HWTagsViewCell: UITableViewCell {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    var delegate: HWTagsViewCellDelegate?
     
-    var tagData = [[String: Any]]() {
+    @IBOutlet weak var collectionView: UICollectionView!
+    var squareData = [HWMeSquare]() {
         didSet {
             collectionView.reloadData()
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
 }
 
+// UICollectionViewDataSource, UICollectionViewDelegate
 extension HWTagsViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tagData.count
+        return squareData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kTagCollectionCellKey, for: indexPath) as! HWTagCollectionViewCell
-        cell.model = tagData[indexPath.item]
+        cell.model = squareData[indexPath.item]
         return cell
+    }
+    
+    // 点击事件
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.tagsViewCell(view: self, didClickedSquare: squareData[indexPath.item])
     }
 }
 
-// MARK:
-class HWTagCollectionViewLayout: UICollectionViewLayout {
-    
+// MARK: UICollectionViewFlowLayout
+class HWTagCollectionViewFlowLayout: UICollectionViewFlowLayout {
+    override func prepare() {
+        // Cell 间隙
+        minimumLineSpacing = 0
+        minimumInteritemSpacing = 0
+        // Cell Size
+        itemSize = CGSize.init(width: itemW, height: itemH)
+        // 背景色
+        collectionView?.backgroundColor = UIColor.defaultLightGray
+        // 回弹
+        collectionView?.bounces = false
+        // 滚动条
+        collectionView?.showsVerticalScrollIndicator = false
+        collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.isScrollEnabled = false
+    }
 }
 
 // MARK: HWTagCollectionViewCell
@@ -92,14 +158,12 @@ class HWTagCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tagImageView: UIImageView!
     @IBOutlet weak var tagNameLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.backgroundColor = UIColor.cyan
+        self.backgroundView = UIImageView(image: UIImage(named: "mainCellBackground"))
     }
     
-    var model: [String: Any]? {
+    var model: HWMeSquare? {
         didSet {
             updateCellUI()
         }
@@ -108,8 +172,8 @@ class HWTagCollectionViewCell: UICollectionViewCell {
         tagImageView.image = nil
         tagNameLabel.text = nil
         guard let data = model else { return }
-        tagNameLabel.text = data["name"] as? String
-        guard let iconURLStr = data["icon"] as? String else { return }
+        tagNameLabel.text = data.name
+        guard let iconURLStr = data.icon else { return }
         tagImageView.sd_setImage(with: URL(string:iconURLStr))
     }
 }

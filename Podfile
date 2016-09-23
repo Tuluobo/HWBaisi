@@ -8,6 +8,7 @@ target 'HWBaiSi' do
   # Pods for HWBaiSi
   pod 'AFNetworking'
   pod 'SDWebImage'
+  pod 'MJExtension'
   pod 'SVProgressHUD'
 
 

@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,11 +50,11 @@
                                         <rect key="frame" x="0.0" y="154" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJY-dc-wSi" id="Sh8-s2-Jke">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="离线下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cRw-8b-ha5">
-                                                    <frame key="frameInset" minX="15" width="325" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -68,16 +67,16 @@
                             </tableViewSection>
                             <tableViewSection id="8hJ-1U-en4">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="450" id="nGJ-2t-d6b" customClass="HWTagsViewCell" customModule="HWBaiSi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="209" width="375" height="450"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="nGJ-2t-d6b" customClass="HWTagsViewCell" customModule="HWBaiSi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="209" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nGJ-2t-d6b" id="hZ7-qt-jWJ">
-                                            <frame key="frameInset" width="375" height="449"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-yW-for">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-yW-for">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="E9q-Vu-IGa">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="E9q-Vu-IGa" customClass="HWTagCollectionViewFlowLayout" customModule="HWBaiSi" customModuleProvider="target">
                                                         <size key="itemSize" width="76" height="94"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -97,19 +96,20 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-Fv-EyE">
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </view>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="MJp-Fv-EyE" secondAttribute="bottom" constant="8" id="3Mg-WV-Hth"/>
-                                                                <constraint firstAttribute="trailing" secondItem="AMq-9E-kgg" secondAttribute="trailing" constant="4" id="Du3-yN-JTh"/>
-                                                                <constraint firstItem="MJp-Fv-EyE" firstAttribute="top" secondItem="AMq-9E-kgg" secondAttribute="bottom" constant="8" id="Hia-pQ-GV5"/>
+                                                                <constraint firstAttribute="trailing" secondItem="AMq-9E-kgg" secondAttribute="trailing" constant="16" id="Du3-yN-JTh"/>
+                                                                <constraint firstItem="MJp-Fv-EyE" firstAttribute="top" secondItem="AMq-9E-kgg" secondAttribute="bottom" constant="12" id="Hia-pQ-GV5"/>
                                                                 <constraint firstItem="MJp-Fv-EyE" firstAttribute="leading" secondItem="J5r-7R-G3Y" secondAttribute="leading" constant="2" id="JA5-Se-Db5"/>
-                                                                <constraint firstItem="AMq-9E-kgg" firstAttribute="top" secondItem="J5r-7R-G3Y" secondAttribute="top" constant="4" id="ORm-hK-0T6"/>
-                                                                <constraint firstItem="AMq-9E-kgg" firstAttribute="leading" secondItem="J5r-7R-G3Y" secondAttribute="leading" constant="4" id="PZ9-cd-xQ7"/>
+                                                                <constraint firstItem="AMq-9E-kgg" firstAttribute="top" secondItem="J5r-7R-G3Y" secondAttribute="top" constant="12" id="ORm-hK-0T6"/>
+                                                                <constraint firstItem="AMq-9E-kgg" firstAttribute="leading" secondItem="J5r-7R-G3Y" secondAttribute="leading" constant="16" id="PZ9-cd-xQ7"/>
                                                                 <constraint firstAttribute="trailing" secondItem="MJp-Fv-EyE" secondAttribute="trailing" constant="2" id="pFE-v2-Umj"/>
                                                             </constraints>
                                                             <connections>
@@ -121,10 +121,10 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1w1-yW-for" secondAttribute="bottom" id="SVg-bh-dHG"/>
-                                                <constraint firstItem="1w1-yW-for" firstAttribute="top" secondItem="hZ7-qt-jWJ" secondAttribute="topMargin" id="UT8-Fb-LqQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1w1-yW-for" secondAttribute="trailing" id="UiD-Zo-TDE"/>
-                                                <constraint firstItem="1w1-yW-for" firstAttribute="leading" secondItem="hZ7-qt-jWJ" secondAttribute="leadingMargin" id="hGp-GJ-c81"/>
+                                                <constraint firstItem="1w1-yW-for" firstAttribute="leading" secondItem="hZ7-qt-jWJ" secondAttribute="leading" id="7d2-19-g9t"/>
+                                                <constraint firstAttribute="bottom" secondItem="1w1-yW-for" secondAttribute="bottom" constant="-0.5" id="HiS-Xj-mBY"/>
+                                                <constraint firstAttribute="trailing" secondItem="1w1-yW-for" secondAttribute="trailing" id="K3i-ef-jLv"/>
+                                                <constraint firstItem="1w1-yW-for" firstAttribute="top" secondItem="hZ7-qt-jWJ" secondAttribute="top" id="Upo-QL-vp9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
