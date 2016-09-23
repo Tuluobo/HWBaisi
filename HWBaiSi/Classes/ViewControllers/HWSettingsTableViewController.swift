@@ -39,9 +39,6 @@ class HWSettingsTableViewController: UITableViewController {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
-    deinit {
-        HWLog("")
-    }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath == IndexPath(item: 1, section: 0) {
@@ -55,7 +52,6 @@ class HWSettingsTableViewController: UITableViewController {
             weak var weakSelf = self
             weak var weakCell = cell
             DispatchQueue.global().async {
-                Thread.sleep(forTimeInterval: 5.0)
                 let sizeStr = weakSelf?.getDiskCacheSize()
                 if weakCell == nil {
                     return

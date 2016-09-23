@@ -10,26 +10,25 @@ import UIKit
 
 private let kTableViewCellkey = "tableCell"
 
+// MARK: collectionView 中的 Cell
 class HWTableCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+    @IBOutlet weak var tableView: HWContentTableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
     }
 }
 
 extension HWTableCollectionViewCell: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.tableView.contentModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCellkey, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCellkey, for: indexPath) as! HWConetentTableViewCell
+        cell.model = self.tableView.contentModels[indexPath.item]
         return cell
     }
     

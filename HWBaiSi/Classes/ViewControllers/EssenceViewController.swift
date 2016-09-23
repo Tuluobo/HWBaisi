@@ -16,9 +16,9 @@ class EssenceViewController: BaseViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
+        self.automaticallyAdjustsScrollViewInsets = false
 		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
-        // 添加数据
+        // TODO: 添加数据
         tableItem = ["t1","t2","t3","t4","t5","t6"]
 	}
     
@@ -33,11 +33,7 @@ extension EssenceViewController: UICollectionViewDataSource,UICollectionViewDele
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHWTableCollectionViewCellKey, for: indexPath) as! HWTableCollectionViewCell
-        let tableView = UITableView(frame: cell.bounds, style: UITableViewStyle.plain)
-        if indexPath.item % 2 == 0 {
-            tableView.backgroundColor = UIColor.red
-        }
-        cell.tableView = tableView
+        // TODO: Cell
         return cell
     }
 }

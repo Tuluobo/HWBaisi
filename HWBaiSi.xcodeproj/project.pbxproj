@@ -27,6 +27,7 @@
 		D20EA7BB1D83BD620004C9B6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7B91D83BD620004C9B6 /* Me.storyboard */; };
 		D20EA7C01D83BD980004C9B6 /* Essence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7BE1D83BD980004C9B6 /* Essence.storyboard */; };
 		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
+		D27B7C451D9574EF0091B107 /* HWContentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27B7C441D9574EF0091B107 /* HWContentTableView.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
 		D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */; };
@@ -83,6 +84,7 @@
 		D20EA7BA1D83BD620004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		D20EA7BF1D83BD980004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essence.storyboard; sourceTree = "<group>"; };
 		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
+		D27B7C441D9574EF0091B107 /* HWContentTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWContentTableView.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
 		D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
@@ -157,9 +159,6 @@
 			children = (
 				D20EA7AF1D83BCC30004C9B6 /* EssenceViewController.swift */,
 				D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */,
-				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
-				D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */,
-				D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */,
 			);
 			name = Essence;
 			sourceTree = "<group>";
@@ -310,6 +309,10 @@
 		D29C558D1D86F1AE0044FA29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
+				D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */,
+				D27B7C441D9574EF0091B107 /* HWContentTableView.swift */,
+				D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
 				D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */,
+				D27B7C451D9574EF0091B107 /* HWContentTableView.swift in Sources */,
 				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,
 				D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */,
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
