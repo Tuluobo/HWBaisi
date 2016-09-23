@@ -20,7 +20,7 @@ class RESTfulManager {
     }
     
     // MARL: 外部方法
-    func fetchTags(completion:((_ data:[HWMeSquare]?, _ error: Error?) -> Void)?) {
+    func fetchSquareTags(completion:((_ data:[HWMeSquare]?, _ error: Error?) -> Void)?) {
         let paras = ["a":"square","c":"topic","client":"iphone"]
         networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
             
@@ -53,4 +53,16 @@ class RESTfulManager {
             completion?(nil, error)
         }
     }
+    
+    func fetchRecommendTags(completion:((_ data:[HWRecommendTag]?, _ error: Error?) -> Void)?) {
+        let paras = ["a":"tag_recommend","action":"sub","c":"topic"]
+        networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
+            var res = [HWRecommendTag]()
+            res = HWRecommendTag.mj_objectArray(withKeyValuesArray: data).copy() as! [HWRecommendTag]
+            completion?(res, nil)
+        }) { (_, error) in
+            completion?(nil, error)
+        }
+    }
+
 }

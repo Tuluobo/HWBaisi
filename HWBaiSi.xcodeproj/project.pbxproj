@@ -27,7 +27,6 @@
 		D20EA7BB1D83BD620004C9B6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7B91D83BD620004C9B6 /* Me.storyboard */; };
 		D20EA7C01D83BD980004C9B6 /* Essence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7BE1D83BD980004C9B6 /* Essence.storyboard */; };
 		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
-		D27EDD171D884D08001DF587 /* MyAttentionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27EDD161D884D08001DF587 /* MyAttentionListController.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
 		D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */; };
@@ -36,6 +35,12 @@
 		D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C55881D86ED5F0044FA29 /* Defines.swift */; };
 		D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */; };
 		D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */; };
+		D2B826511D94CBE60056506C /* HWSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826501D94CBE60056506C /* HWSettingsTableViewController.swift */; };
+		D2B826531D9513F70056506C /* HWRecommendTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */; };
+		D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826541D9516830056506C /* HWRecommendTag.swift */; };
+		D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826561D9517A60056506C /* HWRecommendTagCell.swift */; };
+		D2B8265B1D9533980056506C /* HWTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */; };
+		D2B8265D1D9534CE0056506C /* HWConetentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +83,6 @@
 		D20EA7BA1D83BD620004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		D20EA7BF1D83BD980004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essence.storyboard; sourceTree = "<group>"; };
 		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
-		D27EDD161D884D08001DF587 /* MyAttentionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAttentionListController.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
 		D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,12 @@
 		D29C55881D86ED5F0044FA29 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEXtension.swift; sourceTree = "<group>"; };
 		D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWSquareWebViewController.swift; sourceTree = "<group>"; };
+		D2B826501D94CBE60056506C /* HWSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWSettingsTableViewController.swift; sourceTree = "<group>"; };
+		D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTagViewController.swift; sourceTree = "<group>"; };
+		D2B826541D9516830056506C /* HWRecommendTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTag.swift; sourceTree = "<group>"; };
+		D2B826561D9517A60056506C /* HWRecommendTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTagCell.swift; sourceTree = "<group>"; };
+		D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTableCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWConetentTableViewCell.swift; sourceTree = "<group>"; };
 		E15B6CCA1FA21E054DE97A98 /* Pods-HWBaiSi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWBaiSi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				D20EA7AF1D83BCC30004C9B6 /* EssenceViewController.swift */,
-				D27EDD161D884D08001DF587 /* MyAttentionListController.swift */,
+				D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */,
+				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
+				D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */,
+				D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */,
 			);
 			name = Essence;
 			sourceTree = "<group>";
@@ -180,6 +193,7 @@
 			children = (
 				D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */,
 				D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */,
+				D2B826501D94CBE60056506C /* HWSettingsTableViewController.swift */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -304,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				D22710831D93CE7600F270C8 /* HWMeSquare.swift */,
+				D2B826541D9516830056506C /* HWRecommendTag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,9 +533,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B8265D1D9534CE0056506C /* HWConetentTableViewCell.swift in Sources */,
+				D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */,
 				D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
 				D28E3E001D8AEF380056D3C2 /* RESTfulManager.swift in Sources */,
+				D2B826531D9513F70056506C /* HWRecommendTagViewController.swift in Sources */,
 				D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */,
 				D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */,
 				D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */,
@@ -530,11 +548,13 @@
 				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,
 				D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */,
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
+				D2B8265B1D9533980056506C /* HWTableCollectionViewCell.swift in Sources */,
 				D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */,
 				D20EA7B01D83BCC30004C9B6 /* EssenceViewController.swift in Sources */,
 				D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */,
+				D2B826511D94CBE60056506C /* HWSettingsTableViewController.swift in Sources */,
+				D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */,
 				D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */,
-				D27EDD171D884D08001DF587 /* MyAttentionListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

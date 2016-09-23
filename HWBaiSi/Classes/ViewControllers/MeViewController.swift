@@ -37,7 +37,7 @@ class MeViewController: UITableViewController {
 	
     // MARK: 内部方法
     private func updateSquareData() {
-        RESTfulManager.sharedInstance.fetchTags { (data, error) in
+        RESTfulManager.sharedInstance.fetchSquareTags { (data, error) in
             if let e = error {
                 HWLog("\(e)")
                 return
@@ -65,13 +65,14 @@ class MeViewController: UITableViewController {
     }
     
     // MARK: 用户响应方法
+    /// 夜间模式切换
     @IBAction func clickedNightModeBtn(_ sender: AnyObject) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.nightMode = !appDelegate.nightMode
     }
 }
 
-// MARK: HWTagsViewCellDelegate
+// MARK: HWTagsViewCellDelegate 代理
 extension MeViewController: HWTagsViewCellDelegate {
     
     func tagsViewCell(view: HWTagsViewCell, didClickedSquare square: HWMeSquare) {
@@ -84,6 +85,7 @@ extension MeViewController: HWTagsViewCellDelegate {
             let webVC = HWSquareWebViewController()
             webVC.hidesBottomBarWhenPushed = true
             webVC.url = url
+            webVC.navigationItem.title = square.name
             self.navigationController?.pushViewController(webVC, animated: true)
         } else {
             UIApplication.shared.openURL(url)
@@ -91,15 +93,15 @@ extension MeViewController: HWTagsViewCellDelegate {
     }
 }
 
-// MARK: HWTagsViewCellDelegate
+// MARK: HWTagsViewCellDelegate  代理
 protocol HWTagsViewCellDelegate: NSObjectProtocol {
     func tagsViewCell(view:HWTagsViewCell, didClickedSquare square:HWMeSquare)
 }
-// MARK: HWTagsViewCell
+// MARK: HWTagsViewCell 自定义Cell
 // 最后一个 Cell 的类定义
 class HWTagsViewCell: UITableViewCell {
     
-    var delegate: HWTagsViewCellDelegate?
+    weak var delegate: HWTagsViewCellDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
     var squareData = [HWMeSquare]() {
@@ -115,7 +117,7 @@ class HWTagsViewCell: UITableViewCell {
     }
 }
 
-// UICollectionViewDataSource, UICollectionViewDelegate
+// UICollectionViewDataSource, UICollectionViewDelegate  代理和数据源
 extension HWTagsViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -134,7 +136,7 @@ extension HWTagsViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-// MARK: UICollectionViewFlowLayout
+// MARK: UICollectionViewFlowLayout  流布局
 class HWTagCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         // Cell 间隙
@@ -153,7 +155,7 @@ class HWTagCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
-// MARK: HWTagCollectionViewCell
+// MARK: HWTagCollectionViewCell 代理
 class HWTagCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tagImageView: UIImageView!

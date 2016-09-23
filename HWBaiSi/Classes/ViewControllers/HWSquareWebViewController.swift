@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+fileprivate let kWkWebViewProgressObserverKey = "estimatedProgress"
+
 class HWSquareWebViewController: BaseViewController {
 
     var url: URL?
@@ -31,7 +33,11 @@ class HWSquareWebViewController: BaseViewController {
             barFlexibleSpace,
             refreshBtn
         ]
+        wkWebView.addObserver(self, forKeyPath: kWkWebViewProgressObserverKey, options:NSKeyValueObservingOptions.new, context: nil)
         requestWeb()
+    }
+    deinit {
+        wkWebView.removeObserver(self, forKeyPath: kWkWebViewProgressObserverKey)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +48,12 @@ class HWSquareWebViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isToolbarHidden = true
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == kWkWebViewProgressObserverKey {
+            
+        }
     }
     
     // MARK: 内部方法
