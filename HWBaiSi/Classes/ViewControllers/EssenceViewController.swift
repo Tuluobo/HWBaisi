@@ -12,8 +12,7 @@ fileprivate let kHWTableCollectionViewCellKey = "collectionCell"
 
 class EssenceViewController: BaseViewController {
 
-    var tableType = [HWContentType]()
-    var tableItem = [IndexPath: HWTableCollectionViewCell]()
+    var contentModels = [HWContent]()
     private var currentTitleBtn: UIButton! {
         didSet {
             oldValue?.isSelected = false
@@ -21,6 +20,7 @@ class EssenceViewController: BaseViewController {
         }
     }
 
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var allTypeTitleBtn: UIButton!
     @IBOutlet weak var tableCollectionView: UICollectionView!
     
@@ -28,18 +28,26 @@ class EssenceViewController: BaseViewController {
 		super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
 		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
-        currentTitleBtn = allTypeTitleBtn
-        
+        // 加载数据
         loadData()
+        currentTitleBtn = allTypeTitleBtn
+        currentTitleBtn.sizeToFit()
+        currentTitleBtn.titleLabel?.sizeToFit()
+        self.titleView.addSubview(indicatorView)
 	}
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        clickedTitleBtn(currentTitleBtn)
+    }
+    
     func loadData() {
-        let type = [["title":"全部","dataURL":"1"],
-                    ["title":"视频","dataURL":"2"],
-                    ["title":"声音","dataURL":"3"],
-                    ["title":"图片","dataURL":"4"],
-                    ["title":"段子","dataURL":"5"]]
-        tableType = HWContentType.mutilInit(arr: type)
+        let type = [["title":"全部","viewController":HWAllViewController()],
+                    ["title":"视频","viewController":HWVideoViewController()],
+                    ["title":"声音","viewController":HWPictureViewController()],
+                    ["title":"图片","viewController":HWVoiceViewController()],
+                    ["title":"段子","viewController":HWWordViewController()]]
+        contentModels = HWContent.mutilInit(arr: type)
     }
     
     // 点击title事件
@@ -47,34 +55,64 @@ class EssenceViewController: BaseViewController {
         currentTitleBtn = sender
         let tag = sender.tag
         tableCollectionView.scrollToItem(at: IndexPath(item: tag, section: 0), at: .centeredHorizontally, animated: true)
+        UIView.animate(withDuration: 0.25) {
+            self.indicatorView.frame.size.width = self.currentTitleBtn.titleLabel?.frame.size.width ?? 0
+            self.indicatorView.center.x = self.currentTitleBtn.center.x
+        }
     }
     
+    // MARK: 懒加载成员
+    /// 按钮下的指示View
+    lazy private var indicatorView: UIView = {
+        // 设置UI
+        let indicatorH: CGFloat = 2.0;
+        let view = UIView()
+        view.center.x = self.currentTitleBtn.center.x
+        view.frame.origin.y = self.currentTitleBtn.frame.size.height + 1
+        view.frame.size = CGSize(width: self.currentTitleBtn.titleLabel?.frame.size.width ?? 0, height: indicatorH)
+        view.backgroundColor = self.currentTitleBtn.currentTitleColor
+        return view
+    }()
+
 }
 
 // MARK: collection的代理和数据源
 extension EssenceViewController: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tableType.count
+        return contentModels.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        for i in 0 ..< tableType.count {
-            let iPath = IndexPath(item: i, section: 0)
-            guard let _ = tableItem[iPath] else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHWTableCollectionViewCellKey, for: iPath) as! HWTableCollectionViewCell
-                cell.tableView.model = tableType[i]
-                tableItem[iPath] = cell
-                continue
-            }
-        }        
-        // 载入table数据
-        return tableItem[indexPath]!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHWTableCollectionViewCellKey, for: indexPath)
+        // TODO: 载入table数据
+        cell.addSubview(contentModels[indexPath.item].viewController.view)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
             // TODO: 设置按钮
+    }
+}
+
+// MARK: 内容控制器Model
+class HWContent: NSObject {
+    
+    var title: String!
+    var viewController: UIViewController!
+    
+    init(dict: [String: Any]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
+    
+    class func mutilInit(arr: [[String: Any]]) -> [HWContent] {
+        var type = [HWContent]()
+        for item in arr {
+            type.append(HWContent(dict: item))
+        }
+        return type
     }
 }
 
@@ -98,4 +136,3 @@ class HWTableFlowLayout: UICollectionViewFlowLayout {
         collectionView?.showsHorizontalScrollIndicator = false
     }
 }
-

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Tuluobo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /****** 自定义Log ******/
 func HWLog<T>(_ message: T, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
@@ -15,3 +15,4 @@ func HWLog<T>(_ message: T, fileName: String = #file, function: String = #functi
 		print("\(filename!)\(function)[\(lineNumber)]: \(message)")
 	#endif
 }
+

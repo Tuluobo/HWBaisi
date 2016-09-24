@@ -17,6 +17,13 @@ extension UIColor {
 	convenience init(R: Int, G: Int, B: Int, A: Int) {
 		self.init(red: CGFloat(R) / 255.0, green: CGFloat(G) / 255.0, blue: CGFloat(B) / 255.0, alpha: CGFloat(A) / 255.0)
 	}
+    
+    class var randomColor: UIColor {
+        let r = arc4random_uniform(255)
+        let g = arc4random_uniform(255)
+        let b = arc4random_uniform(255)
+        return UIColor(R: Int(r), G: Int(g), B: Int(b))
+    }
 	
     class var defaultLightGray: UIColor {
 		return UIColor(R: 243, G: 243, B: 243)
