@@ -1,5 +1,5 @@
 //
-//  HWConetentTableViewCell.swift
+//  HWContentTableViewCell.swift
 //  HWBaiSi
 //
 //  Created by WangHao on 16/9/23.
@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: tableView 中的 Cell
-class HWConetentTableViewCell: UITableViewCell {
+class HWContentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
     var model: String? {

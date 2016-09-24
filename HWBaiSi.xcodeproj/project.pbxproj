@@ -28,6 +28,7 @@
 		D20EA7C01D83BD980004C9B6 /* Essence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7BE1D83BD980004C9B6 /* Essence.storyboard */; };
 		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
 		D27B7C451D9574EF0091B107 /* HWContentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27B7C441D9574EF0091B107 /* HWContentTableView.swift */; };
+		D28823FE1D962BBA00282616 /* HWContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28823FD1D962BBA00282616 /* HWContentType.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
 		D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */; };
@@ -41,7 +42,7 @@
 		D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826541D9516830056506C /* HWRecommendTag.swift */; };
 		D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826561D9517A60056506C /* HWRecommendTagCell.swift */; };
 		D2B8265B1D9533980056506C /* HWTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */; };
-		D2B8265D1D9534CE0056506C /* HWConetentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */; };
+		D2B8265D1D9534CE0056506C /* HWContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8265C1D9534CE0056506C /* HWContentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		D20EA7BF1D83BD980004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essence.storyboard; sourceTree = "<group>"; };
 		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
 		D27B7C441D9574EF0091B107 /* HWContentTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWContentTableView.swift; sourceTree = "<group>"; };
+		D28823FD1D962BBA00282616 /* HWContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWContentType.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
 		D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		D2B826541D9516830056506C /* HWRecommendTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTag.swift; sourceTree = "<group>"; };
 		D2B826561D9517A60056506C /* HWRecommendTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTagCell.swift; sourceTree = "<group>"; };
 		D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTableCollectionViewCell.swift; sourceTree = "<group>"; };
-		D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWConetentTableViewCell.swift; sourceTree = "<group>"; };
+		D2B8265C1D9534CE0056506C /* HWContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWContentTableViewCell.swift; sourceTree = "<group>"; };
 		E15B6CCA1FA21E054DE97A98 /* Pods-HWBaiSi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWBaiSi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,7 +314,7 @@
 				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
 				D2B8265A1D9533980056506C /* HWTableCollectionViewCell.swift */,
 				D27B7C441D9574EF0091B107 /* HWContentTableView.swift */,
-				D2B8265C1D9534CE0056506C /* HWConetentTableViewCell.swift */,
+				D2B8265C1D9534CE0056506C /* HWContentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +324,7 @@
 			children = (
 				D22710831D93CE7600F270C8 /* HWMeSquare.swift */,
 				D2B826541D9516830056506C /* HWRecommendTag.swift */,
+				D28823FD1D962BBA00282616 /* HWContentType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -536,7 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2B8265D1D9534CE0056506C /* HWConetentTableViewCell.swift in Sources */,
+				D2B8265D1D9534CE0056506C /* HWContentTableViewCell.swift in Sources */,
 				D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */,
 				D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
@@ -547,6 +550,7 @@
 				D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */,
 				D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
+				D28823FE1D962BBA00282616 /* HWContentType.swift in Sources */,
 				D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */,
 				D27B7C451D9574EF0091B107 /* HWContentTableView.swift in Sources */,
 				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,

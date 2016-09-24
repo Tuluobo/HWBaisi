@@ -27,7 +27,7 @@ extension HWTableCollectionViewCell: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCellkey, for: indexPath) as! HWConetentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCellkey, for: indexPath) as! HWContentTableViewCell
         cell.model = self.tableView.contentModels[indexPath.item]
         return cell
     }

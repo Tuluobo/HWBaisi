@@ -33,7 +33,7 @@
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-Dl-SuY" customClass="HWContentTableView" customModule="HWBaiSi" customModuleProvider="target">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="3Bo-en-LX1" customClass="HWConetentTableViewCell" customModule="HWBaiSi" customModuleProvider="target">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="3Bo-en-LX1" customClass="HWContentTableViewCell" customModule="HWBaiSi" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28" width="169" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Bo-en-LX1" id="85s-Y9-fcD">
@@ -74,6 +74,100 @@
                                     <outlet property="delegate" destination="iYS-YC-bN8" id="EZU-af-ugl"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkE-5a-3cM">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm1-Hf-Qsr">
+                                        <state key="normal" title="全部">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedTitleBtn:" destination="iYS-YC-bN8" eventType="touchUpInside" id="oL5-PN-oSU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-J2-bQy">
+                                        <state key="normal" title="视频">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedTitleBtn:" destination="iYS-YC-bN8" eventType="touchUpInside" id="JQg-Tt-6wh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUy-Xs-b7P">
+                                        <state key="normal" title="声音">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedTitleBtn:" destination="iYS-YC-bN8" eventType="touchUpInside" id="Jel-Zr-eP3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLh-zp-ovU">
+                                        <state key="normal" title="图片">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedTitleBtn:" destination="iYS-YC-bN8" eventType="touchUpInside" id="4g4-5e-yrS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wM-ft-jro">
+                                        <state key="normal" title="段子">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.76078431372549016" green="0.082352941176470587" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedTitleBtn:" destination="iYS-YC-bN8" eventType="touchUpInside" id="JrF-9M-sfy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="RLh-zp-ovU" firstAttribute="centerY" secondItem="VUy-Xs-b7P" secondAttribute="centerY" id="Drk-Ys-r08"/>
+                                    <constraint firstItem="vMs-J2-bQy" firstAttribute="leading" secondItem="Tm1-Hf-Qsr" secondAttribute="trailing" constant="8" id="F5v-ux-ajB"/>
+                                    <constraint firstItem="VUy-Xs-b7P" firstAttribute="centerY" secondItem="vMs-J2-bQy" secondAttribute="centerY" id="FfZ-r0-9zv"/>
+                                    <constraint firstItem="RLh-zp-ovU" firstAttribute="leading" secondItem="VUy-Xs-b7P" secondAttribute="trailing" constant="8" id="FrH-2G-GGA"/>
+                                    <constraint firstItem="6wM-ft-jro" firstAttribute="width" secondItem="RLh-zp-ovU" secondAttribute="width" id="Fvd-DU-tnu"/>
+                                    <constraint firstItem="Tm1-Hf-Qsr" firstAttribute="leading" secondItem="gkE-5a-3cM" secondAttribute="leading" constant="8" id="Nt7-qx-sTE"/>
+                                    <constraint firstItem="VUy-Xs-b7P" firstAttribute="leading" secondItem="vMs-J2-bQy" secondAttribute="trailing" constant="8" id="SjQ-zn-sOJ"/>
+                                    <constraint firstItem="VUy-Xs-b7P" firstAttribute="width" secondItem="vMs-J2-bQy" secondAttribute="width" id="Tai-da-gRI"/>
+                                    <constraint firstItem="6wM-ft-jro" firstAttribute="leading" secondItem="RLh-zp-ovU" secondAttribute="trailing" constant="8" id="b5j-Pn-G4V"/>
+                                    <constraint firstItem="6wM-ft-jro" firstAttribute="centerY" secondItem="RLh-zp-ovU" secondAttribute="centerY" id="fcL-LZ-iw3"/>
+                                    <constraint firstItem="RLh-zp-ovU" firstAttribute="width" secondItem="VUy-Xs-b7P" secondAttribute="width" id="orr-mE-f69"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tm1-Hf-Qsr" secondAttribute="bottom" id="pSp-kq-hGM"/>
+                                    <constraint firstAttribute="height" constant="35" id="qBh-CT-hVt"/>
+                                    <constraint firstItem="Tm1-Hf-Qsr" firstAttribute="top" secondItem="gkE-5a-3cM" secondAttribute="top" id="qOU-c8-Rfh"/>
+                                    <constraint firstItem="vMs-J2-bQy" firstAttribute="width" secondItem="Tm1-Hf-Qsr" secondAttribute="width" id="ryL-e1-bJZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wM-ft-jro" secondAttribute="trailing" constant="8" id="tgC-mM-Wuq"/>
+                                    <constraint firstItem="vMs-J2-bQy" firstAttribute="centerY" secondItem="Tm1-Hf-Qsr" secondAttribute="centerY" id="uQN-Rr-OdD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,6 +175,9 @@
                             <constraint firstItem="EcE-QX-Acm" firstAttribute="top" secondItem="iWg-hX-dyD" secondAttribute="top" id="1e5-C1-FWZ"/>
                             <constraint firstAttribute="trailing" secondItem="EcE-QX-Acm" secondAttribute="trailing" id="BRV-Sp-3nH"/>
                             <constraint firstItem="EcE-QX-Acm" firstAttribute="leading" secondItem="iWg-hX-dyD" secondAttribute="leading" id="MFO-tE-n3I"/>
+                            <constraint firstItem="gkE-5a-3cM" firstAttribute="leading" secondItem="iWg-hX-dyD" secondAttribute="leading" id="aB2-Dy-08g"/>
+                            <constraint firstItem="gkE-5a-3cM" firstAttribute="top" secondItem="4bI-wL-HON" secondAttribute="bottom" id="ci6-by-z4G"/>
+                            <constraint firstAttribute="trailing" secondItem="gkE-5a-3cM" secondAttribute="trailing" id="zbo-Mk-Lcr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xp8-0b-90E">
@@ -99,6 +196,10 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="allTypeTitleBtn" destination="Tm1-Hf-Qsr" id="HxF-AJ-lHV"/>
+                        <outlet property="tableCollectionView" destination="EcE-QX-Acm" id="onY-no-Bxk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrf-cL-pzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
