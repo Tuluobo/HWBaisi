@@ -22,7 +22,7 @@ class RESTfulManager {
     // MARL: 外部方法
     /// 获取“我”页面的方块类型数据
     func fetchSquareTags(completion:((_ data:[HWMeSquare]?, _ error: Error?) -> Void)?) {
-        cancel()
+        
         let paras = ["a":"square","c":"topic","client":"iphone"]
         networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
             
@@ -58,7 +58,7 @@ class RESTfulManager {
     
     /// 获取首页的推荐关注数据
     func fetchRecommendTags(completion:((_ data:[HWRecommendTag]?, _ error: Error?) -> Void)?) {
-        cancel()
+
         let paras = ["a":"tag_recommend","action":"sub","c":"topic"]
         networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
             var res = [HWRecommendTag]()
@@ -70,14 +70,14 @@ class RESTfulManager {
     }
     
     /// 获取帖子数据
-    func fetchTopicData(type:Int, maxtime:String?, completion:((_ info: [String: Any]?, _ data: [HWTopic]?, _ error: Error?) -> Void)?) {
-        cancel()
+    func fetchTopicData(type:Int, maxtime:String?, completion:((_ info: [String: Any]?, _ data: [HWTopic]?, _ error: Error?) -> Void)?) -> URLSessionTask? {
+
         var paras = ["a":"list","c":"data","type":type] as [String : Any]
         if let maxtime = maxtime {
             paras["maxtime"] = maxtime
         }
         
-        networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
+        let task = networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
             guard let resData = data as? [String: Any] else {
                 let error = NSError(domain: "com.tuluobo.error", code: -999, userInfo: [NSLocalizedDescriptionKey : "请求数据错误"])
                 completion?(nil, nil, error)
@@ -99,12 +99,7 @@ class RESTfulManager {
         }) { (_, error) in
             completion?(nil, nil, error)
         }
-    }
-
-    /// 取消请求任务
-    func cancel() {
-        for task in networkingManager.tasks {
-            task.cancel()
-        }
+        
+        return task
     }
 }

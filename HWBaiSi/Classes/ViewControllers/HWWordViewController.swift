@@ -9,16 +9,14 @@
 
 import UIKit
 
-class HWWordViewController: BaseTableViewController {
+class HWWordViewController: BaseTopicViewController {
 
+    override var topicType: Int {
+        return 29
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTopicTableViewCellKey, for: indexPath) as! HWTopicTableViewCell
-        cell.textLabel?.text = "HWWordViewController:\(indexPath.item)"
-        return cell
     }
 
     /*

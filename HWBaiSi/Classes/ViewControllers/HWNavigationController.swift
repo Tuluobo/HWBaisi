@@ -19,9 +19,6 @@ class HWNavigationController: UINavigationController {
     }
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        
-        HWLog("")
-        
         /// 设置通用返回按钮
         let btn = UIButton(type: .custom)
         btn.setTitle("返回", for: .normal)
