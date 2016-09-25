@@ -32,7 +32,9 @@
 		D217F3221D96ABD500A7A97A /* HWVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3211D96ABD500A7A97A /* HWVoiceViewController.swift */; };
 		D217F3241D96ABDF00A7A97A /* HWPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */; };
 		D217F3261D96ABE800A7A97A /* HWWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3251D96ABE800A7A97A /* HWWordViewController.swift */; };
+		D217F3281D96AF8200A7A97A /* HWTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3271D96AF8200A7A97A /* HWTopicTableViewCell.swift */; };
 		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
+		D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283DC571D97A67500BA2B5F /* HWTopic.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
 		D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */; };
@@ -92,7 +94,9 @@
 		D217F3211D96ABD500A7A97A /* HWVoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWVoiceViewController.swift; sourceTree = "<group>"; };
 		D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWPictureViewController.swift; sourceTree = "<group>"; };
 		D217F3251D96ABE800A7A97A /* HWWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWWordViewController.swift; sourceTree = "<group>"; };
+		D217F3271D96AF8200A7A97A /* HWTopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopicTableViewCell.swift; sourceTree = "<group>"; };
 		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
+		D283DC571D97A67500BA2B5F /* HWTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopic.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
 		D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAndLoginViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
+				D217F3271D96AF8200A7A97A /* HWTopicTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 			children = (
 				D22710831D93CE7600F270C8 /* HWMeSquare.swift */,
 				D2B826541D9516830056506C /* HWRecommendTag.swift */,
+				D283DC571D97A67500BA2B5F /* HWTopic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,9 +553,11 @@
 			files = (
 				D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */,
 				D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */,
+				D217F3281D96AF8200A7A97A /* HWTopicTableViewCell.swift in Sources */,
 				D217F3221D96ABD500A7A97A /* HWVoiceViewController.swift in Sources */,
 				D217F31E1D96AB5400A7A97A /* HWAllViewController.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
+				D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */,
 				D217F31C1D96AABB00A7A97A /* BaseTableViewController.swift in Sources */,
 				D28E3E001D8AEF380056D3C2 /* RESTfulManager.swift in Sources */,
 				D2B826531D9513F70056506C /* HWRecommendTagViewController.swift in Sources */,

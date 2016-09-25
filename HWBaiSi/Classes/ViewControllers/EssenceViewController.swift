@@ -13,7 +13,7 @@ fileprivate let kHWTableCollectionViewCellKey = "collectionCell"
 class EssenceViewController: BaseViewController {
 
     var contentModels = [HWContent]()
-    private var currentTitleBtn: UIButton! {
+    fileprivate var currentTitleBtn: UIButton! {
         didSet {
             oldValue?.isSelected = false
             currentTitleBtn?.isSelected = true
@@ -21,7 +21,6 @@ class EssenceViewController: BaseViewController {
     }
 
     @IBOutlet weak var titleView: UIView!
-    @IBOutlet weak var allTypeTitleBtn: UIButton!
     @IBOutlet weak var tableCollectionView: UICollectionView!
     
 	override func viewDidLoad() {
@@ -30,7 +29,7 @@ class EssenceViewController: BaseViewController {
 		self.navigationItem.titleView = UIImageView(image: UIImage(named: "MainTitle"))
         // 加载数据
         loadData()
-        currentTitleBtn = allTypeTitleBtn
+        currentTitleBtn = titleView.viewWithTag(1) as! UIButton
         currentTitleBtn.sizeToFit()
         currentTitleBtn.titleLabel?.sizeToFit()
         self.titleView.addSubview(indicatorView)
@@ -44,17 +43,17 @@ class EssenceViewController: BaseViewController {
     func loadData() {
         let type = [["title":"全部","viewController":HWAllViewController()],
                     ["title":"视频","viewController":HWVideoViewController()],
-                    ["title":"声音","viewController":HWPictureViewController()],
-                    ["title":"图片","viewController":HWVoiceViewController()],
+                    ["title":"声音","viewController":HWVoiceViewController()],
+                    ["title":"图片","viewController":HWPictureViewController()],
                     ["title":"段子","viewController":HWWordViewController()]]
         contentModels = HWContent.mutilInit(arr: type)
     }
     
     // 点击title事件
     @IBAction func clickedTitleBtn(_ sender: UIButton) {
-        currentTitleBtn = sender
-        let tag = sender.tag
+        let tag = sender.tag - 1
         tableCollectionView.scrollToItem(at: IndexPath(item: tag, section: 0), at: .centeredHorizontally, animated: true)
+        currentTitleBtn = sender
         UIView.animate(withDuration: 0.25) {
             self.indicatorView.frame.size.width = self.currentTitleBtn.titleLabel?.frame.size.width ?? 0
             self.indicatorView.center.x = self.currentTitleBtn.center.x
@@ -63,7 +62,7 @@ class EssenceViewController: BaseViewController {
     
     // MARK: 懒加载成员
     /// 按钮下的指示View
-    lazy private var indicatorView: UIView = {
+    lazy fileprivate var indicatorView: UIView = {
         // 设置UI
         let indicatorH: CGFloat = 2.0;
         let view = UIView()
@@ -87,13 +86,17 @@ extension EssenceViewController: UICollectionViewDataSource,UICollectionViewDele
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kHWTableCollectionViewCellKey, for: indexPath)
         // TODO: 载入table数据
-        cell.addSubview(contentModels[indexPath.item].viewController.view)
+        let childView = contentModels[indexPath.item].viewController.view
+        cell.addSubview(childView!)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-            // TODO: 设置按钮
+    // scrollView 代理方法，手动滚动scrollview结束
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
+        clickedTitleBtn(titleView.viewWithTag(index + 1) as! UIButton)
     }
+    
 }
 
 // MARK: 内容控制器Model

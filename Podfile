@@ -10,6 +10,7 @@ target 'HWBaiSi' do
   pod 'SDWebImage'
   pod 'MJExtension'
   pod 'SVProgressHUD'
+  pod 'MJRefresh'
 
 
   target 'HWBaiSiTests' do
