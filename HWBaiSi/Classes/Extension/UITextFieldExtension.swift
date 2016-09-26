@@ -12,7 +12,7 @@ fileprivate let kUITextFieldPlaceholderColorKey = "placeholderLabel.textColor"
 
 extension UITextField {
     
-    var placeholderColor: UIColor? {
+    var hw_placeholderColor: UIColor? {
         set {
             // 使 UITextField 创建 placeholderLabel
             let oldPlaceholder = self.placeholder

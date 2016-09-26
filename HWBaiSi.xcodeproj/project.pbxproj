@@ -33,6 +33,10 @@
 		D217F3241D96ABDF00A7A97A /* HWPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */; };
 		D217F3261D96ABE800A7A97A /* HWWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3251D96ABE800A7A97A /* HWWordViewController.swift */; };
 		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
+		D2692CA81D99287000B36E14 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CA71D99287000B36E14 /* DateExtension.swift */; };
+		D2692CAA1D99292000B36E14 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CA91D99292000B36E14 /* CalendarExtension.swift */; };
+		D2692CAC1D995A8E00B36E14 /* HWComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CAB1D995A8E00B36E14 /* HWComment.swift */; };
+		D2692CAE1D995AD200B36E14 /* HWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CAD1D995AD200B36E14 /* HWUser.swift */; };
 		D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283DC571D97A67500BA2B5F /* HWTopic.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
@@ -96,6 +100,10 @@
 		D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWPictureViewController.swift; sourceTree = "<group>"; };
 		D217F3251D96ABE800A7A97A /* HWWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWWordViewController.swift; sourceTree = "<group>"; };
 		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
+		D2692CA71D99287000B36E14 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D2692CA91D99292000B36E14 /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
+		D2692CAB1D995A8E00B36E14 /* HWComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWComment.swift; sourceTree = "<group>"; };
+		D2692CAD1D995AD200B36E14 /* HWUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWUser.swift; sourceTree = "<group>"; };
 		D283DC571D97A67500BA2B5F /* HWTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopic.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
@@ -320,6 +328,8 @@
 			children = (
 				D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */,
 				D28E3DF91D8A9F3B0056D3C2 /* UITextFieldExtension.swift */,
+				D2692CA71D99287000B36E14 /* DateExtension.swift */,
+				D2692CA91D99292000B36E14 /* CalendarExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -340,6 +350,8 @@
 				D22710831D93CE7600F270C8 /* HWMeSquare.swift */,
 				D2B826541D9516830056506C /* HWRecommendTag.swift */,
 				D283DC571D97A67500BA2B5F /* HWTopic.swift */,
+				D2692CAB1D995A8E00B36E14 /* HWComment.swift */,
+				D2692CAD1D995AD200B36E14 /* HWUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,9 +572,11 @@
 				D217F3221D96ABD500A7A97A /* HWVoiceViewController.swift in Sources */,
 				D217F31E1D96AB5400A7A97A /* HWAllViewController.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
+				D2692CAE1D995AD200B36E14 /* HWUser.swift in Sources */,
 				D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */,
 				D217F31C1D96AABB00A7A97A /* BaseTopicViewController.swift in Sources */,
 				D28E3E001D8AEF380056D3C2 /* RESTfulManager.swift in Sources */,
+				D2692CAC1D995A8E00B36E14 /* HWComment.swift in Sources */,
 				D2B826531D9513F70056506C /* HWRecommendTagViewController.swift in Sources */,
 				D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */,
 				D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */,
@@ -570,6 +584,7 @@
 				D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
 				D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */,
+				D2692CA81D99287000B36E14 /* DateExtension.swift in Sources */,
 				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,
 				D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */,
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
@@ -583,6 +598,7 @@
 				D2B826511D94CBE60056506C /* HWSettingsTableViewController.swift in Sources */,
 				D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */,
 				D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */,
+				D2692CAA1D99292000B36E14 /* CalendarExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,29 +12,78 @@ import Foundation
 class HWTopic: NSObject {
     
     /// 帖子信息
-    var id: String?             // 帖子id
-    var type: String?              // 帖子的类型，1为全部 10为图片 29为段子 31为音频 41为视频
-    var text: String?           // 帖子的内容
-    var created_at: String?     // 系统审核通过后创建帖子的时间
-    var is_gif: String?         // 是否是gif动画
+    var id: NSNumber?               // 帖子id
+    var type: String?               // 帖子的类型，1为全部 10为图片 29为段子 31为音频 41为视频
+    var text: String?               // 帖子的内容
+    private var _createdAt: String? // 系统审核通过后创建帖子的时间
+    var created_at: String? {
+        set {
+           _createdAt = newValue
+        }
+        get {
+            return formatCreateAt()
+        }
+    }
+    var is_gif: String?             // 是否是gif动画
+    var top_cmt = [HWComment]()     // 热门评论
+    
     /// 发帖人的信息
-    var user_id: String?        // 发帖人的id
-    var jie_v: Int?             // 是否是百思不得姐的认证用户
-    var screen_name: String?    // 发帖人的昵称
-    var profile_image: String?  // 头像的图片url地址
+    var user_id: String?            // 发帖人的id
+    var jie_v: Int?                 // 是否是百思不得姐的认证用户
+    var screen_name: String?        // 发帖人的昵称
+    var profile_image: String?      // 头像的图片url地址
+    
     /// 关注播放等相关的
-    var repost: String?         // 转发的数量
-    var comment: String?        // 帖子的被评论数量
-    var cai: String?            // 踩的人数
-    var ding: String?           // 顶的人数
+    var repost: NSNumber?           // 转发的数量
+    var comment: NSNumber?          // 帖子的被评论数量
+    var cai: NSNumber?              // 踩的人数
+    var ding: NSNumber?             // 顶的人数
     
-    var playfcount: String?     // 真实的播放次数？
-    var hate: String?           // 踩的数量
-    var bookmark: String?       // 帖子的收藏量
-    var favourite: String?      // 帖子的收藏量
-    var love: String?           // 收藏量
+    var playfcount: NSNumber?       // 真实的播放次数？
+    var hate: NSNumber?             // 踩的数量
+    var bookmark: NSNumber?         // 帖子的收藏量
+    var favourite: NSNumber?        // 帖子的收藏量
+    var love: NSNumber?             // 收藏量
     
+    // MARK: - 重写MJExtension的方法
+    override class func mj_objectClassInArray() -> [AnyHashable : Any]! {
+        return ["top_cmt": HWComment.self]
+    }
     
+    // MARK: - 内部方法
+    private func formatCreateAt() -> String? {
+        guard let datetime = _createdAt else { return nil }
+        
+        let calendar = Calendar.hw_calendar
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        guard let date = dateFormatter.date(from: datetime) else { return nil }
+        
+        // 今年以前
+        if !date.hw_isInThisYear {
+            return datetime
+        }
+        // 昨天
+        if date.hw_isInYesterday {
+            dateFormatter.dateFormat = "昨天 HH:mm:ss"
+            return dateFormatter.string(from: date)
+        }
+        // 昨天以前
+        if !date.hw_isInToday {
+            dateFormatter.dateFormat = "MM-dd HH:mm:ss"
+            return dateFormatter.string(from: date)
+        }
+        // 今天
+        let components = calendar.dateComponents([.hour, .minute, .second], from: date, to: Date())
+        if components.hour! > 0 {
+            return "\(components.hour!)小时前"
+        }
+        if components.minute! > 0 {
+            return "\(components.minute!)分前"
+        }
+        
+        return "刚刚"
+    }
     
 //    var weixin_url: String?    // 当分享到微信中的url链接
 //    var theme_id: Int?    // 0

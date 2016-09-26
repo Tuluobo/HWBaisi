@@ -12,7 +12,6 @@ target 'HWBaiSi' do
   pod 'SVProgressHUD'
   pod 'MJRefresh'
 
-
   target 'HWBaiSiTests' do
     inherit! :search_paths
     # Pods for testing

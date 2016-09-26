@@ -124,16 +124,16 @@ class LoginRegisterTextField: UITextField, UITextFieldDelegate {
         self.tintColor = UIColor.white
         self.textColor = UIColor.white
         self.delegate = self
-        self.placeholderColor = UIColor.gray
+        self.hw_placeholderColor = UIColor.gray
     }
     
     override func becomeFirstResponder() -> Bool {
-        self.placeholderColor = UIColor.white
+        self.hw_placeholderColor = UIColor.white
         return super.becomeFirstResponder()
     }
     
     override func resignFirstResponder() -> Bool {
-        self.placeholderColor = UIColor.gray
+        self.hw_placeholderColor = UIColor.gray
         return super.resignFirstResponder()
     }
 }

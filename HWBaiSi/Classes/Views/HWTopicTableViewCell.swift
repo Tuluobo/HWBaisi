@@ -16,22 +16,38 @@ class HWTopicTableViewCell: UITableViewCell {
         }
     }
     
+    /// 用户信息和正文
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var createTimeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var bottomView: UIView!
     
+    /// 按钮
     @IBOutlet weak var dingButton: UIButton!
     @IBOutlet weak var caiButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     
+    /// 最热评论
+    @IBOutlet weak var hotCommentView: UIView!
+    @IBOutlet weak var commentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundView = UIImageView(image: UIImage(named: "mainCellBackground"))
         profileImageView.layer.cornerRadius = 44.0 / 2.0
         profileImageView.layer.masksToBounds = true
+    }
+    
+    override var frame: CGRect {
+        didSet {
+            var newFrame = self.frame
+            newFrame.size.height -= 10
+            newFrame.origin.y += 10
+            super.frame = newFrame
+        }
     }
 
     private func updateUI() {
@@ -39,6 +55,7 @@ class HWTopicTableViewCell: UITableViewCell {
         screenNameLabel.text = nil
         createTimeLabel.text = nil
         contentLabel.text = nil
+        commentLabel.text = nil
         
         guard let data = model else {
             return
@@ -53,6 +70,7 @@ class HWTopicTableViewCell: UITableViewCell {
         }
         /// 时间
         if let created_at = data.created_at {
+            
             createTimeLabel.text = created_at
         }
         /// 内容
@@ -60,11 +78,62 @@ class HWTopicTableViewCell: UITableViewCell {
             contentLabel.text = text
             contentLabel.frame.size.height = contentLabel.textRect(forBounds: contentLabel.bounds, limitedToNumberOfLines: 0).size.height
         }
+        /// 顶
+        setupButton(button: dingButton, number: data.ding ?? 0, placeholder: "顶")
+        /// 踩
+        setupButton(button: caiButton, number: data.cai ?? 0, placeholder: "踩")
+        /// 分享
+        setupButton(button: shareButton, number: data.repost ?? 0, placeholder: "分享")
+        /// 评论
+        setupButton(button: commentButton, number: data.comment ?? 0, placeholder: "评论")
         
+        /// 热门评论
+        if data.top_cmt.count == 0 {
+            hotCommentView.isHidden = true
+        } else {
+            hotCommentView.isHidden = false
+            let comment = data.top_cmt[0]
+            commentLabel.text = "\(comment.user.username ?? ""):\(comment.content ?? "")"
+        }
+        
+    }
+    
+    private func setupButton(button: UIButton, number: NSNumber, placeholder: String) {
+        let count = number.intValue
+        if count > 10000 {
+            button.setTitle(String(format: "%.1f万", number.floatValue / 10000.0), for: .normal)
+        } else if count > 0 {
+            button.setTitle(String(format: "%zd", count), for: .normal)
+        } else {
+            button.setTitle(placeholder, for: .normal)
+        }
     }
 
     @IBAction func clickedMoreBtn() {
+        let sheetVC = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        sheetVC.addAction(UIAlertAction(title: "收藏", style: .default, handler: { (_) in
+            
+        }))
+        sheetVC.addAction(UIAlertAction(title: "举报", style: .default, handler: { (_)    in
+            
+        }))
+        sheetVC.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        self.window?.rootViewController?.present(sheetVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func clickedDingBtn() {
         HWLog("")
     }
     
+    @IBAction func clickedCaiBtn() {
+        HWLog("")
+    }
+    
+    @IBAction func clickedShareBtn() {
+        HWLog("")
+    }
+    
+    @IBAction func clickedCommentBtn() {
+        HWLog("")
+    }
 }
