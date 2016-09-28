@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="488" id="KGk-i7-Jjw" customClass="HWTopicTableViewCell" customModule="HWBaiSi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="445" height="488"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="331" id="KGk-i7-Jjw" customClass="HWTopicTableViewCell" customModule="HWBaiSi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="331"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="445" height="487.5"/>
+                <frame key="frameInset" width="445" height="330"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Syh-3f-F7p">
@@ -47,6 +47,30 @@
                             <action selector="clickedMoreBtn" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h42-fw-TQL"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceD-nf-uBp">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydu-yx-5Gd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每一个 iOS 应用都具有的两个类，他们是一个 iOS App 的灵魂支撑。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQz-FH-q5I">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.89019607840000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ydu-yx-5Gd" secondAttribute="trailing" constant="4" id="0Nr-2z-8dE"/>
+                            <constraint firstItem="UQz-FH-q5I" firstAttribute="leading" secondItem="ceD-nf-uBp" secondAttribute="leading" constant="4" id="B2E-LP-kdV"/>
+                            <constraint firstAttribute="trailing" secondItem="UQz-FH-q5I" secondAttribute="trailing" constant="4" id="U38-ld-eZ8"/>
+                            <constraint firstItem="ydu-yx-5Gd" firstAttribute="top" secondItem="ceD-nf-uBp" secondAttribute="top" id="bcC-Xi-3NK"/>
+                            <constraint firstItem="UQz-FH-q5I" firstAttribute="top" secondItem="ydu-yx-5Gd" secondAttribute="bottom" constant="4" id="gxI-fi-4aP"/>
+                            <constraint firstAttribute="bottom" secondItem="UQz-FH-q5I" secondAttribute="bottom" id="mQ7-IO-b2j"/>
+                            <constraint firstItem="ydu-yx-5Gd" firstAttribute="leading" secondItem="ceD-nf-uBp" secondAttribute="leading" constant="4" id="sQv-YI-hGx"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVV-7H-jUf">
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxU-W7-Odu">
@@ -156,30 +180,6 @@
                             <constraint firstAttribute="trailing" secondItem="13C-aN-PSU" secondAttribute="trailing" id="zq7-D2-3iA"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceD-nf-uBp">
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最热评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydu-yx-5Gd">
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每一个 iOS 应用都具有的两个类，他们是一个 iOS App 的灵魂支撑。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQz-FH-q5I">
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.3854836941" blue="0.70724121409999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ydu-yx-5Gd" secondAttribute="trailing" id="0Nr-2z-8dE"/>
-                            <constraint firstItem="UQz-FH-q5I" firstAttribute="leading" secondItem="ceD-nf-uBp" secondAttribute="leading" id="B2E-LP-kdV"/>
-                            <constraint firstAttribute="trailing" secondItem="UQz-FH-q5I" secondAttribute="trailing" id="U38-ld-eZ8"/>
-                            <constraint firstItem="ydu-yx-5Gd" firstAttribute="top" secondItem="ceD-nf-uBp" secondAttribute="top" id="bcC-Xi-3NK"/>
-                            <constraint firstItem="UQz-FH-q5I" firstAttribute="top" secondItem="ydu-yx-5Gd" secondAttribute="bottom" constant="4" id="gxI-fi-4aP"/>
-                            <constraint firstAttribute="bottom" secondItem="UQz-FH-q5I" secondAttribute="bottom" id="mQ7-IO-b2j"/>
-                            <constraint firstItem="ydu-yx-5Gd" firstAttribute="leading" secondItem="ceD-nf-uBp" secondAttribute="leading" id="sQv-YI-hGx"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="rVV-7H-jUf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8mR-SB-bIQ"/>
@@ -191,7 +191,7 @@
                     <constraint firstItem="gmm-3f-64j" firstAttribute="leading" secondItem="Syh-3f-F7p" secondAttribute="trailing" constant="10" id="PNf-Nz-VXf"/>
                     <constraint firstItem="rUa-5j-cHt" firstAttribute="leading" secondItem="gmm-3f-64j" secondAttribute="leading" id="Ssa-LO-c35"/>
                     <constraint firstItem="rUa-5j-cHt" firstAttribute="width" secondItem="gmm-3f-64j" secondAttribute="width" id="Vvp-fO-aqE"/>
-                    <constraint firstItem="fXW-rx-zhT" firstAttribute="trailing" secondItem="OqX-Ju-CKI" secondAttribute="trailing" id="bIw-DR-oNO"/>
+                    <constraint firstItem="fXW-rx-zhT" firstAttribute="trailing" secondItem="OqX-Ju-CKI" secondAttribute="trailing" constant="-4" id="bIw-DR-oNO"/>
                     <constraint firstItem="Syh-3f-F7p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="e4d-rG-LAc"/>
                     <constraint firstItem="rVV-7H-jUf" firstAttribute="top" secondItem="ceD-nf-uBp" secondAttribute="bottom" constant="10" id="fyB-RJ-Sih"/>
                     <constraint firstItem="OqX-Ju-CKI" firstAttribute="centerY" secondItem="Syh-3f-F7p" secondAttribute="centerY" id="jKA-G4-V5N"/>
@@ -199,8 +199,7 @@
                     <constraint firstItem="Syh-3f-F7p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qxW-Al-NFN"/>
                     <constraint firstItem="ceD-nf-uBp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="udg-Qk-XpL"/>
                     <constraint firstItem="OqX-Ju-CKI" firstAttribute="leading" secondItem="gmm-3f-64j" secondAttribute="trailing" constant="10" id="wlC-5z-8OQ"/>
-                    <constraint firstItem="ceD-nf-uBp" firstAttribute="top" secondItem="fXW-rx-zhT" secondAttribute="bottom" constant="10" id="wo5-LQ-JJy"/>
-                    <constraint firstItem="fXW-rx-zhT" firstAttribute="leading" secondItem="Syh-3f-F7p" secondAttribute="leading" id="yFB-LC-NnF"/>
+                    <constraint firstItem="fXW-rx-zhT" firstAttribute="leading" secondItem="Syh-3f-F7p" secondAttribute="leading" constant="4" id="yFB-LC-NnF"/>
                     <constraint firstItem="rUa-5j-cHt" firstAttribute="bottom" secondItem="Syh-3f-F7p" secondAttribute="bottom" id="yaq-Fb-aM4"/>
                 </constraints>
             </tableViewCellContentView>
@@ -217,7 +216,7 @@
                 <outlet property="screenNameLabel" destination="gmm-3f-64j" id="sA6-hi-FTq"/>
                 <outlet property="shareButton" destination="TWS-Es-2ti" id="cWJ-5y-yN2"/>
             </connections>
-            <point key="canvasLocation" x="-245.5" y="-111"/>
+            <point key="canvasLocation" x="-245.5" y="-189.5"/>
         </tableViewCell>
     </objects>
     <resources>

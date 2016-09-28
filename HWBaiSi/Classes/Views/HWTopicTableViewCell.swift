@@ -93,7 +93,25 @@ class HWTopicTableViewCell: UITableViewCell {
         } else {
             hotCommentView.isHidden = false
             let comment = data.top_cmt[0]
-            commentLabel.text = "\(comment.user.username ?? ""):\(comment.content ?? "")"
+            commentLabel.text = "\(comment.user.username ?? "") : \(comment.content ?? "")"
+        }
+        
+        // 不同类型的内容显示
+        let maxWidth = kScreenWidth-14.0*2.0
+        let height = maxWidth * CGFloat(data.height!.doubleValue) / CGFloat(data.width!.doubleValue)
+        let frame = CGRect(x: 14, y: 64, width: maxWidth, height: height)
+        if data.type.intValue == 10 {   // 图片
+            let imageView = UIImageView(frame: frame)
+            self.addSubview(imageView)
+            imageView.sd_setImage(with: URL(string: data.image0!))
+
+        } else if data.type.intValue == 32 {    // 音频
+            
+        } else if data.type.intValue == 41 {    // 视频
+            let imageView = UIImageView(frame: frame)
+            self.addSubview(imageView)
+            imageView.sd_setImage(with: URL(string: data.image0!))
+
         }
         
     }

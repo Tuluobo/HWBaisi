@@ -7,16 +7,23 @@
 //  Copyright © 2016年 Tuluobo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum TopicType: Int {
+    case picture    = 10    // 图片
+    case word       = 29    // 段子
+    case voice      = 32    // 音频
+    case video      = 41    // 视频
+}
 
 class HWTopic: NSObject {
     
     /// 帖子信息
-    var id: NSNumber?               // 帖子id
-    var type: String?               // 帖子的类型，1为全部 10为图片 29为段子 31为音频 41为视频
+    var id: NSNumber!               // 帖子id
+    var type: NSNumber!            // 帖子的类型
     var text: String?               // 帖子的内容
     private var _createdAt: String? // 系统审核通过后创建帖子的时间
-    var created_at: String? {
+    var created_at: String! {
         set {
            _createdAt = newValue
         }
@@ -26,6 +33,9 @@ class HWTopic: NSObject {
     }
     var is_gif: String?             // 是否是gif动画
     var top_cmt = [HWComment]()     // 热门评论
+    var image0: String?             // 显示在页面中的视频图片的url
+    var width: NSNumber?            // 视频或图片类型帖子的宽度
+    var height: NSNumber?           // 图片或视频等其他的内容的高度
     
     /// 发帖人的信息
     var user_id: String?            // 发帖人的id
@@ -45,12 +55,48 @@ class HWTopic: NSObject {
     var favourite: NSNumber?        // 帖子的收藏量
     var love: NSNumber?             // 收藏量
     
+    var cellHeight: CGFloat! {      // cell 高度
+        return calcCellHeight()
+    }
+    
     // MARK: - 重写MJExtension的方法
     override class func mj_objectClassInArray() -> [AnyHashable : Any]! {
         return ["top_cmt": HWComment.self]
     }
     
     // MARK: - 内部方法
+    
+    /// 计算Cell高度
+    private func calcCellHeight() -> CGFloat {
+        
+        let maxWidth = kScreenWidth-14.0*2.0
+        let textMaxSize = CGSize(width: maxWidth, height: 200)
+        let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 16)]
+        
+        // 头像和底部计算
+        var cHeight: CGFloat = 10 + 44 + 10;
+        // 文字
+        if let text = text {
+            let size = (text as NSString).boundingRect(with: textMaxSize, options: .usesLineFragmentOrigin, attributes: attri, context: nil)
+            cHeight += (size.height + 10)
+        }
+        // 其他资源
+        if type != 29 {
+            cHeight += maxWidth * CGFloat(height!.doubleValue) / CGFloat(width!.doubleValue)
+            cHeight += 10
+        }
+        
+        // 评论区
+        if top_cmt.count > 0 {
+            let content = "\(top_cmt[0].user.username ?? "") : \(top_cmt[0].content ?? "")" as NSString
+            let size = content.boundingRect(with: textMaxSize, options: .usesLineFragmentOrigin, attributes: attri, context: nil)
+            cHeight += (size.height + 10 + 20)
+        }
+        cHeight += (35 + 10)
+        return cHeight
+    }
+    
+    /// 格式化输出时间
     private func formatCreateAt() -> String? {
         guard let datetime = _createdAt else { return nil }
         
@@ -101,16 +147,16 @@ class HWTopic: NSObject {
 //    var cdn_img: String?    // 视频加载时候的静态显示的图片地址
 //    var from: String?    // 9
 //    var tag: String?    // 帖子的标签备注
-//    var height: String?    // 图片或视频等其他的内容的高度
+
 //    var original_pid: String?    // 空
 //    var image1: String?    // 显示在页面中的视频图片的url
 //    var url: String?    // 空
 //    var voicetime: String?    // 如果为音频类帖子，则返回值为音频的时长
-//    var image0: String?    // 显示在页面中的视频图片的url
+
 //    var videouri: String?    // 视频播放的url地址
 //    var image_small: String?    // 显示在页面中的视频图片的url
 //    var sina_v: Int?    // 是否是新浪会员
-//    var width: String?    // 视频或图片类型帖子的宽度
+
 //    var theme_name: String?    // 空
 //    var status: String?    // 帖子的状态（例：4）
 }

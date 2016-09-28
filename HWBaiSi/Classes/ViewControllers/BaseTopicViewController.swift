@@ -30,7 +30,6 @@ class BaseTopicViewController: UITableViewController {
         tableView.contentInset = UIEdgeInsets(top: 44+35, left: 0, bottom: 49, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 200
         /// 注册nib
         let nib = UINib(nibName: "HWTopicTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: kTopicTableViewCellKey)
@@ -95,14 +94,16 @@ class BaseTopicViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cellHeight = cellHeightCaches[indexPath] {
-            cell.frame.size.height = cellHeight - 10
-        }
-        let cell = cell as! HWTopicTableViewCell
-        let cellFrame = cell.bottomView.frame
-        let cellHeight = cellFrame.size.height+cellFrame.origin.y
-        cellHeightCaches[indexPath] = cellHeight
-        cell.frame.size.height = cellHeight - 10
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+//        if let cellHeight = cellHeightCaches[indexPath] {
+//            return cellHeight
+//        }
+        let height = dataModels[indexPath.item].cellHeight!
+        cellHeightCaches[indexPath] = height
+        return height
     }
+    
+    
 }
