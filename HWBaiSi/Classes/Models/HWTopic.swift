@@ -55,6 +55,7 @@ class HWTopic: NSObject {
     var favourite: NSNumber?        // 帖子的收藏量
     var love: NSNumber?             // 收藏量
     
+    private var _cellHeight: CGFloat?
     var cellHeight: CGFloat! {      // cell 高度
         return calcCellHeight()
     }
@@ -68,7 +69,9 @@ class HWTopic: NSObject {
     
     /// 计算Cell高度
     private func calcCellHeight() -> CGFloat {
-        
+        if let height = _cellHeight {
+            return height
+        }
         let maxWidth = kScreenWidth-14.0*2.0
         let textMaxSize = CGSize(width: maxWidth, height: 200)
         let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 16)]
@@ -93,6 +96,7 @@ class HWTopic: NSObject {
             cHeight += (size.height + 10 + 20)
         }
         cHeight += (35 + 10)
+        _cellHeight = cHeight
         return cHeight
     }
     

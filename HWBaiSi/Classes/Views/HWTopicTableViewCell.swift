@@ -97,23 +97,12 @@ class HWTopicTableViewCell: UITableViewCell {
         }
         
         // 不同类型的内容显示
-        let maxWidth = kScreenWidth-14.0*2.0
-        let height = maxWidth * CGFloat(data.height!.doubleValue) / CGFloat(data.width!.doubleValue)
-        let frame = CGRect(x: 14, y: 64, width: maxWidth, height: height)
-        if data.type.intValue == 10 {   // 图片
-            let imageView = UIImageView(frame: frame)
+        if data.type != 29 {
+            let nib = UINib(nibName: "HWTopicImageView", bundle: nil)
+            let imageView = nib.instantiate(withOwner: HWTopicImageView.self, options: nil).first as! HWTopicImageView
+            imageView.topicModel = data
             self.addSubview(imageView)
-            imageView.sd_setImage(with: URL(string: data.image0!))
-
-        } else if data.type.intValue == 32 {    // 音频
-            
-        } else if data.type.intValue == 41 {    // 视频
-            let imageView = UIImageView(frame: frame)
-            self.addSubview(imageView)
-            imageView.sd_setImage(with: URL(string: data.image0!))
-
         }
-        
     }
     
     private func setupButton(button: UIButton, number: NSNumber, placeholder: String) {

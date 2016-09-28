@@ -37,6 +37,8 @@
 		D2692CAA1D99292000B36E14 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CA91D99292000B36E14 /* CalendarExtension.swift */; };
 		D2692CAC1D995A8E00B36E14 /* HWComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CAB1D995A8E00B36E14 /* HWComment.swift */; };
 		D2692CAE1D995AD200B36E14 /* HWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CAD1D995AD200B36E14 /* HWUser.swift */; };
+		D2692CF11D9C0C7600B36E14 /* HWTopicImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CF01D9C0C7600B36E14 /* HWTopicImageView.swift */; };
+		D2692CF31D9C0C9800B36E14 /* HWTopicImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2692CF21D9C0C9800B36E14 /* HWTopicImageView.xib */; };
 		D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283DC571D97A67500BA2B5F /* HWTopic.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
@@ -104,6 +106,8 @@
 		D2692CA91D99292000B36E14 /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		D2692CAB1D995A8E00B36E14 /* HWComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWComment.swift; sourceTree = "<group>"; };
 		D2692CAD1D995AD200B36E14 /* HWUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWUser.swift; sourceTree = "<group>"; };
+		D2692CF01D9C0C7600B36E14 /* HWTopicImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopicImageView.swift; sourceTree = "<group>"; };
+		D2692CF21D9C0C9800B36E14 /* HWTopicImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWTopicImageView.xib; sourceTree = "<group>"; };
 		D283DC571D97A67500BA2B5F /* HWTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopic.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
 				D2EFCEF71D97ED2A0036949B /* HWTopicTableViewCell.swift */,
 				D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */,
+				D2692CF01D9C0C7600B36E14 /* HWTopicImageView.swift */,
+				D2692CF21D9C0C9800B36E14 /* HWTopicImageView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				D20EA7A21D8392150004C9B6 /* InfoPlist.strings in Resources */,
 				D20EA7841D8391C20004C9B6 /* Assets.xcassets in Resources */,
 				D20EA7BB1D83BD620004C9B6 /* Me.storyboard in Resources */,
+				D2692CF31D9C0C9800B36E14 /* HWTopicImageView.xib in Resources */,
 				D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */,
 				D20EA7821D8391C20004C9B6 /* Main.storyboard in Resources */,
 				D2045C8D1D83C91100270179 /* FriendTrends.storyboard in Resources */,
@@ -597,6 +604,7 @@
 				D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */,
 				D2B826511D94CBE60056506C /* HWSettingsTableViewController.swift in Sources */,
 				D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */,
+				D2692CF11D9C0C7600B36E14 /* HWTopicImageView.swift in Sources */,
 				D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */,
 				D2692CAA1D99292000B36E14 /* CalendarExtension.swift in Sources */,
 			);

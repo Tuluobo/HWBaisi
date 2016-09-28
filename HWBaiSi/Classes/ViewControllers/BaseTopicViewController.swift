@@ -97,9 +97,9 @@ class BaseTopicViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-//        if let cellHeight = cellHeightCaches[indexPath] {
-//            return cellHeight
-//        }
+        if let cellHeight = cellHeightCaches[indexPath] {
+            return cellHeight
+        }
         let height = dataModels[indexPath.item].cellHeight!
         cellHeightCaches[indexPath] = height
         return height
