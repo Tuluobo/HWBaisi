@@ -35,9 +35,6 @@ class HWPictureBrowseViewController: BaseViewController {
              self.imageView.frame.origin.y = (kScreenHeight - height) / 2.0
         }
         
-//        let imageY = (kScreenHeight - height) / 2.0
-//        imageContainerView.contentOffset = CGPoint(x: 0, y: imageY)
-        
         // 缩放比例
         let scale =  CGFloat(model.width!.doubleValue) / imageView.frame.size.width
         if (scale > 1.0) {
