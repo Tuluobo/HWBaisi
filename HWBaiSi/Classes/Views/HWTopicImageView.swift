@@ -23,7 +23,7 @@ class HWTopicImageView: UIView {
         progressView.progressLabel.textColor = UIColor.white
         progressView.roundedCorners = 5
         imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(browsePicture)))
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(browsePicture)))
     }
     
     @IBOutlet weak var imageView: UIImageView!
@@ -36,7 +36,11 @@ class HWTopicImageView: UIView {
     @IBOutlet weak var progressView: DALabeledCircularProgressView!
     
     @objc private func browsePicture() {
-        let browseVC = HWPictureBrowseViewController()
+        if topicModel?.type.intValue != 10 {
+            return
+        }
+        let browseVC = UIStoryboard(name: "PictureBrowse", bundle: nil).instantiateInitialViewController() as! HWPictureBrowseViewController
+        browseVC.model = topicModel
         self.window?.rootViewController?.present(browseVC, animated: true, completion: nil)
     }
     

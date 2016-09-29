@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yNa-Y4-BTO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picture Browse View Controller-->
+        <scene sceneID="LyN-xE-MA2">
+            <objects>
+                <viewController id="yNa-Y4-BTO" customClass="HWPictureBrowseViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7GC-iV-nUK"/>
+                        <viewControllerLayoutGuide type="bottom" id="XJq-jF-isa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oiN-Fa-o0o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgj-fT-gAb">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59875321061643838" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXl-I1-yRT">
+                                <state key="normal" image="show_image_back_icon"/>
+                                <connections>
+                                    <action selector="clickedCloseBtn" destination="yNa-Y4-BTO" eventType="touchUpInside" id="lVl-Ya-GfY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-4E-IAd">
+                                <color key="backgroundColor" red="0.48819237947463989" green="0.54793792963027954" blue="0.61871582269668579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="o3G-Ye-YNH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedSaveBtn" destination="yNa-Y4-BTO" eventType="touchUpInside" id="bgk-jM-cel"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XJq-jF-isa" firstAttribute="top" secondItem="Yhd-4E-IAd" secondAttribute="bottom" constant="20" id="8cZ-OB-YkB"/>
+                            <constraint firstItem="Yhd-4E-IAd" firstAttribute="trailing" secondItem="oiN-Fa-o0o" secondAttribute="trailingMargin" id="B4n-st-RDj"/>
+                            <constraint firstItem="Dgj-fT-gAb" firstAttribute="top" secondItem="oiN-Fa-o0o" secondAttribute="top" id="Jdb-iN-IeE"/>
+                            <constraint firstItem="uXl-I1-yRT" firstAttribute="leading" secondItem="oiN-Fa-o0o" secondAttribute="leadingMargin" constant="10" id="UPm-ce-Rmt"/>
+                            <constraint firstAttribute="trailing" secondItem="Dgj-fT-gAb" secondAttribute="trailing" id="c4R-Yy-e6d"/>
+                            <constraint firstItem="uXl-I1-yRT" firstAttribute="top" secondItem="7GC-iV-nUK" secondAttribute="bottom" constant="10" id="nd6-VD-5SQ"/>
+                            <constraint firstItem="XJq-jF-isa" firstAttribute="top" secondItem="Dgj-fT-gAb" secondAttribute="bottom" id="nxK-4y-FJ8"/>
+                            <constraint firstItem="Dgj-fT-gAb" firstAttribute="leading" secondItem="oiN-Fa-o0o" secondAttribute="leading" id="sbv-Rg-WQQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageContainerView" destination="Dgj-fT-gAb" id="ra1-Jf-Il7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyz-Lu-Rcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.40000000000001" y="151.57421289355324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="show_image_back_icon" width="35" height="35"/>
+    </resources>
+</document>
