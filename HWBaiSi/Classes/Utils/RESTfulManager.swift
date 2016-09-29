@@ -9,6 +9,7 @@
 import Foundation
 import AFNetworking
 import MJExtension
+import SVProgressHUD
 
 class RESTfulManager {
     
@@ -20,6 +21,15 @@ class RESTfulManager {
     }
     
     // MARL: 外部方法
+    
+    func checkNetwork() {
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        SVProgressHUD.setStatus("网络不可达")
+        SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 3.0)
+    }
+    
     /// 获取“我”页面的方块类型数据
     func fetchSquareTags(completion:((_ data:[HWMeSquare]?, _ error: Error?) -> Void)?) {
         

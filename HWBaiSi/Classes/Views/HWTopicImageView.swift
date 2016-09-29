@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class HWTopicImageView: UIView {
     
@@ -28,29 +29,49 @@ class HWTopicImageView: UIView {
     @IBOutlet weak var playTimeLabel: UILabel!
     
     private func updateUI() {
-        gitTagImageView.isHidden = true
+        imageView.image = nil
         videoStartBtn.isHidden = true
         openBigPictureBtn.isHidden = true
         playCountLabel.isHidden = true
         playTimeLabel.isHidden = true
-        
-        
+    
         guard let data = topicModel else { return }
         
-        let maxWidth = kScreenWidth-14.0*2.0
-        let height = maxWidth * CGFloat(data.height!.doubleValue) / CGFloat(data.width!.doubleValue)
-        self.frame = CGRect(x: 14, y: 84, width: maxWidth, height: height)
-        if data.type.intValue == 10 {   // 图片
+        self.frame = data.mediaFrame
+        gitTagImageView.isHidden = !data.is_gif.boolValue
+        
+        switch AFNetworkReachabilityManager.shared().networkReachabilityStatus {
+        case .reachableViaWWAN:
             imageView.sd_setImage(with: URL(string: data.image0!))
+        case .reachableViaWiFi:
+            imageView.sd_setImage(with: URL(string: data.image1!))
+        default:
+            imageView.sd_setImage(with: URL(string: data.image2!))
+        }
+        if data.isBigImage {
+            openBigPictureBtn.isHidden = false
+            imageView.contentMode = .top
+            imageView.clipsToBounds = true
+        } else {
+            openBigPictureBtn.isHidden = true
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = false
+        }
+        // 对不同类型的帖子处理
+        if data.type.intValue == 10 {   // 图片
             
         } else if data.type.intValue == 32 {    // 音频
-            
+            playCountLabel.isHidden = false
+            playCountLabel.text = data.playcount
+            playTimeLabel.isHidden = false
+            playTimeLabel.text = data.voicelength
+            videoStartBtn.isHidden = false
         } else if data.type.intValue == 41 {    // 视频
-            imageView.sd_setImage(with: URL(string: data.image0!))
-            
-        }
-
-        
-        
+            playCountLabel.isHidden = false
+            playCountLabel.text = data.playcount
+            playTimeLabel.isHidden = false
+            playTimeLabel.text = data.videotime
+            videoStartBtn.isHidden = false
+        }   
     }
 }

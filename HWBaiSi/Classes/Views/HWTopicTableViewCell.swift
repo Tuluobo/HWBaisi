@@ -16,6 +16,13 @@ class HWTopicTableViewCell: UITableViewCell {
         }
     }
     
+    lazy private var mediaView: HWTopicImageView = {
+        let nib = UINib(nibName: "HWTopicImageView", bundle: nil)
+        let imageView = nib.instantiate(withOwner: HWTopicImageView.self, options: nil).first as! HWTopicImageView
+        self.contentView.addSubview(imageView)
+        return imageView
+    }()
+    
     /// 用户信息和正文
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var screenNameLabel: UILabel!
@@ -56,6 +63,7 @@ class HWTopicTableViewCell: UITableViewCell {
         createTimeLabel.text = nil
         contentLabel.text = nil
         commentLabel.text = nil
+        mediaView.isHidden = true
         
         guard let data = model else {
             return
@@ -98,10 +106,8 @@ class HWTopicTableViewCell: UITableViewCell {
         
         // 不同类型的内容显示
         if data.type != 29 {
-            let nib = UINib(nibName: "HWTopicImageView", bundle: nil)
-            let imageView = nib.instantiate(withOwner: HWTopicImageView.self, options: nil).first as! HWTopicImageView
-            imageView.topicModel = data
-            self.addSubview(imageView)
+            mediaView.topicModel = data
+            mediaView.isHidden = false
         }
     }
     

@@ -28,16 +28,16 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                     <state key="normal" title="点击打开大图" image="see-big-picture" backgroundImage="see-big-picture-background"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aij-FC-hOd">
-                    <frame key="frameInset" minX="228" width="167" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-7l-0Kr">
+                    <color key="backgroundColor" white="0.0" alpha="0.60220462328767121" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-7l-0Kr">
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Se-zX-Ks5">
+                    <color key="backgroundColor" white="0.0" alpha="0.60220462328767121" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -49,10 +49,12 @@
                 <constraint firstItem="ddc-sh-ulC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GFQ-Ah-oll"/>
                 <constraint firstAttribute="bottom" secondItem="Y1R-7l-0Kr" secondAttribute="bottom" id="MCF-BV-Kfm"/>
                 <constraint firstAttribute="bottom" secondItem="vEr-tw-j2R" secondAttribute="bottom" id="TQI-l9-H2h"/>
+                <constraint firstAttribute="trailing" secondItem="9Se-zX-Ks5" secondAttribute="trailing" id="Xai-DA-s9u"/>
                 <constraint firstAttribute="trailing" secondItem="Y1R-7l-0Kr" secondAttribute="trailing" id="YG3-a3-WOx"/>
                 <constraint firstItem="OGB-F8-JNU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ja9-hs-0lt"/>
                 <constraint firstItem="74X-bB-qJN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jak-Gh-P2E"/>
                 <constraint firstItem="OGB-F8-JNU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mDr-Xj-BE4"/>
+                <constraint firstItem="9Se-zX-Ks5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tJ1-ta-H6R"/>
                 <constraint firstAttribute="trailing" secondItem="OGB-F8-JNU" secondAttribute="trailing" id="u7E-WA-a5i"/>
                 <constraint firstAttribute="trailing" secondItem="vEr-tw-j2R" secondAttribute="trailing" id="vqK-FP-Vwn"/>
                 <constraint firstItem="74X-bB-qJN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wP0-wO-o2f"/>
@@ -63,7 +65,7 @@
                 <outlet property="gitTagImageView" destination="74X-bB-qJN" id="lQu-f6-BcW"/>
                 <outlet property="imageView" destination="OGB-F8-JNU" id="rfZ-ih-ynm"/>
                 <outlet property="openBigPictureBtn" destination="vEr-tw-j2R" id="72E-7I-CYY"/>
-                <outlet property="playCountLabel" destination="aij-FC-hOd" id="t5u-rO-iHJ"/>
+                <outlet property="playCountLabel" destination="9Se-zX-Ks5" id="gRD-rW-IJT"/>
                 <outlet property="playTimeLabel" destination="Y1R-7l-0Kr" id="kYK-kd-Igs"/>
                 <outlet property="videoStartBtn" destination="ddc-sh-ulC" id="07M-yd-Kwq"/>
             </connections>
