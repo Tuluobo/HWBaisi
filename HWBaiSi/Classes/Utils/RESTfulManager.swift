@@ -80,7 +80,7 @@ class RESTfulManager {
     }
     
     /// 获取帖子数据
-    func fetchTopicData(type:Int, maxtime:String?, completion:((_ info: [String: Any]?, _ data: [HWTopic]?, _ error: Error?) -> Void)?) -> URLSessionTask? {
+    func fetchTopicData(type:Int, list: String, maxtime:String?, completion:((_ info: [String: Any]?, _ data: [HWTopic]?, _ error: Error?) -> Void)?) -> URLSessionTask? {
 
         var paras = ["a":"list","c":"data","type":type] as [String : Any]
         if let maxtime = maxtime {

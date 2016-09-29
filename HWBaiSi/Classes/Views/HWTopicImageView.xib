@@ -40,17 +40,33 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="xYA-wt-C5L">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="145" id="eEE-2e-SGp"/>
+                        <constraint firstAttribute="height" constant="30" id="tGr-M4-VJ2"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-rF-xDa" customClass="DALabeledCircularProgressView">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="5wv-QC-FHH"/>
+                        <constraint firstAttribute="height" constant="100" id="JEE-HC-rSL"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.58096050126903553" green="0.58096050126903553" blue="0.58096050126903553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="OGB-F8-JNU" secondAttribute="bottom" id="1L1-j5-U8J"/>
                 <constraint firstItem="ddc-sh-ulC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Nl-cD-ZIn"/>
                 <constraint firstItem="vEr-tw-j2R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7kf-CX-bD6"/>
+                <constraint firstItem="yKx-rF-xDa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9IM-3Q-Ayj"/>
                 <constraint firstItem="ddc-sh-ulC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GFQ-Ah-oll"/>
+                <constraint firstItem="xYA-wt-C5L" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LMr-QT-9bC"/>
                 <constraint firstAttribute="bottom" secondItem="Y1R-7l-0Kr" secondAttribute="bottom" id="MCF-BV-Kfm"/>
                 <constraint firstAttribute="bottom" secondItem="vEr-tw-j2R" secondAttribute="bottom" id="TQI-l9-H2h"/>
                 <constraint firstAttribute="trailing" secondItem="9Se-zX-Ks5" secondAttribute="trailing" id="Xai-DA-s9u"/>
                 <constraint firstAttribute="trailing" secondItem="Y1R-7l-0Kr" secondAttribute="trailing" id="YG3-a3-WOx"/>
+                <constraint firstItem="xYA-wt-C5L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="ixE-au-Sc7"/>
                 <constraint firstItem="OGB-F8-JNU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ja9-hs-0lt"/>
                 <constraint firstItem="74X-bB-qJN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jak-Gh-P2E"/>
                 <constraint firstItem="OGB-F8-JNU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mDr-Xj-BE4"/>
@@ -58,6 +74,7 @@
                 <constraint firstAttribute="trailing" secondItem="OGB-F8-JNU" secondAttribute="trailing" id="u7E-WA-a5i"/>
                 <constraint firstAttribute="trailing" secondItem="vEr-tw-j2R" secondAttribute="trailing" id="vqK-FP-Vwn"/>
                 <constraint firstItem="74X-bB-qJN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wP0-wO-o2f"/>
+                <constraint firstItem="yKx-rF-xDa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z1Q-H4-Dvk"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -65,8 +82,10 @@
                 <outlet property="gitTagImageView" destination="74X-bB-qJN" id="lQu-f6-BcW"/>
                 <outlet property="imageView" destination="OGB-F8-JNU" id="rfZ-ih-ynm"/>
                 <outlet property="openBigPictureBtn" destination="vEr-tw-j2R" id="72E-7I-CYY"/>
+                <outlet property="placeholderImageView" destination="xYA-wt-C5L" id="2J8-3J-R2B"/>
                 <outlet property="playCountLabel" destination="9Se-zX-Ks5" id="gRD-rW-IJT"/>
                 <outlet property="playTimeLabel" destination="Y1R-7l-0Kr" id="kYK-kd-Igs"/>
+                <outlet property="progressView" destination="yKx-rF-xDa" id="Eeb-Ef-hgm"/>
                 <outlet property="videoStartBtn" destination="ddc-sh-ulC" id="07M-yd-Kwq"/>
             </connections>
             <point key="canvasLocation" x="-139.5" y="-81.5"/>
@@ -74,6 +93,7 @@
     </objects>
     <resources>
         <image name="common-gif" width="31" height="31"/>
+        <image name="post_placeholderImage" width="145" height="30"/>
         <image name="see-big-picture" width="19" height="19"/>
         <image name="see-big-picture-background" width="285" height="43"/>
         <image name="video-play" width="71" height="71"/>

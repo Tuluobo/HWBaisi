@@ -11,6 +11,7 @@ target 'HWBaiSi' do
   pod 'MJExtension'
   pod 'SVProgressHUD'
   pod 'MJRefresh'
+  pod 'DACircularProgress'
 
   target 'HWBaiSiTests' do
     inherit! :search_paths

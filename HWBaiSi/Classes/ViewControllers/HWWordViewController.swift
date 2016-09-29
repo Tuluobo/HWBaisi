@@ -9,7 +9,7 @@
 
 import UIKit
 
-class HWWordViewController: BaseTopicViewController {
+class HWWordViewController: HWTopicViewController {
 
     override var topicType: Int {
         return 29

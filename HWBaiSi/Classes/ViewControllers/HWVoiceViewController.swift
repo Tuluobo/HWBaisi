@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HWVoiceViewController: BaseTopicViewController {
+class HWVoiceViewController: HWTopicViewController {
 
     override var topicType: Int {
         return 31

@@ -1,5 +1,5 @@
 //
-//  BaseTopicViewController.swift
+//  HWTopicViewController.swift
 //  HWBaiSi
 //
 //  Created by WangHao on 16/9/24.
@@ -11,10 +11,13 @@ import MJRefresh
 
 let kTopicTableViewCellKey = "topicCell"
 
-class BaseTopicViewController: UITableViewController {
+class HWTopicViewController: UITableViewController {
 
     var topicType: Int {
         return 1
+    }
+    var listType: String {
+        return "newlist"
     }
     
     var info = [String : Any]()
@@ -51,7 +54,7 @@ class BaseTopicViewController: UITableViewController {
     func loadData() -> URLSessionTask? {
         let maxtime = tableView.mj_header.isRefreshing() ? nil : info["maxtime"] as? String
         /// type: 1 表示全部
-        let task = RESTfulManager.sharedInstance.fetchTopicData(type: topicType, maxtime: maxtime) { (infoDict, data, error) in
+        let task = RESTfulManager.sharedInstance.fetchTopicData(type: topicType, list: listType, maxtime: maxtime) { (infoDict, data, error) in
             // 停止刷新
             if self.tableView.mj_header.isRefreshing() {
                 self.tableView.mj_header.endRefreshing()

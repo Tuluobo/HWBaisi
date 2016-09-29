@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HWAllViewController: BaseTopicViewController {
+class HWAllViewController: HWTopicViewController {
 
     override var topicType: Int {
         return 1

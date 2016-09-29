@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HWVideoViewController: BaseTopicViewController {
+class HWVideoViewController: HWTopicViewController {
 
     override var topicType: Int {
         return 41

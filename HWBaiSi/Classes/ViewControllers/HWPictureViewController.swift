@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HWPictureViewController: BaseTopicViewController {
+class HWPictureViewController: HWTopicViewController {
 
     override var topicType: Int {
         return 10
