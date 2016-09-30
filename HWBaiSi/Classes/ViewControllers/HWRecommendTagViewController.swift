@@ -7,22 +7,40 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 private let kRecommendCellKey = "recommendCell"
 
 class HWRecommendTagViewController: UITableViewController {
 
     var recommendTags = [HWRecommendTag]()
+    private var fetchTask: URLSessionTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refresh()
+        navigationItem.title = "推荐标签"
+        tableView.backgroundColor = UIColor.defaultLightGray
+        tableView.rowHeight = 68.0
+        tableView.separatorStyle = .none
+        /// 更新数据源
+        refresh()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        fetchTask?.cancel()
+        SVProgressHUD.dismiss()
     }
     
     private func refresh() {
-        RESTfulManager.sharedInstance.fetchRecommendTags { (data, error) in
+        SVProgressHUD.show()
+        fetchTask = RESTfulManager.sharedInstance.fetchRecommendTags { (data, error) in
+            SVProgressHUD.dismiss()
             if let e = error {
+                if e._code != NSURLErrorCancelled {
+                    SVProgressHUD.showError(withStatus: "网络连接错误")
+                }
                 HWLog("\(e)")
                 return
             }
@@ -32,8 +50,7 @@ class HWRecommendTagViewController: UITableViewController {
             }
         }
     }
-
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -45,15 +62,5 @@ class HWRecommendTagViewController: UITableViewController {
         cell.tagModel = recommendTags[indexPath.item]
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

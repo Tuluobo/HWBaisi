@@ -47,6 +47,7 @@
 		D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */; };
 		D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DF91D8A9F3B0056D3C2 /* UITextFieldExtension.swift */; };
 		D28E3E001D8AEF380056D3C2 /* RESTfulManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DFF1D8AEF380056D3C2 /* RESTfulManager.swift */; };
+		D29B3AF11D9EAFC20014A27B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29B3AF01D9EAFC20014A27B /* UIImageExtension.swift */; };
 		D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C55881D86ED5F0044FA29 /* Defines.swift */; };
 		D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */; };
 		D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */; };
@@ -119,6 +120,7 @@
 		D28E3DF91D8A9F3B0056D3C2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D28E3DFB1D8AEDAA0056D3C2 /* HWBaiSi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HWBaiSi-Bridging-Header.h"; sourceTree = "<group>"; };
 		D28E3DFF1D8AEF380056D3C2 /* RESTfulManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTfulManager.swift; sourceTree = "<group>"; };
+		D29B3AF01D9EAFC20014A27B /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		D29C55881D86ED5F0044FA29 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		D29C558B1D86EFD30044FA29 /* UIColorEXtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEXtension.swift; sourceTree = "<group>"; };
 		D2B8264E1D941CF00056506C /* HWSquareWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWSquareWebViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				D28E3DF91D8A9F3B0056D3C2 /* UITextFieldExtension.swift */,
 				D2692CA71D99287000B36E14 /* DateExtension.swift */,
 				D2692CA91D99292000B36E14 /* CalendarExtension.swift */,
+				D29B3AF01D9EAFC20014A27B /* UIImageExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */,
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
 				D2EFCEF91D97ED2A0036949B /* HWTopicTableViewCell.swift in Sources */,
+				D29B3AF11D9EAFC20014A27B /* UIImageExtension.swift in Sources */,
 				D217F3241D96ABDF00A7A97A /* HWPictureViewController.swift in Sources */,
 				D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */,
 				D217F3201D96AB8400A7A97A /* HWVideoViewController.swift in Sources */,

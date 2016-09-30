@@ -42,10 +42,8 @@ class HWTopicTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         self.backgroundView = UIImageView(image: UIImage(named: "mainCellBackground"))
-        profileImageView.layer.cornerRadius = 44.0 / 2.0
-        profileImageView.layer.masksToBounds = true
     }
     
     override var frame: CGRect {
@@ -70,7 +68,12 @@ class HWTopicTableViewCell: UITableViewCell {
         }
         /// 头像
         if let profileImage = data.profile_image {
-            profileImageView.sd_setImage(with: URL(string: profileImage), placeholderImage: UIImage(named: "defaultUserIcon"))
+            profileImageView.sd_setImage(with: URL(string: profileImage), placeholderImage: UIImage(named: "defaultUserIcon"), options: [], completed: { (image, error, _, _) in
+                if let img = image {
+                    self.profileImageView.image = img.circleImage()
+                }
+            })
+            
         }
         /// 昵称
         if let screen_name = data.screen_name {

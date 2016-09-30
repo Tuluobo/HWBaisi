@@ -187,7 +187,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Byp-ST-XAw" id="q7e-Uz-XD5">
-                                    <frame key="frameInset" width="375" height="81.5"/>
+                                    <frame key="frameInset" width="375" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-Ic-BX4">
@@ -205,23 +205,26 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffc-pU-ZDF">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUg-6d-kbr">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="+ 订阅" backgroundImage="FollowBtnBg">
+                                                <color key="titleColor" red="0.7843137255" green="0.14901960780000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                             <connections>
-                                                <action selector="clickedAttentionBtn:" destination="Byp-ST-XAw" eventType="touchUpInside" id="dBg-f2-k1a"/>
+                                                <action selector="clickedAttentionBtn:" destination="Byp-ST-XAw" eventType="touchUpInside" id="w1f-oK-Kfp"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ffc-pU-ZDF" secondAttribute="trailing" id="8Lf-IJ-krT"/>
-                                        <constraint firstItem="ffc-pU-ZDF" firstAttribute="centerY" secondItem="q7e-Uz-XD5" secondAttribute="centerY" id="Q2f-KE-38e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AUg-6d-kbr" secondAttribute="trailing" constant="10" id="4rY-o4-Cex"/>
                                         <constraint firstItem="TeK-Ic-BX4" firstAttribute="top" secondItem="q7e-Uz-XD5" secondAttribute="topMargin" id="Q3P-li-P7U"/>
                                         <constraint firstItem="TeK-Ic-BX4" firstAttribute="bottom" secondItem="q7e-Uz-XD5" secondAttribute="bottomMargin" id="RJM-js-yHl"/>
                                         <constraint firstItem="unP-qa-lGd" firstAttribute="leading" secondItem="TeK-Ic-BX4" secondAttribute="trailing" constant="8" id="cXQ-lo-LFw"/>
-                                        <constraint firstItem="ffc-pU-ZDF" firstAttribute="top" secondItem="unP-qa-lGd" secondAttribute="bottom" constant="-5" id="ghu-JB-I4E"/>
-                                        <constraint firstItem="Lrk-hh-6Ir" firstAttribute="bottom" secondItem="TeK-Ic-BX4" secondAttribute="bottom" id="iPC-Ui-wkW"/>
+                                        <constraint firstItem="Lrk-hh-6Ir" firstAttribute="bottom" secondItem="TeK-Ic-BX4" secondAttribute="bottom" constant="-2" id="iPC-Ui-wkW"/>
                                         <constraint firstItem="Lrk-hh-6Ir" firstAttribute="leading" secondItem="unP-qa-lGd" secondAttribute="leading" id="lLO-YE-S1z"/>
                                         <constraint firstItem="Lrk-hh-6Ir" firstAttribute="width" secondItem="unP-qa-lGd" secondAttribute="width" id="nF3-X9-EXP"/>
-                                        <constraint firstItem="unP-qa-lGd" firstAttribute="top" secondItem="TeK-Ic-BX4" secondAttribute="top" id="qBR-se-Fv9"/>
+                                        <constraint firstItem="unP-qa-lGd" firstAttribute="top" secondItem="TeK-Ic-BX4" secondAttribute="top" constant="2" id="qBR-se-Fv9"/>
+                                        <constraint firstItem="AUg-6d-kbr" firstAttribute="centerY" secondItem="q7e-Uz-XD5" secondAttribute="centerY" id="ryy-un-rDo"/>
                                         <constraint firstItem="TeK-Ic-BX4" firstAttribute="leading" secondItem="q7e-Uz-XD5" secondAttribute="leadingMargin" id="zig-Ni-wV5"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -263,6 +266,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FollowBtnBg" width="51" height="25"/>
         <image name="MainTagSubIcon" width="18" height="15"/>
         <image name="MainTagSubIconClick" width="18" height="15"/>
         <image name="tabBar_essence_click_icon" width="37" height="37"/>

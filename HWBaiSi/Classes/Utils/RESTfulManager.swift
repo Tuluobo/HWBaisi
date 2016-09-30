@@ -66,16 +66,18 @@ class RESTfulManager {
     }
     
     /// 获取首页的推荐关注数据
-    func fetchRecommendTags(completion:((_ data:[HWRecommendTag]?, _ error: Error?) -> Void)?) {
+    func fetchRecommendTags(completion:((_ data:[HWRecommendTag]?, _ error: Error?) -> Void)?) -> URLSessionTask? {
 
         let paras = ["a":"tag_recommend","action":"sub","c":"topic"]
-        networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
+        let task = networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
+            HWLog("recommend: === \(data)")
             var res = [HWRecommendTag]()
             res = HWRecommendTag.mj_objectArray(withKeyValuesArray: data).copy() as! [HWRecommendTag]
             completion?(res, nil)
         }) { (_, error) in
             completion?(nil, error)
         }
+        return task
     }
     
     /// 获取帖子数据
