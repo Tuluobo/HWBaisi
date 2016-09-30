@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgj-fT-gAb">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59875321061643838" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXl-I1-yRT">
                                 <state key="normal" image="show_image_back_icon"/>
@@ -27,7 +27,7 @@
                                     <action selector="clickedCloseBtn" destination="yNa-Y4-BTO" eventType="touchUpInside" id="lVl-Ya-GfY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-4E-IAd">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-4E-IAd">
                                 <color key="backgroundColor" red="0.48819237947463989" green="0.54793792963027954" blue="0.61871582269668579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="o3G-Ye-YNH"/>
@@ -35,6 +35,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="clickedSaveBtn" destination="yNa-Y4-BTO" eventType="touchUpInside" id="bgk-jM-cel"/>
@@ -55,6 +58,7 @@
                     </view>
                     <connections>
                         <outlet property="imageContainerView" destination="Dgj-fT-gAb" id="ra1-Jf-Il7"/>
+                        <outlet property="saveButton" destination="Yhd-4E-IAd" id="UIr-aD-hQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyz-Lu-Rcu" userLabel="First Responder" sceneMemberID="firstResponder"/>

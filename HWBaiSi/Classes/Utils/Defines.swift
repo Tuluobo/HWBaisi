@@ -16,7 +16,7 @@ func HWLog<T>(_ message: T, fileName: String = #file, function: String = #functi
 	#endif
 }
 
-
+let kPhotoCollectionTitle = "BDJ"
 let kScreenSize = UIScreen.main.bounds.size
 let kScreenWidth = kScreenSize.width
 let kScreenHeight = kScreenSize.height

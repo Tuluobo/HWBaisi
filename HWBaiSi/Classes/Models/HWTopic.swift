@@ -136,7 +136,7 @@ class HWTopic: NSObject {
         }
         let maxWidth = kScreenWidth-14.0*2.0
         let textMaxSize = CGSize(width: maxWidth, height: 200)
-        let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 16)]
+        let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)]
         
         // 头像和底部计算
         var cellY: CGFloat = 10 + 44 + 10;

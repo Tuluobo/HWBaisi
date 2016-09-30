@@ -27,7 +27,6 @@ class RESTfulManager {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.setStatus("网络不可达")
         SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 3.0)
     }
     
     /// 获取“我”页面的方块类型数据
