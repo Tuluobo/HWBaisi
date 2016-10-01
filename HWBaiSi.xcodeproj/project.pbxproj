@@ -33,6 +33,8 @@
 		D217F3241D96ABDF00A7A97A /* HWPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */; };
 		D217F3261D96ABE800A7A97A /* HWWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217F3251D96ABE800A7A97A /* HWWordViewController.swift */; };
 		D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22710831D93CE7600F270C8 /* HWMeSquare.swift */; };
+		D23A0A561D9FE1FC00793EAF /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23A0A541D9FE1FC00793EAF /* Comment.storyboard */; };
+		D23A0A581D9FE4C900793EAF /* HWCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23A0A571D9FE4C900793EAF /* HWCommentViewController.swift */; };
 		D2692CA81D99287000B36E14 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CA71D99287000B36E14 /* DateExtension.swift */; };
 		D2692CAA1D99292000B36E14 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CA91D99292000B36E14 /* CalendarExtension.swift */; };
 		D2692CAC1D995A8E00B36E14 /* HWComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CAB1D995A8E00B36E14 /* HWComment.swift */; };
@@ -105,6 +107,8 @@
 		D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWPictureViewController.swift; sourceTree = "<group>"; };
 		D217F3251D96ABE800A7A97A /* HWWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWWordViewController.swift; sourceTree = "<group>"; };
 		D22710831D93CE7600F270C8 /* HWMeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMeSquare.swift; sourceTree = "<group>"; };
+		D23A0A551D9FE1FC00793EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Comment.storyboard; sourceTree = "<group>"; };
+		D23A0A571D9FE4C900793EAF /* HWCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCommentViewController.swift; sourceTree = "<group>"; };
 		D2692CA71D99287000B36E14 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		D2692CA91D99292000B36E14 /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		D2692CAB1D995A8E00B36E14 /* HWComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWComment.swift; sourceTree = "<group>"; };
@@ -177,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				D20EA7A81D83A30A0004C9B6 /* BaseViewController.swift */,
-				D217F31B1D96AABB00A7A97A /* HWTopicViewController.swift */,
 				D20EA7AD1D83B3E10004C9B6 /* MainTabBarViewController.swift */,
 				D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */,
 				D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */,
@@ -188,13 +191,14 @@
 		D2045C8F1D83CAFE00270179 /* Essence */ = {
 			isa = PBXGroup;
 			children = (
-				D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */,
+				D217F31B1D96AABB00A7A97A /* HWTopicViewController.swift */,
 				D20EA7AF1D83BCC30004C9B6 /* EssenceViewController.swift */,
 				D217F31D1D96AB5400A7A97A /* HWAllViewController.swift */,
 				D217F31F1D96AB8400A7A97A /* HWVideoViewController.swift */,
 				D217F3211D96ABD500A7A97A /* HWVoiceViewController.swift */,
 				D217F3231D96ABDF00A7A97A /* HWPictureViewController.swift */,
 				D217F3251D96ABE800A7A97A /* HWWordViewController.swift */,
+				D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */,
 				D2692CF41D9D3CB300B36E14 /* HWPictureBrowseViewController.swift */,
 			);
 			name = Essence;
@@ -308,6 +312,7 @@
 				D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */,
 				D20EA7B91D83BD620004C9B6 /* Me.storyboard */,
 				D2692CF61D9D3F7A00B36E14 /* PictureBrowse.storyboard */,
+				D23A0A541D9FE1FC00793EAF /* Comment.storyboard */,
 			);
 			name = Storyboards;
 			path = Base.lproj;
@@ -319,11 +324,20 @@
 				D2045C8E1D83CAF100270179 /* Base */,
 				D2045C8F1D83CAFE00270179 /* Essence */,
 				D2045C911D83CB1100270179 /* New */,
+				D23A0A591D9FE82600793EAF /* Comment */,
 				D2045C901D83CB0700270179 /* Publish */,
 				D2045C921D83CB1800270179 /* FriendTrends */,
 				D2045C931D83CB2600270179 /* Me */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D23A0A591D9FE82600793EAF /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				D23A0A571D9FE4C900793EAF /* HWCommentViewController.swift */,
+			);
+			name = Comment;
 			sourceTree = "<group>";
 		};
 		D29C55871D86ED200044FA29 /* Utils */ = {
@@ -472,6 +486,7 @@
 				D20EA7821D8391C20004C9B6 /* Main.storyboard in Resources */,
 				D2045C8D1D83C91100270179 /* FriendTrends.storyboard in Resources */,
 				D20EA7C01D83BD980004C9B6 /* Essence.storyboard in Resources */,
+				D23A0A561D9FE1FC00793EAF /* Comment.storyboard in Resources */,
 				D2EFCEFA1D97ED2A0036949B /* HWTopicTableViewCell.xib in Resources */,
 				D2045C8A1D83C8E800270179 /* New.storyboard in Resources */,
 			);
@@ -597,6 +612,7 @@
 				D2B826531D9513F70056506C /* HWRecommendTagViewController.swift in Sources */,
 				D29C55891D86ED5F0044FA29 /* Defines.swift in Sources */,
 				D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */,
+				D23A0A581D9FE4C900793EAF /* HWCommentViewController.swift in Sources */,
 				D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */,
 				D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
@@ -692,6 +708,14 @@
 			);
 			name = Essence.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		D23A0A541D9FE1FC00793EAF /* Comment.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D23A0A551D9FE1FC00793EAF /* Base */,
+			);
+			name = Comment.storyboard;
 			sourceTree = "<group>";
 		};
 		D2692CF61D9D3F7A00B36E14 /* PictureBrowse.storyboard */ = {

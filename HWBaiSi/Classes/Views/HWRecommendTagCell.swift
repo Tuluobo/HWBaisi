@@ -35,7 +35,7 @@ class HWRecommendTagCell: UITableViewCell {
         tagDetailLabel.text = nil
         guard let data = tagModel else { return }
         if let urlStr = data.image_list {
-            tagImageView.sd_setImage(with: URL(string: urlStr), placeholderImage: UIImage(named: "defaultUserIcon"), options: [], completed: { (image, error, _, _) in
+            tagImageView.sd_setImage(with: URL(string: urlStr), placeholderImage: UIImage(named: "defaultUserIcon")!.circleImage(), options: [], completed: { (image, error, _, _) in
                 if let img = image {
                     self.tagImageView.image = img.circleImage()
                 }

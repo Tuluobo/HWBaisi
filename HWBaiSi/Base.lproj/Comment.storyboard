@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a2f-l3-1ZC">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comment View Controller-->
+        <scene sceneID="uVy-iu-y6d">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="a2f-l3-1ZC" customClass="HWCommentViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mWz-68-AWV"/>
+                        <viewControllerLayoutGuide type="bottom" id="yl5-hK-6pJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fey-O0-yVf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B3H-gF-lFb">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="prA-qB-2Qg">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="prA-qB-2Qg" id="xy7-Kb-0bD">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="a2f-l3-1ZC" id="0V4-kL-Yin"/>
+                                    <outlet property="delegate" destination="a2f-l3-1ZC" id="LHu-yN-nmr"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOG-xr-9cs">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment-bar-bg" translatesAutoresizingMaskIntoConstraints="NO" id="o8p-Po-iQe"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJc-Eu-Sfp">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vJc-Eu-Sfp" secondAttribute="height" multiplier="1:1" id="zpo-zf-gfE"/>
+                                        </constraints>
+                                        <state key="normal" image="comment-bar-voice"/>
+                                        <state key="highlighted" image="comment-bar-voice-click"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXI-ed-n29">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oXI-ed-n29" secondAttribute="height" multiplier="1:1" id="2eq-M4-bPu"/>
+                                        </constraints>
+                                        <state key="normal" image="comment_bar_at_icon"/>
+                                        <state key="highlighted" image="comment_bar_at_icon_click"/>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIl-Gv-Hkc">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oXI-ed-n29" secondAttribute="bottom" id="0WP-0t-kKv"/>
+                                    <constraint firstItem="oXI-ed-n29" firstAttribute="top" secondItem="bOG-xr-9cs" secondAttribute="top" id="BXI-dA-92N"/>
+                                    <constraint firstItem="o8p-Po-iQe" firstAttribute="top" secondItem="bOG-xr-9cs" secondAttribute="top" id="J6k-mi-adl"/>
+                                    <constraint firstItem="oXI-ed-n29" firstAttribute="leading" secondItem="hIl-Gv-Hkc" secondAttribute="trailing" constant="5" id="KWQ-Qk-8iY"/>
+                                    <constraint firstAttribute="bottom" secondItem="o8p-Po-iQe" secondAttribute="bottom" id="L4W-PG-7dT"/>
+                                    <constraint firstItem="vJc-Eu-Sfp" firstAttribute="leading" secondItem="bOG-xr-9cs" secondAttribute="leading" id="N0R-yM-elY"/>
+                                    <constraint firstAttribute="height" constant="44" id="RZR-Q2-vyk"/>
+                                    <constraint firstItem="hIl-Gv-Hkc" firstAttribute="centerY" secondItem="vJc-Eu-Sfp" secondAttribute="centerY" id="YaN-Y5-tIn"/>
+                                    <constraint firstItem="hIl-Gv-Hkc" firstAttribute="leading" secondItem="vJc-Eu-Sfp" secondAttribute="trailing" constant="5" id="YvD-e8-Vo7"/>
+                                    <constraint firstAttribute="trailing" secondItem="o8p-Po-iQe" secondAttribute="trailing" id="dJM-fF-blg"/>
+                                    <constraint firstItem="oXI-ed-n29" firstAttribute="centerY" secondItem="hIl-Gv-Hkc" secondAttribute="centerY" id="fOz-Nd-3s2"/>
+                                    <constraint firstItem="o8p-Po-iQe" firstAttribute="leading" secondItem="bOG-xr-9cs" secondAttribute="leading" id="mLn-Gs-YDT"/>
+                                    <constraint firstItem="vJc-Eu-Sfp" firstAttribute="top" secondItem="bOG-xr-9cs" secondAttribute="top" id="qzh-8w-z8v"/>
+                                    <constraint firstAttribute="bottom" secondItem="vJc-Eu-Sfp" secondAttribute="bottom" id="scg-bf-wrN"/>
+                                    <constraint firstAttribute="trailing" secondItem="oXI-ed-n29" secondAttribute="trailing" id="y0g-1B-Mfu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bOG-xr-9cs" secondAttribute="trailing" id="CLY-5H-8qq"/>
+                            <constraint firstItem="bOG-xr-9cs" firstAttribute="leading" secondItem="Fey-O0-yVf" secondAttribute="leading" id="Hon-aR-BJW"/>
+                            <constraint firstItem="yl5-hK-6pJ" firstAttribute="top" secondItem="bOG-xr-9cs" secondAttribute="bottom" id="tvC-HW-KTy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentBarBottomMargin" destination="tvC-HW-KTy" id="f6R-7I-Dq0"/>
+                        <outlet property="commentTextField" destination="hIl-Gv-Hkc" id="YTC-as-kvg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2HJ-Fy-HJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202.40000000000001" y="86.806596701649184"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="comment-bar-bg" width="320" height="49"/>
+        <image name="comment-bar-voice" width="29" height="29"/>
+        <image name="comment-bar-voice-click" width="29" height="29"/>
+        <image name="comment_bar_at_icon" width="27" height="27"/>
+        <image name="comment_bar_at_icon_click" width="27" height="27"/>
+    </resources>
+</document>

@@ -10,6 +10,10 @@ import UIKit
 
 extension UIImage {
     
+    class func circleImage(named: String) -> UIImage {
+        return UIImage(named: named)!.circleImage()
+    }
+    
     func circleImage() -> UIImage {
         UIGraphicsBeginImageContext(self.size)
         let ctx = UIGraphicsGetCurrentContext()

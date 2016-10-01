@@ -68,7 +68,7 @@ class HWTopicTableViewCell: UITableViewCell {
         }
         /// 头像
         if let profileImage = data.profile_image {
-            profileImageView.sd_setImage(with: URL(string: profileImage), placeholderImage: UIImage(named: "defaultUserIcon"), options: [], completed: { (image, error, _, _) in
+            profileImageView.sd_setImage(with: URL(string: profileImage), placeholderImage: UIImage(named: "defaultUserIcon")!.circleImage(), options: [], completed: { (image, error, _, _) in
                 if let img = image {
                     self.profileImageView.image = img.circleImage()
                 }

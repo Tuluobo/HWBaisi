@@ -22,7 +22,6 @@ class HWTopicViewController: UITableViewController {
     
     var info = [String : Any]()
     var dataModels = [HWTopic]()
-    var cellHeightCaches = [IndexPath : CGFloat]()
     var fetchTask: URLSessionTask?
     
     override func viewDidLoad() {
@@ -81,10 +80,6 @@ class HWTopicViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModels.count
     }
@@ -97,16 +92,18 @@ class HWTopicViewController: UITableViewController {
         return cell
     }
     
-
+    /// 计算cell高度
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if let cellHeight = cellHeightCaches[indexPath] {
-            return cellHeight
-        }
-        let height = dataModels[indexPath.item].cellHeight!
-        cellHeightCaches[indexPath] = height
-        return height
+        return dataModels[indexPath.item].cellHeight!
     }
     
+    /// 选择cell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let commentVC = UIStoryboard(name: "Comment", bundle: nil).instantiateInitialViewController() as! HWCommentViewController
+        commentVC.topic = self.dataModels[indexPath.item]
+        // TODO: 如何快速获取 navigationController???
+        let tbVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarViewController
+        (tbVC.selectedViewController as! UINavigationController).pushViewController(commentVC, animated: true)
+    }
     
 }

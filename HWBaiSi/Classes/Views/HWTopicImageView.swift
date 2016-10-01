@@ -63,35 +63,13 @@ class HWTopicImageView: UIView {
         
         switch AFNetworkReachabilityManager.shared().networkReachabilityStatus {
         case .reachableViaWWAN:
-            imageView.sd_setImage(with: URL(string: data.image0!), placeholderImage: nil, options: [], progress: { (receivedSize, totalSize)  in
-                    let progress = CGFloat(receivedSize)/CGFloat(totalSize)
-                    self.progressView.setProgress(progress, animated: true)
-                    self.progressView.progressLabel.text = "\(Int(progress*100))%"
-                }, completed: {  (_, error, _, _)  in
-                    self.placeholderImageView.isHidden = true
-                    self.progressView.isHidden = true
-            })
+            setImageView(imageName: data.image0!, type: data.type)
         case .reachableViaWiFi:
-            imageView.sd_setImage(with: URL(string: data.image1!), placeholderImage: nil, options: [], progress: { (receivedSize, totalSize)  in
-                    let progress = CGFloat(receivedSize)/CGFloat(totalSize)
-                    self.progressView.setProgress(progress, animated: true)
-                    self.progressView.progressLabel.text = "\(Int(progress*100))%"
-                }, completed: {  (_, error, _, _)  in
-                    self.placeholderImageView.isHidden = true
-                    self.progressView.isHidden = true
-            })
-
+            setImageView(imageName: data.image1!, type: data.type)
         default:
-            imageView.sd_setImage(with: URL(string: data.image2!), placeholderImage: nil, options: [], progress: { (receivedSize, totalSize)  in
-                    let progress = CGFloat(receivedSize)/CGFloat(totalSize)
-                    self.progressView.setProgress(progress, animated: true)
-                    self.progressView.progressLabel.text = "\(Int(progress*100))%"
-                }, completed: {  (_, error, _, _)  in
-                    self.placeholderImageView.isHidden = true
-                    self.progressView.isHidden = true
-            })
-
+            setImageView(imageName: data.image2!, type: data.type)
         }
+        
         if data.isBigImage {
             openBigPictureBtn.isHidden = false
             imageView.contentMode = .top
@@ -107,7 +85,6 @@ class HWTopicImageView: UIView {
             playCountLabel.text = data.playcount
             playTimeLabel.isHidden = false
             playTimeLabel.text = data.voicetime
-            videoStartBtn.isHidden = false
             videoStartBtn.setImage(UIImage(named:"playButtonPlay"), for: .normal)
             videoStartBtn.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
             videoStartBtn.setBackgroundImage(UIImage(named:"playButtonClick"), for: .highlighted)
@@ -116,10 +93,24 @@ class HWTopicImageView: UIView {
             playCountLabel.text = data.playcount
             playTimeLabel.isHidden = false
             playTimeLabel.text = data.videotime
-            videoStartBtn.isHidden = false
             videoStartBtn.setImage(UIImage(named:"video-play"), for: .normal)
             videoStartBtn.setBackgroundImage(nil, for: .normal)
             videoStartBtn.setBackgroundImage(nil, for: .highlighted)
         }   
+    }
+    
+    private func setImageView(imageName: String, type:NSNumber) {
+        imageView.sd_setImage(with: URL(string: imageName), placeholderImage: nil, options: [], progress: { (receivedSize, totalSize)  in
+            let progress = CGFloat(receivedSize)/CGFloat(totalSize)
+            self.progressView.setProgress(progress, animated: true)
+            self.progressView.progressLabel.text = "\(Int(progress*100))%"
+            }, completed: {  (_, error, _, _)  in
+                self.placeholderImageView.isHidden = true
+                self.progressView.isHidden = true
+                if type.intValue == 31 || type.intValue == 41 {
+                    self.videoStartBtn.isHidden = false
+                }
+                
+        })
     }
 }
