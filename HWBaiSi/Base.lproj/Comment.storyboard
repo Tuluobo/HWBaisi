@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,18 +19,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B3H-gF-lFb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B3H-gF-lFb">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="prA-qB-2Qg">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="84" id="prA-qB-2Qg" customClass="HWCommentTableViewCell" customModule="HWBaiSi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="prA-qB-2Qg" id="xy7-Kb-0bD">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHI-dx-M37">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="MHI-dx-M37" secondAttribute="height" multiplier="1:1" id="1jo-zP-jTP"/>
+                                                        <constraint firstAttribute="width" constant="44" id="yOq-ae-Lcf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRH-0z-4vn">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-BD-GFU">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A67-C8-Edu">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Khp-oN-fU0"/>
+                                                        <constraint firstAttribute="width" constant="62" id="tXs-bG-UoB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <inset key="titleEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="42" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="10''" image="play-voice-stop" backgroundImage="play-voice-bg">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <state key="selected" backgroundImage="play-voice-bg-select"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhy-Mi-unD">
+                                                    <state key="normal" image="commentLikeButton"/>
+                                                    <state key="selected" image="commentLikeButtonClick"/>
+                                                    <connections>
+                                                        <action selector="clickedLikeBtn" destination="prA-qB-2Qg" eventType="touchUpInside" id="eeC-58-fSQ"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_manIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ZTm-fM-8dD">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ZTm-fM-8dD" secondAttribute="height" multiplier="1:1" id="2HM-rU-Tcg"/>
+                                                        <constraint firstAttribute="width" constant="13" id="Ikv-WY-voT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9j-Hq-t9Y">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4ya-BD-GFU" firstAttribute="trailing" secondItem="hRH-0z-4vn" secondAttribute="trailing" id="0Rd-Nz-g18"/>
+                                                <constraint firstItem="hRH-0z-4vn" firstAttribute="top" secondItem="MHI-dx-M37" secondAttribute="top" id="20p-xQ-N4v"/>
+                                                <constraint firstItem="nhy-Mi-unD" firstAttribute="trailing" secondItem="xy7-Kb-0bD" secondAttribute="trailingMargin" constant="-10" id="2bq-yx-EUy"/>
+                                                <constraint firstItem="4ya-BD-GFU" firstAttribute="top" secondItem="hRH-0z-4vn" secondAttribute="bottom" constant="8" id="4Qg-fB-XRt"/>
+                                                <constraint firstItem="A67-C8-Edu" firstAttribute="leading" secondItem="4ya-BD-GFU" secondAttribute="leading" id="BUX-ov-uQZ"/>
+                                                <constraint firstItem="j9j-Hq-t9Y" firstAttribute="centerX" secondItem="nhy-Mi-unD" secondAttribute="centerX" id="FSo-wc-dCn"/>
+                                                <constraint firstItem="MHI-dx-M37" firstAttribute="leading" secondItem="xy7-Kb-0bD" secondAttribute="leading" constant="10" id="HAf-mA-ZOh"/>
+                                                <constraint firstItem="ZTm-fM-8dD" firstAttribute="leading" secondItem="MHI-dx-M37" secondAttribute="trailing" constant="10" id="JbZ-fU-xqw"/>
+                                                <constraint firstItem="4ya-BD-GFU" firstAttribute="leading" secondItem="MHI-dx-M37" secondAttribute="trailing" constant="10" id="Q2u-FA-uN8"/>
+                                                <constraint firstItem="hRH-0z-4vn" firstAttribute="leading" secondItem="ZTm-fM-8dD" secondAttribute="trailing" constant="10" id="RMd-Px-jMn"/>
+                                                <constraint firstItem="ZTm-fM-8dD" firstAttribute="centerY" secondItem="hRH-0z-4vn" secondAttribute="centerY" id="Z5f-ve-mJ6"/>
+                                                <constraint firstItem="MHI-dx-M37" firstAttribute="top" secondItem="xy7-Kb-0bD" secondAttribute="top" constant="10" id="Zox-Z0-X8Q"/>
+                                                <constraint firstItem="nhy-Mi-unD" firstAttribute="leading" secondItem="hRH-0z-4vn" secondAttribute="trailing" constant="20" id="h6f-lX-T55"/>
+                                                <constraint firstItem="A67-C8-Edu" firstAttribute="top" secondItem="4ya-BD-GFU" secondAttribute="top" id="nkP-BW-c29"/>
+                                                <constraint firstItem="nhy-Mi-unD" firstAttribute="centerY" secondItem="xy7-Kb-0bD" secondAttribute="centerY" constant="-12" id="qix-WZ-pe2"/>
+                                                <constraint firstItem="j9j-Hq-t9Y" firstAttribute="top" secondItem="nhy-Mi-unD" secondAttribute="bottom" constant="4" id="wJd-6K-1cI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4ya-BD-GFU" secondAttribute="bottom" constant="10" id="wnz-ur-iPB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="4ya-BD-GFU" id="J40-wx-CGq"/>
+                                            <outlet property="genderImageView" destination="ZTm-fM-8dD" id="5Ha-gX-Nfy"/>
+                                            <outlet property="likeBtn" destination="nhy-Mi-unD" id="FE4-HV-bzq"/>
+                                            <outlet property="likeNumberLabel" destination="j9j-Hq-t9Y" id="cio-ED-67n"/>
+                                            <outlet property="nickNameLabel" destination="hRH-0z-4vn" id="koO-Rh-Nu0"/>
+                                            <outlet property="profileImageView" destination="MHI-dx-M37" id="3L8-A8-SIq"/>
+                                            <outlet property="voiceComment" destination="A67-C8-Edu" id="Bes-0G-sH6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -89,19 +167,26 @@
                     </view>
                     <connections>
                         <outlet property="commentBarBottomMargin" destination="tvC-HW-KTy" id="f6R-7I-Dq0"/>
+                        <outlet property="commentTableView" destination="B3H-gF-lFb" id="tS2-Ra-2vO"/>
                         <outlet property="commentTextField" destination="hIl-Gv-Hkc" id="YTC-as-kvg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HJ-Fy-HJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202.40000000000001" y="86.806596701649184"/>
+            <point key="canvasLocation" x="-431.19999999999999" y="-27.436281859070466"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Profile_manIcon" width="13" height="13"/>
         <image name="comment-bar-bg" width="320" height="49"/>
         <image name="comment-bar-voice" width="29" height="29"/>
         <image name="comment-bar-voice-click" width="29" height="29"/>
+        <image name="commentLikeButton" width="18" height="18"/>
+        <image name="commentLikeButtonClick" width="19" height="19"/>
         <image name="comment_bar_at_icon" width="27" height="27"/>
         <image name="comment_bar_at_icon_click" width="27" height="27"/>
+        <image name="play-voice-bg" width="62" height="22"/>
+        <image name="play-voice-bg-select" width="74" height="24"/>
+        <image name="play-voice-stop" width="12" height="12"/>
     </resources>
 </document>

@@ -113,4 +113,32 @@ class RESTfulManager {
         
         return task
     }
+    
+    /// 获取评论数据
+    func fetchCommentData(data_id: String, lastcid: String?, completion:((_ data: [[HWComment]]?, _ error: Error?) -> Void)?) -> URLSessionTask? {
+        
+        var paras = ["a":"dataList","c":"comment","data_id":data_id]
+        if let lastcid = lastcid {
+            paras["lastcid"] = lastcid
+        } else {
+            paras["hot"] = "1"
+        }
+        
+        let task = networkingManager.get("api_open.php", parameters: paras, progress: nil, success: { (_, data) in
+            
+            var hotCommentList = [HWComment]()
+            var newCommentList = [HWComment]()
+            if let hotCmt = (data as? [String: Any])?["hot"] as? [Any] {
+                hotCommentList = HWComment.mj_objectArray(withKeyValuesArray: hotCmt).copy() as! [HWComment]
+            }
+            if let newCmt = (data as? [String: Any])?["data"] as? [Any] {
+                newCommentList = HWComment.mj_objectArray(withKeyValuesArray: newCmt).copy() as! [HWComment]
+            }
+            let res = [hotCommentList, newCommentList]
+            completion?(res, nil)
+        }) { (_, error) in
+            completion?(nil, error)
+        }
+        return task
+    }
 }

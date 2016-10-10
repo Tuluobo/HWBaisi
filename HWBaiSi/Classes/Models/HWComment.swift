@@ -17,9 +17,9 @@ class HWComment: NSObject {
     var ctime: String?
     var precid: String?
     var preuid: String?
-    var like_count: String?
-    var voiceuri: String?
-    var voicetime: String?
+    var like_count: NSNumber!
+    var voiceuri: String!
+    var voicetime: NSNumber?
     var user: HWUser!
     var precmt = [Any]()
     

@@ -12,7 +12,7 @@ class HWUser: NSObject {
     
     var id: String?
     var username: String?
-    var sex: String?
+    var sex: String!
     var profile_image: String?
     var weibo_uid: String?
     var qq_uid: String?

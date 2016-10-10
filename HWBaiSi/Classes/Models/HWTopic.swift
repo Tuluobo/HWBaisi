@@ -20,7 +20,7 @@ enum TopicType: Int {
 class HWTopic: NSObject {
     
     /// 帖子信息
-    var id: NSNumber!               // 帖子id
+    var id: String!               // 帖子id
     var type: NSNumber!            // 帖子的类型
     var text: String?               // 帖子的内容
     private var _createdAt: String? // 系统审核通过后创建帖子的时间
@@ -216,24 +216,15 @@ class HWTopic: NSObject {
 //    var weixin_url: String?    // 当分享到微信中的url链接
 //    var theme_id: Int?    // 0
 //    var mid: Int?    // 0
-
-
-
 //    var theme_id: String?    // 标签的id,如：微视频的id为55
 //    var theme_name: String?    // 帖子的所属分类的标签名字
 //    var theme_type: Int?    // 一般为1
-
 //    var passtime: String?    // 帖子通过的时间和created_at的参数时间一致
-
 //    var from: String?    // 9
 //    var tag: String?    // 帖子的标签备注
-
 //    var original_pid: String?    // 空
-
 //    var url: String?    // 空
-
 //    var sina_v: Int?    // 是否是新浪会员
-
 //    var theme_name: String?    // 空
 //    var status: String?    // 帖子的状态（例：4）
 }
