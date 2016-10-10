@@ -44,6 +44,7 @@
 		D2692CF51D9D3CB300B36E14 /* HWPictureBrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2692CF41D9D3CB300B36E14 /* HWPictureBrowseViewController.swift */; };
 		D2692CF81D9D3F7A00B36E14 /* PictureBrowse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2692CF61D9D3F7A00B36E14 /* PictureBrowse.storyboard */; };
 		D280416D1DABB0E0001DFAD5 /* HWCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280416C1DABB0E0001DFAD5 /* HWCommentHeaderView.swift */; };
+		D280416F1DABDBB1001DFAD5 /* HWCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280416E1DABDBB1001DFAD5 /* HWCommentTableViewCell.swift */; };
 		D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283DC571D97A67500BA2B5F /* HWTopic.swift */; };
 		D28E3DE71D89274D0056D3C2 /* HWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */; };
 		D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28E3DE81D895F710056D3C2 /* RegisterAndLogin.storyboard */; };
@@ -119,6 +120,7 @@
 		D2692CF41D9D3CB300B36E14 /* HWPictureBrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWPictureBrowseViewController.swift; sourceTree = "<group>"; };
 		D2692CF71D9D3F7A00B36E14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PictureBrowse.storyboard; sourceTree = "<group>"; };
 		D280416C1DABB0E0001DFAD5 /* HWCommentHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCommentHeaderView.swift; sourceTree = "<group>"; };
+		D280416E1DABDBB1001DFAD5 /* HWCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCommentTableViewCell.swift; sourceTree = "<group>"; };
 		D283DC571D97A67500BA2B5F /* HWTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopic.swift; sourceTree = "<group>"; };
 		D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNavigationController.swift; sourceTree = "<group>"; };
 		D28E3DE91D895F710056D3C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */,
 				D2692CF01D9C0C7600B36E14 /* HWTopicImageView.swift */,
 				D2692CF21D9C0C9800B36E14 /* HWTopicImageView.xib */,
+				D280416E1DABDBB1001DFAD5 /* HWCommentTableViewCell.swift */,
 				D280416C1DABB0E0001DFAD5 /* HWCommentHeaderView.swift */,
 			);
 			path = Views;
@@ -606,6 +609,7 @@
 				D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */,
 				D217F3221D96ABD500A7A97A /* HWVoiceViewController.swift in Sources */,
 				D217F31E1D96AB5400A7A97A /* HWAllViewController.swift in Sources */,
+				D280416F1DABDBB1001DFAD5 /* HWCommentTableViewCell.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
 				D2692CAE1D995AD200B36E14 /* HWUser.swift in Sources */,
 				D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */,

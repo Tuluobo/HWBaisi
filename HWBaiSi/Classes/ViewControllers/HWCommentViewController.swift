@@ -29,6 +29,8 @@ class HWCommentViewController: BaseViewController {
         self.commentTableView.backgroundColor = UIColor.defaultLightGray
         self.commentTableView.separatorStyle = .none
         self.commentTableView.register(HWCommentHeaderView.self, forHeaderFooterViewReuseIdentifier: kHeaderID)
+        self.commentTableView.estimatedRowHeight = 120
+        self.commentTableView.rowHeight = UITableViewAutomaticDimension
         
         setupThisTopic()
         
@@ -58,6 +60,7 @@ class HWCommentViewController: BaseViewController {
         // topic cell view
         let xib = UINib(nibName: "HWTopicTableViewCell", bundle: nil)
         let topicView = xib.instantiate(withOwner: HWTopicTableViewCell.self, options: nil).first as! HWTopicTableViewCell
+        topicView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: topic.cellHeight)
         topicView.model = topic
         // headerView
         let headerView = UIView()
@@ -134,12 +137,6 @@ extension HWCommentViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? HWCommentTableViewCell {
-            cell.frame.size.height = cell.commentLabel.frame.origin.y + cell.commentLabel.frame.size.height + 20
-        }
-    }
-    
     // MARK: - 这是Section Header的设置
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if commentItems[section].count > 0 {
@@ -161,83 +158,5 @@ extension HWCommentViewController: UITableViewDataSource, UITableViewDelegate {
         return nil
     }
     
-}
-
-// MARK: - HWCommentTableViewCell 类
-class HWCommentTableViewCell: UITableViewCell {
-    
-    var comment: HWComment? {
-        didSet {
-            updateUI()
-        }
-    }
-    
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var genderImageView: UIImageView!
-    @IBOutlet weak var nickNameLabel: UILabel!
-    @IBOutlet weak var voiceComment: UIButton!
-    @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var likeNumberLabel: UILabel!
-    @IBOutlet weak var likeBtn: UIButton!
-    
-    override var frame: CGRect {
-        didSet {
-            var newFrame = frame
-            newFrame.size.height -= 1
-            super.frame = newFrame
-        }
-    }
-    
-    private func updateUI() {
-        commentLabel.isHidden = true
-        voiceComment.isHidden = true
-        nickNameLabel.text = nil
-        likeNumberLabel.text = nil
-        
-        guard let model = comment else {
-            return
-        }
-        // 头像
-        profileImageView.sd_setImage(with: URL(string: model.user.profile_image ?? ""), placeholderImage: UIImage(named: "defaultUserIcon")!.circleImage(), options: [], completed: { (image, error, _, _) in
-            if let img = image {
-                self.profileImageView.image = img.circleImage()
-            }
-        })
-        // 性别
-        if model.user.sex == "f" {
-            genderImageView.image = UIImage(named:"Profile_womanIcon")
-        } else {
-            genderImageView.image = UIImage(named:"Profile_manIcon")
-        }
-        // 昵称
-        nickNameLabel.text = model.user.username
-        // 评论内容
-        if model.voiceuri.hasPrefix("http") {
-            voiceComment.isHidden = false
-            HWLog("\(model.voiceuri)")
-        } else {
-            commentLabel.text = model.content
-            commentLabel.isHidden = false
-        }
-        // 喜欢的数
-        likeNumberLabel.text = model.like_count.stringValue
-        
-    }
-    
-    @IBAction func clickedLikeBtn() {
-        guard let model = comment else {
-            return
-        }
-        likeBtn.isSelected = !likeBtn.isSelected
-        var likeCount = model.like_count.intValue
-        // TODO: 这里需要与服务器通信
-        if likeBtn.isSelected {
-            likeCount += 1
-        } else {
-            likeCount -= 1
-        }
-        model.like_count = NSNumber(value: likeCount)
-        likeNumberLabel.text = model.like_count.stringValue
-    }
 }
 

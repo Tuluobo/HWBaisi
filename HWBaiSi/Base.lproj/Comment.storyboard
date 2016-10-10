@@ -39,11 +39,11 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRH-0z-4vn">
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.58096050129999999" green="0.58096050129999999" blue="0.58096050129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-BD-GFU">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -53,8 +53,8 @@
                                                         <constraint firstAttribute="width" constant="62" id="tXs-bG-UoB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <inset key="titleEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <inset key="imageEdgeInsets" minX="42" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="titleEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="10''" image="play-voice-stop" backgroundImage="play-voice-bg">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
@@ -81,22 +81,23 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4ya-BD-GFU" firstAttribute="trailing" secondItem="hRH-0z-4vn" secondAttribute="trailing" id="0Rd-Nz-g18"/>
-                                                <constraint firstItem="hRH-0z-4vn" firstAttribute="top" secondItem="MHI-dx-M37" secondAttribute="top" id="20p-xQ-N4v"/>
+                                                <constraint firstItem="hRH-0z-4vn" firstAttribute="top" secondItem="MHI-dx-M37" secondAttribute="top" constant="4" id="20p-xQ-N4v"/>
                                                 <constraint firstItem="nhy-Mi-unD" firstAttribute="trailing" secondItem="xy7-Kb-0bD" secondAttribute="trailingMargin" constant="-10" id="2bq-yx-EUy"/>
                                                 <constraint firstItem="4ya-BD-GFU" firstAttribute="top" secondItem="hRH-0z-4vn" secondAttribute="bottom" constant="8" id="4Qg-fB-XRt"/>
                                                 <constraint firstItem="A67-C8-Edu" firstAttribute="leading" secondItem="4ya-BD-GFU" secondAttribute="leading" id="BUX-ov-uQZ"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="A67-C8-Edu" secondAttribute="bottom" constant="4" id="DPN-TE-iQ4"/>
                                                 <constraint firstItem="j9j-Hq-t9Y" firstAttribute="centerX" secondItem="nhy-Mi-unD" secondAttribute="centerX" id="FSo-wc-dCn"/>
                                                 <constraint firstItem="MHI-dx-M37" firstAttribute="leading" secondItem="xy7-Kb-0bD" secondAttribute="leading" constant="10" id="HAf-mA-ZOh"/>
                                                 <constraint firstItem="ZTm-fM-8dD" firstAttribute="leading" secondItem="MHI-dx-M37" secondAttribute="trailing" constant="10" id="JbZ-fU-xqw"/>
                                                 <constraint firstItem="4ya-BD-GFU" firstAttribute="leading" secondItem="MHI-dx-M37" secondAttribute="trailing" constant="10" id="Q2u-FA-uN8"/>
-                                                <constraint firstItem="hRH-0z-4vn" firstAttribute="leading" secondItem="ZTm-fM-8dD" secondAttribute="trailing" constant="10" id="RMd-Px-jMn"/>
+                                                <constraint firstItem="hRH-0z-4vn" firstAttribute="leading" secondItem="ZTm-fM-8dD" secondAttribute="trailing" constant="6" id="RMd-Px-jMn"/>
                                                 <constraint firstItem="ZTm-fM-8dD" firstAttribute="centerY" secondItem="hRH-0z-4vn" secondAttribute="centerY" id="Z5f-ve-mJ6"/>
                                                 <constraint firstItem="MHI-dx-M37" firstAttribute="top" secondItem="xy7-Kb-0bD" secondAttribute="top" constant="10" id="Zox-Z0-X8Q"/>
-                                                <constraint firstItem="nhy-Mi-unD" firstAttribute="leading" secondItem="hRH-0z-4vn" secondAttribute="trailing" constant="20" id="h6f-lX-T55"/>
+                                                <constraint firstItem="nhy-Mi-unD" firstAttribute="leading" secondItem="hRH-0z-4vn" secondAttribute="trailing" constant="10" id="h6f-lX-T55"/>
                                                 <constraint firstItem="A67-C8-Edu" firstAttribute="top" secondItem="4ya-BD-GFU" secondAttribute="top" id="nkP-BW-c29"/>
                                                 <constraint firstItem="nhy-Mi-unD" firstAttribute="centerY" secondItem="xy7-Kb-0bD" secondAttribute="centerY" constant="-12" id="qix-WZ-pe2"/>
                                                 <constraint firstItem="j9j-Hq-t9Y" firstAttribute="top" secondItem="nhy-Mi-unD" secondAttribute="bottom" constant="4" id="wJd-6K-1cI"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="4ya-BD-GFU" secondAttribute="bottom" constant="10" id="wnz-ur-iPB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4ya-BD-GFU" secondAttribute="bottom" constant="4" id="wnz-ur-iPB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -173,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HJ-Fy-HJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-431.19999999999999" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="-346" y="-60"/>
         </scene>
     </scenes>
     <resources>
