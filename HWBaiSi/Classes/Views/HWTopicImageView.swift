@@ -17,6 +17,7 @@ class HWTopicImageView: UIView {
             updateUI()
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -80,7 +81,7 @@ class HWTopicImageView: UIView {
             imageView.clipsToBounds = false
         }
         // 对不同类型的帖子处理
-        if data.type.intValue == 31 {    // 音频
+        if data.type.intValue == 31 {           // 音频
             playCountLabel.isHidden = false
             playCountLabel.text = data.playcount
             playTimeLabel.isHidden = false
@@ -96,7 +97,7 @@ class HWTopicImageView: UIView {
             videoStartBtn.setImage(UIImage(named:"video-play"), for: .normal)
             videoStartBtn.setBackgroundImage(nil, for: .normal)
             videoStartBtn.setBackgroundImage(nil, for: .highlighted)
-        }   
+        }
     }
     
     private func setImageView(imageName: String, type:NSNumber) {

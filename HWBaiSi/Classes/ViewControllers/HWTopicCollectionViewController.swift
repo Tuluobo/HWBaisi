@@ -1,5 +1,5 @@
 //
-//  EssenceViewController.swift
+//  HWTopicCollectionViewController.swift
 //  HWBaiSi
 //
 //  Created by WangHao on 16/9/10.
@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let kHWTableCollectionViewCellKey = "collectionCell"
 
-class EssenceViewController: BaseViewController {
+class HWTopicCollectionViewController: BaseViewController {
 
     var contentModels = [HWContent]()
     fileprivate var currentTitleBtn: UIButton! {
@@ -76,7 +76,7 @@ class EssenceViewController: BaseViewController {
 }
 
 // MARK: collection的代理和数据源
-extension EssenceViewController: UICollectionViewDataSource,UICollectionViewDelegate {
+extension HWTopicCollectionViewController: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return contentModels.count

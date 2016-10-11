@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Essence View Controller-->
+        <!--Topic Collection View Controller-->
         <scene sceneID="zy3-GK-o67">
             <objects>
-                <viewController id="iYS-YC-bN8" customClass="EssenceViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iYS-YC-bN8" customClass="HWTopicCollectionViewController" customModule="HWBaiSi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4bI-wL-HON"/>
                         <viewControllerLayoutGuide type="bottom" id="wLn-ch-SoR"/>
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrf-cL-pzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607.1999999999998" y="-637.33133433283365"/>
+            <point key="canvasLocation" x="2538" y="-637"/>
         </scene>
         <!--Recommend Tag View Controller-->
         <scene sceneID="Pen-9p-acO">
@@ -243,7 +243,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pF-x4-JRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2605.5999999999999" y="-1303.8980509745129"/>
+            <point key="canvasLocation" x="3342" y="-637"/>
         </scene>
         <!--精华-->
         <scene sceneID="2TY-6U-lR4">

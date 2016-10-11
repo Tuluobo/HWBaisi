@@ -57,16 +57,24 @@ class HWCommentViewController: BaseViewController {
     
     // MARK: - 内部方法
     private func setupThisTopic() {
-        // topic cell view
-        let xib = UINib(nibName: "HWTopicTableViewCell", bundle: nil)
-        let topicView = xib.instantiate(withOwner: HWTopicTableViewCell.self, options: nil).first as! HWTopicTableViewCell
-        topicView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: topic.cellHeight)
-        topicView.model = topic
+        
         // headerView
         let headerView = UIView()
         headerView.backgroundColor = UIColor.randomColor
-        headerView.frame.size.height = topic.cellHeight
+        
+        // topic cell view
+        let xib = UINib(nibName: "HWTopicTableViewCell", bundle: nil)
+        let topicView = xib.instantiate(withOwner: HWTopicTableViewCell.self, options: nil).first as! HWTopicTableViewCell
+        topicView.model = topic
+        // 更新Frame
+        var frame = topicView.frame
+        frame.origin = CGPoint.zero
+        frame.size.height = topic.cellHeight
+        topicView.frame = frame
         headerView.addSubview(topicView)
+        // 设置 header 高度
+        headerView.frame.size.height = topicView.frame.size.height + 10 * 2
+        // 设置 header
         self.commentTableView.tableHeaderView = headerView
     }
     
@@ -74,15 +82,16 @@ class HWCommentViewController: BaseViewController {
         if commentTableView.mj_header.isRefreshing() {
             lastcid = nil
         }
-        let task = RESTfulManager.sharedInstance.fetchCommentData(data_id: topic.id, lastcid: lastcid) { (data, error) in
+        let task = RESTfulManager.sharedInstance.fetchCommentData(data_id: topic.id, lastcid: lastcid) { (total, data, error) in
             // 停止刷新
             if self.commentTableView.mj_header.isRefreshing() {
                 self.commentTableView.mj_header.endRefreshing()
-            } else {
-                self.commentTableView.mj_footer.endRefreshing()
             }
             if let e = error {
                 HWLog("请求出现错误：\(e)")
+                if self.commentTableView.mj_footer.isRefreshing() {
+                    self.commentTableView.mj_footer.endRefreshing()
+                }
                 return
             }
             if self.commentTableView.mj_header.isRefreshing() {
@@ -92,6 +101,13 @@ class HWCommentViewController: BaseViewController {
             }
             if let last = data![1].last {
                 self.lastcid = last.id
+            }
+            if self.commentTableView.mj_footer.isRefreshing() {
+                if total == self.commentItems[1].count {
+                    self.commentTableView.mj_footer.endRefreshingWithNoMoreData()
+                } else {
+                    self.commentTableView.mj_footer.endRefreshing()
+                }
             }
             DispatchQueue.main.async {
                 self.commentTableView.reloadData()
@@ -140,7 +156,7 @@ extension HWCommentViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - 这是Section Header的设置
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if commentItems[section].count > 0 {
-            return section == 0 ? 44 : 22
+            return 24
         }
         return 0
     }

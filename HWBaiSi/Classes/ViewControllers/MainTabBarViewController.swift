@@ -11,6 +11,7 @@ import UIKit
 class MainTabBarViewController: UITabBarController {
     
     // MARK: 懒加载
+    // + 按钮
     lazy fileprivate var publishBtn: UIButton = {
         let centerBtn = UIButton(type: UIButtonType.custom)
         centerBtn.setImage(UIImage(named: "tabBar_publish_icon")!, for: UIControlState())
@@ -36,6 +37,7 @@ class MainTabBarViewController: UITabBarController {
     }
     
     // MARK: 内部方法
+    // 点击 + 按钮
     @objc fileprivate func clickedCenterBtn() {
         let publishVC = UIStoryboard(name: "Publish", bundle: nil).instantiateInitialViewController()!
         self.present(publishVC, animated: true, completion: nil)
