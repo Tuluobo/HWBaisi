@@ -127,6 +127,11 @@ class HWTopic: NSObject {
         return ["top_cmt": HWComment.self]
     }
     
+    // MARK: - 外部方法
+    func setCellHeight(height: CGFloat) {
+        _cellHeight = height
+    }
+    
     // MARK: - 内部方法
     
     /// 
@@ -160,17 +165,21 @@ class HWTopic: NSObject {
     
     /// 计算Cell高度
     private func calcCellHeight() -> CGFloat {
-        if let height = _cellHeight {
+        if let height = _cellHeight, height > 0 {
             return height
         }
         var cHeight = mediaFrame.origin.y + mediaFrame.size.height + 10.0
         // 评论区
         if top_cmt.count > 0 {
-            let content = "\(top_cmt[0].user.username ?? "") : \(top_cmt[0].content ?? "")" as NSString
+            var content = top_cmt[0].content!
+            if top_cmt[0].voiceuri.hasPrefix("http") {
+                content = "[语音评论]"
+            }
+            let comment = "\(top_cmt[0].user.username ?? "") : \(content)" as NSString
             let maxWidth = kScreenWidth-14.0*2.0
             let textMaxSize = CGSize(width: maxWidth, height: 200)
             let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 16)]
-            let size = content.boundingRect(with: textMaxSize, options: .usesLineFragmentOrigin, attributes: attri, context: nil)
+            let size = comment.boundingRect(with: textMaxSize, options: .usesLineFragmentOrigin, attributes: attri, context: nil)
             cHeight += (size.height + 10 + 20)
         }
         cHeight += (35 + 10)

@@ -57,25 +57,25 @@ class HWCommentViewController: BaseViewController {
     
     // MARK: - 内部方法
     private func setupThisTopic() {
-        
+        // 临时调整model
+        let tempComment = topic.top_cmt
+        topic.top_cmt.removeAll()
+        topic.setCellHeight(height: 0)
         // headerView
         let headerView = UIView()
-        headerView.backgroundColor = UIColor.randomColor
-        
         // topic cell view
         let xib = UINib(nibName: "HWTopicTableViewCell", bundle: nil)
         let topicView = xib.instantiate(withOwner: HWTopicTableViewCell.self, options: nil).first as! HWTopicTableViewCell
         topicView.model = topic
-        // 更新Frame
-        var frame = topicView.frame
-        frame.origin = CGPoint.zero
-        frame.size.height = topic.cellHeight
-        topicView.frame = frame
+        topicView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: topic.cellHeight)
         headerView.addSubview(topicView)
         // 设置 header 高度
         headerView.frame.size.height = topicView.frame.size.height + 10 * 2
         // 设置 header
         self.commentTableView.tableHeaderView = headerView
+        // 回复model
+        topic.top_cmt = tempComment
+        topic.setCellHeight(height: 0)
     }
     
     private func refreshData() -> URLSessionTask? {

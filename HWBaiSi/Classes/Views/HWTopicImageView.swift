@@ -27,6 +27,14 @@ class HWTopicImageView: UIView {
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(browsePicture)))
     }
     
+    override var frame: CGRect {
+        didSet {
+            if let data = topicModel {
+                super.frame = data.mediaFrame
+            }
+        }
+    }
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var gitTagImageView: UIImageView!
     @IBOutlet weak var videoStartBtn: UIButton!

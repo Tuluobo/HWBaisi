@@ -104,7 +104,11 @@ class HWTopicTableViewCell: UITableViewCell {
         } else {
             hotCommentView.isHidden = false
             let comment = data.top_cmt[0]
-            commentLabel.text = "\(comment.user.username ?? "") : \(comment.content ?? "")"
+            if comment.voiceuri.hasPrefix("http") {
+                commentLabel.text = "\(comment.user.username ?? "") : [语音评论]"
+            } else {
+                commentLabel.text = "\(comment.user.username ?? "") : \(comment.content!)"
+            }
         }
         
         // 不同类型的内容显示
