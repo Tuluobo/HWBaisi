@@ -35,9 +35,9 @@ class HWRecommendTagCell: UITableViewCell {
         tagDetailLabel.text = nil
         guard let data = tagModel else { return }
         if let urlStr = data.image_list {
-            tagImageView.sd_setImage(with: URL(string: urlStr), placeholderImage: UIImage(named: "defaultUserIcon")!.circleImage(), options: [], completed: { (image, error, _, _) in
+            tagImageView.sd_setImage(with: URL(string: urlStr), placeholderImage: UIImage(named: "defaultUserIcon")!.hw_circleImage(), options: [], completed: { (image, error, _, _) in
                 if let img = image {
-                    self.tagImageView.image = img.circleImage()
+                    self.tagImageView.image = img.hw_circleImage()
                 }
             })
         }
@@ -54,7 +54,7 @@ class HWRecommendTagCell: UITableViewCell {
     @IBAction func clickedAttentionBtn(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
-            sender.setTitleColor(UIColor.defaultGray, for: .normal)
+            sender.setTitleColor(UIColor.hw_gray, for: .normal)
             sender.setTitle("已订阅", for: .normal)
         } else {
             sender.setTitleColor(UIColor.red, for: .normal)

@@ -10,11 +10,11 @@ import UIKit
 
 extension UIImage {
     
-    class func circleImage(named: String) -> UIImage {
-        return UIImage(named: named)!.circleImage()
+    class func hw_circleImage(named: String) -> UIImage {
+        return UIImage(named: named)!.hw_circleImage()
     }
     
-    func circleImage() -> UIImage {
+    func hw_circleImage() -> UIImage {
         UIGraphicsBeginImageContext(self.size)
         let ctx = UIGraphicsGetCurrentContext()
         let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)

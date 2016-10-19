@@ -28,7 +28,7 @@ class MeViewController: UITableViewController {
         
 		tagViewCell.delegate = self
         
-        self.view.backgroundColor = UIColor.defaultLightGray
+        self.view.backgroundColor = UIColor.hw_lightGray
 		self.navigationItem.title = "我"
         self.tableView.contentInset = UIEdgeInsetsMake(-24, 0, -20, 0)
         // 获取 Tag 数据
@@ -145,7 +145,7 @@ class HWTagCollectionViewFlowLayout: UICollectionViewFlowLayout {
         // Cell Size
         itemSize = CGSize.init(width: itemW, height: itemH)
         // 背景色
-        collectionView?.backgroundColor = UIColor.defaultLightGray
+        collectionView?.backgroundColor = UIColor.hw_lightGray
         // 回弹
         collectionView?.bounces = false
         // 滚动条

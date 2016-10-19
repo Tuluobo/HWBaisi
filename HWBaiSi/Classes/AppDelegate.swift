@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	var window: UIWindow?
+    var statusWindow: UIWindow!
     
     private let kNightModeKey = "kNightModeKey"
     var nightMode:Bool = false {
@@ -28,14 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
-		/************
-		window = UIWindow(frame: UIScreen.mainScreen().bounds)
+		
+		statusWindow = UIWindow(frame: application.statusBarFrame)
+        statusWindow.windowLevel = UIWindowLevelAlert
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(scrollToTop))
+        statusWindow.addGestureRecognizer(gesture)
 		// iOS9.0之后如果程序启动完成的那一刻不设置root控制器报错：Application windows are expected to have a root view controller at the end of application launch
 		// 但是如果设置延时之后显示，就不会报错
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
-			self.window?.makeKeyAndVisible()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 2 * NSEC_PER_SEC)) {
+            self.statusWindow.isHidden = false
 		}
-        ************/
 		
         setupNightMode()
         
@@ -54,11 +57,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func setupUI() {
 		/// Navi 通用这只
-        UINavigationBar.appearance().tintColor = nightMode ? UIColor.defaultDrakGray :  UIColor.defaultRed
+        UINavigationBar.appearance().tintColor = nightMode ? UIColor.hw_drakGray :  UIColor.hw_red
 		/// Tab Bar Item 字体
-		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultGray], for: UIControlState())
-		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.defaultRed], for: .selected)
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.hw_gray], for: UIControlState())
+		UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.hw_red], for: .selected)
 	}
+    
+    func scrollToTop() {
+        let window = UIApplication.shared.keyWindow!
+        findScrollViewInView(view: window)
+    }
+    
+    func findScrollViewInView(view: UIView) {
+        
+        // 递归找view
+        for v in view.subviews {
+            findScrollViewInView(view: v)
+        }
+        
+        if !view.isKind(of: UIScrollView.self) {
+            return
+        }
+        
+        let scrollView = view as! UIScrollView
+        // 判断是否可见
+        let rect = scrollView.convert(scrollView.bounds, to: nil)
+        if !UIScreen.main.bounds.intersects(rect) {
+            return
+        }
+        HWLog("\(scrollView)")
+        // UIScrollview 滚动
+        var offset = scrollView.contentOffset
+        offset.y = -scrollView.contentInset.top
+        scrollView.setContentOffset(offset, animated: true)
+        
+    }
 	
 	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

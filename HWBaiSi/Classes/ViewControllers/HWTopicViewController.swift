@@ -27,7 +27,7 @@ class HWTopicViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置通用背景颜色
-        view.backgroundColor = UIColor.defaultLightGray
+        view.backgroundColor = UIColor.hw_lightGray
         /// tableView 设置
         tableView.contentInset = UIEdgeInsets(top: 44+35, left: 0, bottom: 49, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset

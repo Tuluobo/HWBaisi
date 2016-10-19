@@ -12,8 +12,8 @@ class HWCommentHeaderView: UITableViewHeaderFooterView {
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        self.contentView.backgroundColor = UIColor.defaultLightGray
-        self.textLabel?.textColor = UIColor.defaultGray
+        self.contentView.backgroundColor = UIColor.hw_lightGray
+        self.textLabel?.textColor = UIColor.hw_gray
     }
     
     required init?(coder aDecoder: NSCoder) {

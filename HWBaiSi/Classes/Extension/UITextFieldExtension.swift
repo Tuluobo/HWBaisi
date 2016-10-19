@@ -21,7 +21,7 @@ extension UITextField {
             // 设置颜色
             var color = newValue
             if color == nil {
-                color = UIColor.placeTextColor
+                color = UIColor.hw_placeTextColor
             }
             self.setValue(color, forKeyPath: kUITextFieldPlaceholderColorKey)
         }

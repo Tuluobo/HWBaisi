@@ -26,7 +26,7 @@ class HWCommentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "评论"
-        self.commentTableView.backgroundColor = UIColor.defaultLightGray
+        self.commentTableView.backgroundColor = UIColor.hw_lightGray
         self.commentTableView.separatorStyle = .none
         self.commentTableView.register(HWCommentHeaderView.self, forHeaderFooterViewReuseIdentifier: kHeaderID)
         self.commentTableView.estimatedRowHeight = 120

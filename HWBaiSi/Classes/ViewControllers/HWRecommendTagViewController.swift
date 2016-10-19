@@ -20,7 +20,7 @@ class HWRecommendTagViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "推荐标签"
-        tableView.backgroundColor = UIColor.defaultLightGray
+        tableView.backgroundColor = UIColor.hw_lightGray
         tableView.rowHeight = 68.0
         tableView.separatorStyle = .none
         /// 更新数据源

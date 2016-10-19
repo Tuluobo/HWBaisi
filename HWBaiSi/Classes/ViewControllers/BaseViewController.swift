@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         // 设置通用背景颜色
-		self.view.backgroundColor = UIColor.defaultLightGray
+		self.view.backgroundColor = UIColor.hw_lightGray
 	}
     
 }

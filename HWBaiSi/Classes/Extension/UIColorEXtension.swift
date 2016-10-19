@@ -18,30 +18,30 @@ extension UIColor {
 		self.init(red: CGFloat(R) / 255.0, green: CGFloat(G) / 255.0, blue: CGFloat(B) / 255.0, alpha: CGFloat(A) / 255.0)
 	}
     
-    class var randomColor: UIColor {
+    class var hw_randomColor: UIColor {
         let r = arc4random_uniform(255)
         let g = arc4random_uniform(255)
         let b = arc4random_uniform(255)
         return UIColor(R: Int(r), G: Int(g), B: Int(b))
     }
 	
-    class var defaultLightGray: UIColor {
+    class var hw_lightGray: UIColor {
 		return UIColor(R: 243, G: 243, B: 243)
 	}
     
-    class var defaultGray: UIColor {
+    class var hw_gray: UIColor {
         return UIColor(R: 39, G: 39, B: 39)
     }
 	
-	class var defaultDrakGray: UIColor {
+	class var hw_drakGray: UIColor {
 		return UIColor(R: 26, G: 26, B: 26)
 	}
 	
-	class var defaultRed: UIColor {
+	class var hw_red: UIColor {
 		return UIColor(R: 255, G: 26, B: 85)
 	}
     
-    class var placeTextColor: UIColor {
+    class var hw_placeTextColor: UIColor {
         return UIColor(colorLiteralRed: 0, green: 0, blue: 0.0980392, alpha: 0.22)
     }
 	

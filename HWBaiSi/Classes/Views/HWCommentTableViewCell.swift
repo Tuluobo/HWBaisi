@@ -40,9 +40,9 @@ class HWCommentTableViewCell: UITableViewCell {
             return
         }
         // 头像
-        profileImageView.sd_setImage(with: URL(string: model.user.profile_image ?? ""), placeholderImage: UIImage(named: "defaultUserIcon")!.circleImage(), options: [], completed: { (image, error, _, _) in
+        profileImageView.sd_setImage(with: URL(string: model.user.profile_image ?? ""), placeholderImage: UIImage(named: "defaultUserIcon")!.hw_circleImage(), options: [], completed: { (image, error, _, _) in
             if let img = image {
-                self.profileImageView.image = img.circleImage()
+                self.profileImageView.image = img.hw_circleImage()
             }
         })
         // 性别
