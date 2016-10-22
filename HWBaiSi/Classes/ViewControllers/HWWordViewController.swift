@@ -1,4 +1,3 @@
-
 //
 //  HWWordViewController.swift
 //  HWBaiSi
@@ -9,24 +8,19 @@
 
 import UIKit
 
-class HWWordViewController: HWTopicViewController {
+class HWWordViewController: HWTopicViewController, HWTopicViewControllerDataSource {
 
-    override var topicType: Int {
+    internal var listType: String {
+        return "list"
+    }
+    
+    internal var topicType: Int {
         return 29
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hwDataSource = self
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

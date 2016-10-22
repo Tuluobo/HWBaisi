@@ -41,11 +41,18 @@ class HWTopicCollectionViewController: BaseViewController {
     }
     
     func loadData() {
-        let type = [["title":"全部","viewController":HWAllViewController()],
+        var type = [["title":"全部","viewController":HWAllViewController()],
                     ["title":"视频","viewController":HWVideoViewController()],
                     ["title":"声音","viewController":HWVoiceViewController()],
                     ["title":"图片","viewController":HWPictureViewController()],
                     ["title":"段子","viewController":HWWordViewController()]]
+        if let index = self.tabBarController?.selectedIndex, index == 1 {
+            type = [["title":"全部","viewController":HWNewAllViewController()],
+                    ["title":"视频","viewController":HWNewVideoViewController()],
+                    ["title":"声音","viewController":HWNewVoiceViewController()],
+                    ["title":"图片","viewController":HWNewPictureViewController()],
+                    ["title":"段子","viewController":HWNewWordViewController()]]
+        }
         contentModels = HWContent.mutilInit(arr: type)
     }
     

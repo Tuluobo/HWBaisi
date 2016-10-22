@@ -11,15 +11,15 @@ import MJRefresh
 
 let kTopicTableViewCellKey = "topicCell"
 
-class HWTopicViewController: UITableViewController {
+protocol HWTopicViewControllerDataSource {
+    var topicType: Int { get }
+    var listType: String { get }
+}
 
-    var topicType: Int {
-        return 1
-    }
-    var listType: String {
-        return "newlist"
-    }
+
+class HWTopicViewController: UITableViewController {
     
+    var hwDataSource: HWTopicViewControllerDataSource?
     var info = [String : Any]()
     var dataModels = [HWTopic]()
     var fetchTask: URLSessionTask?
@@ -53,7 +53,7 @@ class HWTopicViewController: UITableViewController {
     func loadData() -> URLSessionTask? {
         let maxtime = tableView.mj_header.isRefreshing() ? nil : info["maxtime"] as? String
         /// type: 1 表示全部
-        let task = RESTfulManager.sharedInstance.fetchTopicData(type: topicType, list: listType, maxtime: maxtime) { (infoDict, data, error) in
+        let task = RESTfulManager.sharedInstance.fetchTopicData(type: hwDataSource!.topicType, list: hwDataSource!.listType, maxtime: maxtime) { (infoDict, data, error) in
             // 停止刷新
             if self.tableView.mj_header.isRefreshing() {
                 self.tableView.mj_header.endRefreshing()

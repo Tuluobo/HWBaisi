@@ -1,17 +1,17 @@
 //
-//  HWPictureViewController.swift
+//  HWNewPictureViewController.swift
 //  HWBaiSi
 //
-//  Created by WangHao on 16/9/24.
+//  Created by WangHao on 2016/10/22.
 //  Copyright © 2016年 Tuluobo. All rights reserved.
 //
 
 import UIKit
 
-class HWPictureViewController: HWTopicViewController, HWTopicViewControllerDataSource {
-    
+class HWNewPictureViewController: HWTopicViewController, HWTopicViewControllerDataSource {
+
     internal var listType: String {
-        return "list"
+        return "newlist"
     }
     
     internal var topicType: Int {

@@ -8,15 +8,18 @@
 
 import UIKit
 
-class HWAllViewController: HWTopicViewController {
+class HWAllViewController: HWTopicViewController, HWTopicViewControllerDataSource {
+    
+    internal var listType: String {
+        return "list"
+    }
 
-    override var topicType: Int {
+    internal var topicType: Int {
         return 1
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hwDataSource = self
     }
-
-
 }

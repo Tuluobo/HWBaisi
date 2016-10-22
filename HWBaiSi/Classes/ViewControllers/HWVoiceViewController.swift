@@ -8,15 +8,19 @@
 
 import UIKit
 
-class HWVoiceViewController: HWTopicViewController {
+class HWVoiceViewController: HWTopicViewController, HWTopicViewControllerDataSource {
 
-    override var topicType: Int {
+    internal var listType: String {
+        return "list"
+    }
+    
+    internal var topicType: Int {
         return 31
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hwDataSource = self
     }
-
 
 }

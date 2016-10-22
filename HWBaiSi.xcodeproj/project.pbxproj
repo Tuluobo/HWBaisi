@@ -18,7 +18,6 @@
 		D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7A81D83A30A0004C9B6 /* BaseViewController.swift */; };
 		D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7AD1D83B3E10004C9B6 /* MainTabBarViewController.swift */; };
 		D20EA7B01D83BCC30004C9B6 /* HWTopicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7AF1D83BCC30004C9B6 /* HWTopicCollectionViewController.swift */; };
-		D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7B11D83BCDC0004C9B6 /* NewViewController.swift */; };
 		D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7B31D83BCEC0004C9B6 /* PublishViewController.swift */; };
 		D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7B51D83BD240004C9B6 /* FriendTrendsViewController.swift */; };
 		D20EA7B81D83BD2B0004C9B6 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */; };
@@ -58,6 +57,11 @@
 		D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826541D9516830056506C /* HWRecommendTag.swift */; };
 		D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826561D9517A60056506C /* HWRecommendTagCell.swift */; };
 		D2EAAE241DB7836D00F59C2C /* HWTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE231DB7836D00F59C2C /* HWTabBar.swift */; };
+		D2EAAE4F1DBB75D600F59C2C /* HWNewAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE4E1DBB75D600F59C2C /* HWNewAllViewController.swift */; };
+		D2EAAE511DBB761000F59C2C /* HWNewVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE501DBB761000F59C2C /* HWNewVideoViewController.swift */; };
+		D2EAAE531DBB762000F59C2C /* HWNewVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE521DBB762000F59C2C /* HWNewVoiceViewController.swift */; };
+		D2EAAE551DBB762C00F59C2C /* HWNewPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE541DBB762C00F59C2C /* HWNewPictureViewController.swift */; };
+		D2EAAE571DBB763500F59C2C /* HWNewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE561DBB763500F59C2C /* HWNewWordViewController.swift */; };
 		D2EFCEF91D97ED2A0036949B /* HWTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFCEF71D97ED2A0036949B /* HWTopicTableViewCell.swift */; };
 		D2EFCEFA1D97ED2A0036949B /* HWTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -92,7 +96,6 @@
 		D20EA7A81D83A30A0004C9B6 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D20EA7AD1D83B3E10004C9B6 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		D20EA7AF1D83BCC30004C9B6 /* HWTopicCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopicCollectionViewController.swift; sourceTree = "<group>"; };
-		D20EA7B11D83BCDC0004C9B6 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		D20EA7B31D83BCEC0004C9B6 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		D20EA7B51D83BD240004C9B6 /* FriendTrendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTrendsViewController.swift; sourceTree = "<group>"; };
 		D20EA7B71D83BD2B0004C9B6 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +136,11 @@
 		D2B826541D9516830056506C /* HWRecommendTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTag.swift; sourceTree = "<group>"; };
 		D2B826561D9517A60056506C /* HWRecommendTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTagCell.swift; sourceTree = "<group>"; };
 		D2EAAE231DB7836D00F59C2C /* HWTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTabBar.swift; sourceTree = "<group>"; };
+		D2EAAE4E1DBB75D600F59C2C /* HWNewAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewAllViewController.swift; sourceTree = "<group>"; };
+		D2EAAE501DBB761000F59C2C /* HWNewVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewVideoViewController.swift; sourceTree = "<group>"; };
+		D2EAAE521DBB762000F59C2C /* HWNewVoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewVoiceViewController.swift; sourceTree = "<group>"; };
+		D2EAAE541DBB762C00F59C2C /* HWNewPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewPictureViewController.swift; sourceTree = "<group>"; };
+		D2EAAE561DBB763500F59C2C /* HWNewWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWNewWordViewController.swift; sourceTree = "<group>"; };
 		D2EFCEF71D97ED2A0036949B /* HWTopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopicTableViewCell.swift; sourceTree = "<group>"; };
 		D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWTopicTableViewCell.xib; sourceTree = "<group>"; };
 		E15B6CCA1FA21E054DE97A98 /* Pods-HWBaiSi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWBaiSi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,8 +193,8 @@
 				D20EA7AD1D83B3E10004C9B6 /* MainTabBarViewController.swift */,
 				D28E3DE61D89274D0056D3C2 /* HWNavigationController.swift */,
 				D28E3DF31D8961C00056D3C2 /* RegisterAndLoginViewController.swift */,
-				D217F31B1D96AABB00A7A97A /* HWTopicViewController.swift */,
 				D20EA7AF1D83BCC30004C9B6 /* HWTopicCollectionViewController.swift */,
+				D217F31B1D96AABB00A7A97A /* HWTopicViewController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -216,7 +224,11 @@
 		D2045C911D83CB1100270179 /* New */ = {
 			isa = PBXGroup;
 			children = (
-				D20EA7B11D83BCDC0004C9B6 /* NewViewController.swift */,
+				D2EAAE4E1DBB75D600F59C2C /* HWNewAllViewController.swift */,
+				D2EAAE501DBB761000F59C2C /* HWNewVideoViewController.swift */,
+				D2EAAE521DBB762000F59C2C /* HWNewVoiceViewController.swift */,
+				D2EAAE541DBB762C00F59C2C /* HWNewPictureViewController.swift */,
+				D2EAAE561DBB763500F59C2C /* HWNewWordViewController.swift */,
 			);
 			name = New;
 			sourceTree = "<group>";
@@ -602,11 +614,13 @@
 				D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */,
 				D20EA7AE1D83B3E10004C9B6 /* MainTabBarViewController.swift in Sources */,
 				D217F3221D96ABD500A7A97A /* HWVoiceViewController.swift in Sources */,
+				D2EAAE531DBB762000F59C2C /* HWNewVoiceViewController.swift in Sources */,
 				D217F31E1D96AB5400A7A97A /* HWAllViewController.swift in Sources */,
 				D280416F1DABDBB1001DFAD5 /* HWCommentTableViewCell.swift in Sources */,
 				D20EA7B61D83BD240004C9B6 /* FriendTrendsViewController.swift in Sources */,
 				D2692CAE1D995AD200B36E14 /* HWUser.swift in Sources */,
 				D283DC581D97A67500BA2B5F /* HWTopic.swift in Sources */,
+				D2EAAE511DBB761000F59C2C /* HWNewVideoViewController.swift in Sources */,
 				D217F31C1D96AABB00A7A97A /* HWTopicViewController.swift in Sources */,
 				D28E3E001D8AEF380056D3C2 /* RESTfulManager.swift in Sources */,
 				D2692CAC1D995A8E00B36E14 /* HWComment.swift in Sources */,
@@ -618,19 +632,21 @@
 				D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */,
 				D2B8264F1D941CF00056506C /* HWSquareWebViewController.swift in Sources */,
 				D20EA7B41D83BCEC0004C9B6 /* PublishViewController.swift in Sources */,
-				D20EA7B21D83BCDC0004C9B6 /* NewViewController.swift in Sources */,
 				D2692CA81D99287000B36E14 /* DateExtension.swift in Sources */,
 				D2692CF51D9D3CB300B36E14 /* HWPictureBrowseViewController.swift in Sources */,
 				D29C558C1D86EFD30044FA29 /* UIColorEXtension.swift in Sources */,
 				D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */,
+				D2EAAE4F1DBB75D600F59C2C /* HWNewAllViewController.swift in Sources */,
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
 				D2EFCEF91D97ED2A0036949B /* HWTopicTableViewCell.swift in Sources */,
 				D2EAAE241DB7836D00F59C2C /* HWTabBar.swift in Sources */,
 				D29B3AF11D9EAFC20014A27B /* UIImageExtension.swift in Sources */,
+				D2EAAE571DBB763500F59C2C /* HWNewWordViewController.swift in Sources */,
 				D217F3241D96ABDF00A7A97A /* HWPictureViewController.swift in Sources */,
 				D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */,
 				D217F3201D96AB8400A7A97A /* HWVideoViewController.swift in Sources */,
 				D20EA7B01D83BCC30004C9B6 /* HWTopicCollectionViewController.swift in Sources */,
+				D2EAAE551DBB762C00F59C2C /* HWNewPictureViewController.swift in Sources */,
 				D217F3261D96ABE800A7A97A /* HWWordViewController.swift in Sources */,
 				D22710841D93CE7600F270C8 /* HWMeSquare.swift in Sources */,
 				D2B826511D94CBE60056506C /* HWSettingsTableViewController.swift in Sources */,

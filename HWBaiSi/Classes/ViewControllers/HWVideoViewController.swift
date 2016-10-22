@@ -8,15 +8,18 @@
 
 import UIKit
 
-class HWVideoViewController: HWTopicViewController {
+class HWVideoViewController: HWTopicViewController, HWTopicViewControllerDataSource {
 
-    override var topicType: Int {
+    internal var listType: String {
+        return "list"
+    }
+    
+    internal var topicType: Int {
         return 41
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hwDataSource = self
     }
-
-
 }
