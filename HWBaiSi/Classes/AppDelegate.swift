@@ -28,8 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
-		
+        
+        // Main
+        let mainTabBarVC = MainTabBarViewController()
+        window = UIWindow(frame:UIScreen.main.bounds)
+        window?.rootViewController = mainTabBarVC
+        
+		// 自定义一个状态栏
 		statusWindow = UIWindow(frame: application.statusBarFrame)
         statusWindow.windowLevel = UIWindowLevelAlert
         let gesture = UITapGestureRecognizer(target: self, action: #selector(scrollToTop))
@@ -43,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNightMode()
         
 		setupUI()
+        
+        window?.makeKeyAndVisible()
 		
 		return true
 	}

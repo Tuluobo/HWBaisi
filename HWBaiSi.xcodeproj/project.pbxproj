@@ -12,7 +12,6 @@
 		D2045C871D83C74200270179 /* Publish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2045C861D83C74200270179 /* Publish.storyboard */; };
 		D2045C8D1D83C91100270179 /* FriendTrends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2045C8B1D83C91100270179 /* FriendTrends.storyboard */; };
 		D20EA77D1D8391C20004C9B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA77C1D8391C20004C9B6 /* AppDelegate.swift */; };
-		D20EA7821D8391C20004C9B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7801D8391C20004C9B6 /* Main.storyboard */; };
 		D20EA7841D8391C20004C9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7831D8391C20004C9B6 /* Assets.xcassets */; };
 		D20EA7921D8391C20004C9B6 /* HWBaiSiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20EA7911D8391C20004C9B6 /* HWBaiSiTests.swift */; };
 		D20EA7A21D8392150004C9B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D20EA7A41D8392150004C9B6 /* InfoPlist.strings */; };
@@ -58,6 +57,7 @@
 		D2B826531D9513F70056506C /* HWRecommendTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */; };
 		D2B826551D9516830056506C /* HWRecommendTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826541D9516830056506C /* HWRecommendTag.swift */; };
 		D2B826571D9517A60056506C /* HWRecommendTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B826561D9517A60056506C /* HWRecommendTagCell.swift */; };
+		D2EAAE241DB7836D00F59C2C /* HWTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EAAE231DB7836D00F59C2C /* HWTabBar.swift */; };
 		D2EFCEF91D97ED2A0036949B /* HWTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFCEF71D97ED2A0036949B /* HWTopicTableViewCell.swift */; };
 		D2EFCEFA1D97ED2A0036949B /* HWTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -82,13 +82,11 @@
 		D2045C8C1D83C91100270179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FriendTrends.storyboard; sourceTree = "<group>"; };
 		D20EA7791D8391C20004C9B6 /* HWBaiSi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWBaiSi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA77C1D8391C20004C9B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D20EA7811D8391C20004C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D20EA7831D8391C20004C9B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D20EA7881D8391C20004C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D20EA78D1D8391C20004C9B6 /* HWBaiSiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HWBaiSiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7911D8391C20004C9B6 /* HWBaiSiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWBaiSiTests.swift; sourceTree = "<group>"; };
 		D20EA7931D8391C20004C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D20EA79D1D8391EB0004C9B6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		D20EA7A31D8392150004C9B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D20EA7A51D83921B0004C9B6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D20EA7A81D83A30A0004C9B6 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +132,7 @@
 		D2B826521D9513F70056506C /* HWRecommendTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTagViewController.swift; sourceTree = "<group>"; };
 		D2B826541D9516830056506C /* HWRecommendTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTag.swift; sourceTree = "<group>"; };
 		D2B826561D9517A60056506C /* HWRecommendTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWRecommendTagCell.swift; sourceTree = "<group>"; };
+		D2EAAE231DB7836D00F59C2C /* HWTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTabBar.swift; sourceTree = "<group>"; };
 		D2EFCEF71D97ED2A0036949B /* HWTopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWTopicTableViewCell.swift; sourceTree = "<group>"; };
 		D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWTopicTableViewCell.xib; sourceTree = "<group>"; };
 		E15B6CCA1FA21E054DE97A98 /* Pods-HWBaiSi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HWBaiSi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HWBaiSi/Pods-HWBaiSi.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,7 +305,6 @@
 		D20EA7A71D83A2940004C9B6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D20EA7801D8391C20004C9B6 /* Main.storyboard */,
 				D20EA7BE1D83BD980004C9B6 /* TopicCollection.storyboard */,
 				D2045C861D83C74200270179 /* Publish.storyboard */,
 				D2045C8B1D83C91100270179 /* FriendTrends.storyboard */,
@@ -365,6 +363,7 @@
 		D29C558D1D86F1AE0044FA29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2EAAE231DB7836D00F59C2C /* HWTabBar.swift */,
 				D2B826561D9517A60056506C /* HWRecommendTagCell.swift */,
 				D2EFCEF71D97ED2A0036949B /* HWTopicTableViewCell.swift */,
 				D2EFCEF81D97ED2A0036949B /* HWTopicTableViewCell.xib */,
@@ -486,7 +485,6 @@
 				D20EA7BB1D83BD620004C9B6 /* Me.storyboard in Resources */,
 				D2692CF31D9C0C9800B36E14 /* HWTopicImageView.xib in Resources */,
 				D28E3DEA1D895F710056D3C2 /* RegisterAndLogin.storyboard in Resources */,
-				D20EA7821D8391C20004C9B6 /* Main.storyboard in Resources */,
 				D2045C8D1D83C91100270179 /* FriendTrends.storyboard in Resources */,
 				D20EA7C01D83BD980004C9B6 /* TopicCollection.storyboard in Resources */,
 				D23A0A561D9FE1FC00793EAF /* Comment.storyboard in Resources */,
@@ -627,6 +625,7 @@
 				D28E3DF41D8961C00056D3C2 /* RegisterAndLoginViewController.swift in Sources */,
 				D28E3DFA1D8A9F3B0056D3C2 /* UITextFieldExtension.swift in Sources */,
 				D2EFCEF91D97ED2A0036949B /* HWTopicTableViewCell.swift in Sources */,
+				D2EAAE241DB7836D00F59C2C /* HWTabBar.swift in Sources */,
 				D29B3AF11D9EAFC20014A27B /* UIImageExtension.swift in Sources */,
 				D217F3241D96ABDF00A7A97A /* HWPictureViewController.swift in Sources */,
 				D20EA7A91D83A30A0004C9B6 /* BaseViewController.swift in Sources */,
@@ -667,16 +666,6 @@
 				D2045C8C1D83C91100270179 /* Base */,
 			);
 			name = FriendTrends.storyboard;
-			sourceTree = "<group>";
-		};
-		D20EA7801D8391C20004C9B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D20EA7811D8391C20004C9B6 /* Base */,
-				D20EA79D1D8391EB0004C9B6 /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		D20EA7A41D8392150004C9B6 /* InfoPlist.strings */ = {

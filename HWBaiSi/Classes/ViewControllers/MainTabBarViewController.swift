@@ -10,36 +10,32 @@ import UIKit
 
 class MainTabBarViewController: UITabBarController {
     
-    // MARK: 懒加载
-    // + 按钮
-    lazy fileprivate var publishBtn: UIButton = {
-        let centerBtn = UIButton(type: UIButtonType.custom)
-        centerBtn.setImage(UIImage(named: "tabBar_publish_icon")!, for: UIControlState())
-        centerBtn.setImage(UIImage(named: "tabBar_publish_click_icon"), for: .selected)
-        centerBtn.sizeToFit()
-        centerBtn.center = self.tabBar.convert(self.tabBar.center, from: self.tabBar.superview)
-        return centerBtn
-    }()
-    
-    // MARK: 生命周期方法
+    // MARK: - 生命周期方法
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置背景
         self.tabBar.backgroundImage = UIImage(named:"tabbar-light")
-        // 插入中间的发布的tab Bar Item，也可以自定义tabBar
-        var vcs = self.viewControllers!
-        vcs.insert(UIViewController(), at: 2)
-        self.setViewControllers(vcs, animated: false)
-        self.tabBar.items![2].isEnabled = false
-        // 设置中间的按钮
-        self.tabBar.addSubview(publishBtn)
-        publishBtn.addTarget(self, action: #selector(clickedCenterBtn), for: .touchUpInside)
+        // 设置viewController
+        setupChildViewControllers()
+        // 设置自定义tabBar
+        self.setValue(HWTabBar(), forKey: "tabBar")
     }
     
-    // MARK: 内部方法
-    // 点击 + 按钮
-    @objc fileprivate func clickedCenterBtn() {
-        let publishVC = UIStoryboard(name: "Publish", bundle: nil).instantiateInitialViewController()!
-        self.present(publishVC, animated: true, completion: nil)
+    // MARK: - 内部方法
+    // 设置子控制器
+    private func setupChildViewControllers() {
+        layoutViewController(storyboardName:"TopicCollection", title:"精华", imageName:"tabBar_essence_icon", selectedImageName:"tabBar_essence_click_icon")
+        layoutViewController(storyboardName:"TopicCollection", title:"新帖", imageName:"tabBar_new_icon", selectedImageName:"tabBar_new_click_icon")
+        layoutViewController(storyboardName:"FriendTrends", title:"关注", imageName:"tabBar_friendTrends_icon", selectedImageName:"tabBar_friendTrends_click_icon")
+        layoutViewController(storyboardName:"Me", title:"我", imageName:"tabBar_me_icon", selectedImageName:"tabBar_me_click_icon")
+    }
+    
+    // 布局单个子控制器
+    private func layoutViewController(storyboardName: String, title:String, imageName: String, selectedImageName: String) {
+        let navVC = UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController()!
+        navVC.tabBarItem.title = title
+        navVC.tabBarItem.image = UIImage(named:imageName)
+        navVC.tabBarItem.selectedImage = UIImage(named:selectedImageName)
+        self.addChildViewController(navVC)
     }
 }
